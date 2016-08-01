@@ -174,11 +174,34 @@
           "format": "date-time"
         },
         "restrict_site_visibility": {
-          "type": "array",
-          "items": {
-            "type": "string"
+          "type": "object",
+          "properties": {
+            "applicable_sites": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "unapplicable_sites": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            }
           },
-          "uniqueItems": true
+          "required": [
+            "applicable_sites",
+            "unapplicable_sites"
+          ],
+          "additionalProperties": false
         }
       },
       "required": [
@@ -1160,8 +1183,7 @@
               "type": "array",
               "items": {
                 "type": [
-                  "string",
-                  "null"
+                  "string"
                 ],
                 "enum": [
                   "_unclassified",
@@ -1200,7 +1222,9 @@
                   "villa",
                   "vineyard"
                 ]
-              }
+              },
+              "minItems": 0,
+              "uniqueItems": true
             },
             "features": {
               "type": "array",
@@ -1222,7 +1246,9 @@
                   "double_glazing",
                   "central_heating"
                 ]
-              }
+              },
+              "minItems": 0,
+              "uniqueItems": true
             },
             "tags": {
               "type": "array",
@@ -1232,7 +1258,9 @@
                   "null"
                 ],
                 "enum": []
-              }
+              },
+              "minItems": 0,
+              "uniqueItems": true
             }
           },
           "required": [
@@ -1310,7 +1338,9 @@
               "original_bytes"
             ],
             "additionalProperties": false
-          }
+          },
+          "minItems": 0,
+          "uniqueItems": true
         }
       },
       "required": [
