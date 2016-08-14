@@ -268,7 +268,7 @@
           "type": "array",
           "items": {
             "type": [
-              "string",
+              "string"
             ]
           },
           "minItems": 0,
@@ -1351,6 +1351,150 @@
           },
           "minItems": 0,
           "uniqueItems": true
+        },
+        "floor_plans": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "listing_position": {
+                "type": "integer"
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "cloudinary_account": {
+                "type": "string"
+              },
+              "public_id": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "format": {
+                "type": "string",
+                "enum": [
+                  "jpg",
+                  "jpe",
+                  "jpeg",
+                  "png"
+                ]
+              },
+              "bytes": {
+                "type": "integer"
+              },
+              "original_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "original_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "listing_position",
+              "title",
+              "cloudinary_account",
+              "public_id",
+              "version",
+              "width",
+              "height",
+              "format",
+              "bytes",
+              "original_url",
+              "original_bytes"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "virtual_tours": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "listing_position": {
+                "type": "integer"
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "cloudinary_account": {
+                "type": "string"
+              },
+              "public_id": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "format": {
+                "type": "string",
+                "enum": [
+                  "flv",
+                  "mp4",
+                  "ogv",
+                  "webm"
+                ]
+              },
+              "bytes": {
+                "type": "integer"
+              },
+              "original_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "original_bytes": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "listing_position",
+              "title",
+              "cloudinary_account",
+              "public_id",
+              "version",
+              "width",
+              "height",
+              "format",
+              "bytes",
+              "original_url",
+              "original_bytes"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
         }
       },
       "required": [
@@ -1366,7 +1510,9 @@
         "land_area",
         "diagnostic_surveys",
         "attributes",
-        "images"
+        "images",
+        "floor_plans",
+        "virtual_tours"
       ],
       "additionalProperties": false
     }
