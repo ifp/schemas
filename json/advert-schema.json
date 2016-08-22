@@ -1007,12 +1007,19 @@
                 "integer",
                 "null"
               ]
+            },
+            "wc": {
+              "type": [
+                "integer",
+                "null"
+              ]
             }
           },
           "required": [
             "bedrooms",
             "bathrooms",
-            "reception_rooms"
+            "reception_rooms",
+            "wc"
           ],
           "additionalProperties": false
         },
