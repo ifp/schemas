@@ -1014,7 +1014,7 @@
                 "null"
               ]
             },
-            "wc": {
+            "water_closets": {
               "type": [
                 "integer",
                 "null"
@@ -1025,7 +1025,7 @@
             "bedrooms",
             "bathrooms",
             "reception_rooms",
-            "wc"
+            "water_closets"
           ],
           "additionalProperties": false
         },
