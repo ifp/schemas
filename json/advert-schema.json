@@ -238,7 +238,8 @@
         "updated_at",
         "live_at",
         "significantly_updated_at",
-        "restrict_site_visibility"
+        "restrict_site_visibility",
+        "update_conflicts"
       ],
       "additionalProperties": false
     },
