@@ -1025,6 +1025,7 @@
             "bedrooms",
             "bathrooms",
             "reception_rooms",
+            "shower_rooms",
             "water_closets"
           ],
           "additionalProperties": false
@@ -1535,7 +1536,7 @@
         "room_totals",
         "floor_area",
         "land_area",
-        "diagnostic_surveys",
+        "energy_certificates",
         "attributes",
         "images",
         "floor_plans",
