@@ -1544,6 +1544,7 @@
         "title_fr",
         "description_en",
         "description_fr",
+        "highlights",
         "geo",
         "price",
         "room_totals",
