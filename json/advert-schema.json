@@ -127,8 +127,15 @@
             "string"
           ],
           "enum": [
-            "standard",
-            "premium"
+            "standard_all",
+            "premium_all",
+            "free_all",
+            "standard_ifp",
+            "premium_ifp",
+            "free_ifp",
+            "standard_network",
+            "premium_network",
+            "free_network"
           ],
           "default": "standard"
         },
@@ -202,6 +209,15 @@
             "unapplicable_sites"
           ],
           "additionalProperties": false
+        },
+        "update_conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "minItems": 0,
+          "uniqueItems": true
         }
       },
       "required": [
