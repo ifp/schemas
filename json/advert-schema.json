@@ -145,7 +145,8 @@
           ],
           "enum": [
             "online",
-            "offline"
+            "offline",
+            "denied"
           ],
           "default": "online"
         },
