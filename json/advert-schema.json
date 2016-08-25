@@ -1542,6 +1542,9 @@
         "virtual_tours"
       ],
       "additionalProperties": false
+    },
+    "original_property": {
+      "additionalProperties": true
     }
   },
   "required": [
@@ -1551,7 +1554,8 @@
     "created_at",
     "metadata",
     "advert",
-    "property"
+    "property",
+    "original_property"
   ],
   "additionalProperties": false
 }
