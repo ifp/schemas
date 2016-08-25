@@ -212,13 +212,8 @@
           "additionalProperties": false
         },
         "update_conflicts": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": true
-          },
-          "minItems": 0,
-          "uniqueItems": true
+          "type": "object",
+          "additionalProperties": true
         }
       },
       "required": [
