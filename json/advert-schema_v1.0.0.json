@@ -1158,7 +1158,8 @@
                   "type": [
                     "string",
                     "null"
-                  ]
+                  ],
+                  "format": "date-time"
                 }
               },
               "required": [
@@ -1196,7 +1197,8 @@
                   "type": [
                     "string",
                     "null"
-                  ]
+                  ],
+                  "format": "date-time"
                 }
               },
               "required": [
@@ -1283,7 +1285,6 @@
                 ],
                 "enum": [
                   "chalet",
-                  "city",
                   "coastal",
                   "cottage",
                   "detached",
