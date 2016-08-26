@@ -302,10 +302,10 @@
                       "type": "object",
                       "properties": {
                         "lat": {
-                          "type": "string"
+                          "type": "number"
                         },
                         "lon": {
-                          "type": "string"
+                          "type": "number"
                         }
                       },
                       "required": [
@@ -315,7 +315,10 @@
                       "additionalProperties": false
                     },
                     "region_name": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "Auvergne-Rhône-Alpes",
                         "Brittany",
@@ -329,11 +332,15 @@
                         "Occitanie",
                         "Paris Ile-de-France",
                         "Pays de la Loire",
-                        "Provence-Alpes-Côte d'Azur"
+                        "Provence-Alpes-Côte d'Azur",
+                        null
                       ]
                     },
                     "region_tag": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "auvergne-rhone-alpes",
                         "brittany",
@@ -347,11 +354,15 @@
                         "occitanie",
                         "paris ile-de-france",
                         "pays de la loire",
-                        "provence-alpes-cote d'azur"
+                        "provence-alpes-cote d'azur",
+                        null
                       ]
                     },
                     "old_region_name": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "Alsace",
                         "Aquitaine",
@@ -374,11 +385,15 @@
                         "Poitou-Charentes",
                         "Provence-Alpes-Côte d'Azur",
                         "Rhône-Alpes",
-                        "Upper-Normandy"
+                        "Upper-Normandy",
+                        null
                       ]
                     },
                     "old_region_tag": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "alsace",
                         "aquitaine",
@@ -401,11 +416,15 @@
                         "poitou-charentes",
                         "provence-alpes-cote d'azur",
                         "rhone-alpes",
-                        "upper-normandy"
+                        "upper-normandy",
+                        null
                       ]
                     },
                     "department_name": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "Ain",
                         "Aisne",
@@ -502,11 +521,15 @@
                         "Vienne",
                         "Vosges",
                         "Yonne",
-                        "Yvelines"
+                        "Yvelines",
+                        null
                       ]
                     },
                     "department_full_name": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "Ain (01)",
                         "Aisne (02)",
@@ -603,11 +626,15 @@
                         "Hauts-de-Seine (92)",
                         "Seine-Saint-Denis (93)",
                         "Val-de-Marne (94)",
-                        "Val-d'Oise (95)"
+                        "Val-d'Oise (95)",
+                        null
                       ]
                     },
                     "department_code": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "01",
                         "02",
@@ -704,11 +731,15 @@
                         "92",
                         "93",
                         "94",
-                        "95"
+                        "95",
+                        null
                       ]
                     },
                     "department_tag": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "enum": [
                         "ain",
                         "aisne",
@@ -805,20 +836,33 @@
                         "vienne",
                         "vosges",
                         "yonne",
-                        "yvelines"
+                        "yvelines",
+                        null
                       ]
                     },
                     "commune_id": {
-                      "type": "integer"
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
                     },
                     "commune_name": {
-                      "type": "string"
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "commune_tag": {
-                      "type": "string"
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "post_code": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "minLength": 5,
                       "maxLength": 5
                     },
@@ -883,7 +927,7 @@
                     "null"
                   ]
                 },
-                "nearest_town": {
+                "commune_name": {
                   "type": [
                     "string",
                     "null"
@@ -916,7 +960,7 @@
               },
               "required": [
                 "location",
-                "nearest_town",
+                "commune_name",
                 "post_code",
                 "department",
                 "department_name",
