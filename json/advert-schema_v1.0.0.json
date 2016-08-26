@@ -55,6 +55,12 @@
         "agency_id": {
           "type": "string"
         },
+        "agency_external_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "agency_name": {
           "type": "string"
         },
@@ -104,6 +110,12 @@
           ]
         },
         "agent_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agent_external_id": {
           "type": [
             "string",
             "null"
@@ -208,6 +220,7 @@
       },
       "required": [
         "agency_id",
+        "agency_external_id",
         "agency_name",
         "agency_phone",
         "agency_email",
@@ -218,6 +231,7 @@
         "agency_office_phone",
         "agency_office_email",
         "agent_name",
+        "agent_external_id",
         "agent_phone",
         "agent_email",
         "reference",
