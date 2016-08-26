@@ -163,7 +163,7 @@
             "premium_network",
             "free_network"
           ],
-          "default": "standard"
+          "default": "standard_all"
         },
         "status": {
           "type": [
