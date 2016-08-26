@@ -181,36 +181,6 @@
           "type": "string",
           "format": "date-time"
         },
-        "restrict_site_visibility": {
-          "type": "object",
-          "properties": {
-            "applicable_sites": {
-              "type": "array",
-              "items": {
-                "type": [
-                  "string"
-                ]
-              },
-              "minItems": 0,
-              "uniqueItems": true
-            },
-            "unapplicable_sites": {
-              "type": "array",
-              "items": {
-                "type": [
-                  "string"
-                ]
-              },
-              "minItems": 0,
-              "uniqueItems": true
-            }
-          },
-          "required": [
-            "applicable_sites",
-            "unapplicable_sites"
-          ],
-          "additionalProperties": false
-        },
         "update_conflicts": {
           "type": "object",
           "additionalProperties": true
@@ -238,7 +208,6 @@
         "updated_at",
         "live_at",
         "significantly_updated_at",
-        "restrict_site_visibility",
         "update_conflicts"
       ],
       "additionalProperties": false
