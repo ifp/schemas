@@ -1334,6 +1334,7 @@
                 ],
                 "enum": [
                   "chalet",
+                  "city",
                   "coastal",
                   "cottage",
                   "detached",
