@@ -220,7 +220,10 @@
           "format": "date-time"
         },
         "update_conflicts": {
-          "type": "object",
+          "type": [
+            "object",
+            "null"
+          ],
           "additionalProperties": true
         }
       },
