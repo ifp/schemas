@@ -197,14 +197,14 @@
         "created_at": {
           "type": [
             "string",
-            null
+            "null"
           ],
           "format": "date-time"
         },
         "updated_at": {
           "type": [
             "string",
-            null
+            "null"
           ],
           "format": "date-time"
         },
