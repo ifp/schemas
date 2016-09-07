@@ -155,17 +155,22 @@
             "string"
           ],
           "enum": [
-            "standard_all",
-            "premium_all",
-            "free_all",
-            "standard_ifp",
-            "premium_ifp",
-            "free_ifp",
-            "standard_network",
-            "premium_network",
-            "free_network"
+            "free",
+            "premium",
+            "standard"
           ],
-          "default": "standard_all"
+          "default": "standard"
+        },
+        "visibility": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "all",
+            "ifp",
+            "network"
+          ],
+          "default": "all"
         },
         "status": {
           "type": [
