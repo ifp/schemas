@@ -172,6 +172,21 @@
           ],
           "default": "all"
         },
+        "pre_attributed": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string"
+            ],
+            "enum": [
+              "features",
+              "tags",
+              "types"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
         "status": {
           "type": [
             "string"
