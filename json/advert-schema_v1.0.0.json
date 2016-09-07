@@ -266,6 +266,8 @@
         "reference",
         "type",
         "format",
+        "visibility",
+        "pre_attributed",
         "status",
         "url",
         "feed_urls",
