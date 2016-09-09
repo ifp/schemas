@@ -193,7 +193,7 @@
           ],
           "enum": [
             "online",
-            "offline",
+            "offline"
           ],
           "default": "online"
         },
@@ -205,8 +205,9 @@
             "approved",
             "deferred",
             "denied",
+            "pending"
           ],
-          "default": "approved"
+          "default": "pending"
         },
         "url": {
           "type": [
