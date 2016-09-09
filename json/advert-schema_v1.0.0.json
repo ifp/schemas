@@ -206,7 +206,7 @@
             "deferred",
             "denied",
           ],
-          "default": "online"
+          "default": "approved"
         },
         "url": {
           "type": [
