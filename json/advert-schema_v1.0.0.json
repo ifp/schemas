@@ -194,8 +194,17 @@
           "enum": [
             "online",
             "offline",
+          ],
+          "default": "online"
+        },
+        "approval": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "approved",
+            "deferred",
             "denied",
-            "deferred"
           ],
           "default": "online"
         },
