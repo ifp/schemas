@@ -1,10 +1,10 @@
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-  "title": "IFP JSON Advert Schema",
-  "description": "The JSON schema of property adverts within the IFP systems. Currently supports sale properties only.",
+  "title": "IFP Internal JSON Advert Schema",
+  "description": "The full internal JSON schema of property adverts within the IFP systems. Currently supports sale properties only. Do not use this schema if sending us data. Instead, please use https://github.com/ifp/schemas/blob/master/json/public_advert-schema_v1.0.0.json",
   "self": {
     "vendor": "com.french-property.schemas.json",
-    "name": "sale_property_advert",
+    "name": "internal_sale_property_advert",
     "format": "jsonschema",
     "version": "1-0-0"
   },
@@ -145,9 +145,7 @@
             "null"
           ],
           "enum": [
-            "sale",
-            "long_term_rental",
-            "short_term_rental"
+            "sale"
           ]
         },
         "format": {
@@ -1063,9 +1061,10 @@
             "tenure": {
               "type": "string",
               "enum": [
+                "fractional",
                 "freehold",
                 "leasehold",
-                "fractional"
+                "viager"
               ],
               "default": "freehold"
             },
@@ -1073,9 +1072,9 @@
               "type": "string",
               "enum": [
                 "asking_price",
-                "offers_in_region_of",
-                "offers_in_excess_of",
                 "auction_guide_price",
+                "offers_in_excess_of",
+                "offers_in_region_of",
                 "price_from",
                 "price_on_application"
               ],
@@ -1093,16 +1092,28 @@
           ],
           "additionalProperties": false
         },
-        "room_totals": {
+        "room_counts": {
           "type": "object",
           "properties": {
-            "bedrooms": {
+            "total_rooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "total_bathrooms": {
               "type": [
                 "integer",
                 "null"
               ]
             },
             "bathrooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "bedrooms": {
               "type": [
                 "integer",
                 "null"
@@ -1128,8 +1139,10 @@
             }
           },
           "required": [
-            "bedrooms",
+            "total_rooms",
+            "total_bathrooms",
             "bathrooms",
+            "bedrooms",
             "reception_rooms",
             "shower_rooms",
             "water_closets"
@@ -1641,7 +1654,7 @@
         "highlights",
         "geo",
         "price",
-        "room_totals",
+        "room_counts",
         "floor_area",
         "land_area",
         "energy_certificates",

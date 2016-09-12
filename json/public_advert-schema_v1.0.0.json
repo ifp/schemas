@@ -1,0 +1,673 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "title": "IFP Public JSON Advert Schema",
+  "description": "The public JSON schema of property adverts within the IFP systems. Currently supports sale properties only. Use this schema to send us your property adverts",
+  "self": {
+    "vendor": "com.french-property.schemas.json",
+    "name": "public_sale_property_advert",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "advert": {
+      "type": "object",
+      "properties": {
+        "agency_name": {
+          "type": "string"
+        },
+        "agency_phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency_email": {
+          "type": "string"
+        },
+        "agency_website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency_microsite": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency_office_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency_office_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency_office_phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agency_office_email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agent_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agent_phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agent_email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "online",
+            "offline"
+          ],
+          "default": "online"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "agency_name",
+        "agency_phone",
+        "agency_email",
+        "agency_website",
+        "agency_microsite",
+        "agency_office_name",
+        "agency_office_code",
+        "agency_office_phone",
+        "agency_office_email",
+        "agent_name",
+        "agent_phone",
+        "agent_email",
+        "reference",
+        "status",
+        "url",
+        "created_at",
+        "updated_at"
+      ],
+      "additionalProperties": false
+    },
+    "property": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "for_sale",
+            "let",
+            "sold",
+            "sold_subject_to_contract",
+            "to_let",
+            "under_offer",
+            "withdrawn"
+          ],
+          "default": "for_sale"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "title_fr": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description_en": {
+          "type": "string"
+        },
+        "description_fr": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "geo": {
+          "type": "object",
+          "properties": {
+            "user_data": {
+              "type": "object",
+              "properties": {
+                "location": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "commune_name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "post_code": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "department": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "department_name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "department_code": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "location",
+                "commune_name",
+                "post_code",
+                "department",
+                "department_name",
+                "department_code"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "user_data"
+          ],
+          "additionalProperties": false
+        },
+        "price": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "number"
+            },
+            "currency": {
+              "type": "string",
+              "enum": [
+                "EUR"
+              ]
+            },
+            "comment": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "tenure": {
+              "type": "string",
+              "enum": [
+                "fractional",
+                "freehold",
+                "leasehold",
+                "viager"
+              ],
+              "default": "freehold"
+            },
+            "qualifier": {
+              "type": "string",
+              "enum": [
+                "asking_price",
+                "auction_guide_price",
+                "offers_in_excess_of",
+                "offers_in_region_of",
+                "price_from",
+                "price_on_application"
+              ],
+              "default": "asking_price"
+            }
+          },
+          "required": [
+            "amount",
+            "currency",
+            "comment",
+            "tenure",
+            "qualifier"
+          ],
+          "additionalProperties": false
+        },
+        "room_counts": {
+          "type": "object",
+          "properties": {
+            "total_rooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "total_bathrooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "bathrooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "bedrooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "reception_rooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "shower_rooms": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "water_closets": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "total_rooms",
+            "total_bathrooms",
+            "bathrooms",
+            "bedrooms",
+            "reception_rooms",
+            "shower_rooms",
+            "water_closets"
+          ],
+          "additionalProperties": false
+        },
+        "floor_area": {
+          "type": "object",
+          "properties": {
+            "size": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "m²",
+                "ac",
+                "ha"
+              ],
+              "default": "m²"
+            }
+          },
+          "required": [
+            "size",
+            "unit"
+          ],
+          "additionalProperties": false
+        },
+        "land_area": {
+          "type": "object",
+          "properties": {
+            "size": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "m²",
+                "ac",
+                "ha"
+              ],
+              "default": "m²"
+            }
+          },
+          "required": [
+            "size",
+            "unit"
+          ],
+          "additionalProperties": false
+        },
+        "energy_certificates": {
+          "type": "object",
+          "properties": {
+            "dpe": {
+              "type": "object",
+              "properties": {
+                "number": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "letter": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D",
+                    "E",
+                    "F",
+                    "G",
+                    null
+                  ]
+                },
+                "date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "number",
+                "letter",
+                "date"
+              ],
+              "additionalProperties": false
+            },
+            "ges": {
+              "type": "object",
+              "properties": {
+                "number": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "letter": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D",
+                    "E",
+                    "F",
+                    "G",
+                    null
+                  ]
+                },
+                "date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "number",
+                "letter",
+                "date"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "dpe",
+            "ges"
+          ],
+          "additionalProperties": false
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "types": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "enum": [
+                  "_unclassified",
+                  "residential",
+                  "business",
+                  "apartment",
+                  "apartment_building",
+                  "bar",
+                  "barn",
+                  "bed_and_breakfast",
+                  "cafe",
+                  "campsite",
+                  "chateau",
+                  "farm",
+                  "gite",
+                  "gite_complex",
+                  "hotel",
+                  "house",
+                  "house_boat",
+                  "lake",
+                  "land",
+                  "mobile_home",
+                  "office",
+                  "restaurant",
+                  "shop",
+                  "vineyard"
+                ]
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "enum": [
+                  "balcony",
+                  "central_heating",
+                  "double_glazing",
+                  "lake",
+                  "outbuildings",
+                  "pond",
+                  "swimming_pool",
+                  "tennis_court",
+                  "terrace"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "types",
+            "features"
+          ],
+          "additionalProperties": false
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "original_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "original_url"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "floor_plans": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "original_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "original_url"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "virtual_tours": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "cloudinary_account": {
+                "type": "string"
+              },
+              "original_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "original_url"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "status",
+        "title_en",
+        "title_fr",
+        "description_en",
+        "description_fr",
+        "highlights",
+        "geo",
+        "price",
+        "room_counts",
+        "floor_area",
+        "land_area",
+        "energy_certificates",
+        "attributes",
+        "images",
+        "floor_plans",
+        "virtual_tours"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "advert",
+    "property"
+  ],
+  "additionalProperties": false
+}
