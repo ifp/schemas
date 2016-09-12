@@ -10,4 +10,5 @@ Versioning follows
 
 Schemas:
 
-- [JSON Advert Schema v1.0.0](https://github.com/ifp/schemas/blob/master/json/advert-schema_v1.0.0.json)
+- [Public JSON Advert Schema v1.0.0](https://github.com/ifp/schemas/blob/master/json/internal_advert-schema_v1.0.0.json) - please use this schema when sending us adverts
+- [Internal JSON Advert Schema v1.0.0](https://github.com/ifp/schemas/blob/master/json/internal_advert-schema_v1.0.0.json)
