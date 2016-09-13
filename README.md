@@ -13,7 +13,7 @@ This schema represents the Advert object used within the IFP systems. Currently 
 
 ### JSON resources:
 
-- [Tutorials](https://www.google.co.uk/webhp?q=json%20tutorial#safe=off&q=json+tutorial)
+- [Tutorials](https://www.google.co.uk/search?q=json%20tutorial)
 - [JSON Validator](http://www.jsonschemavalidator.net/) - paste our public schema into the left box, then paste your JSON document into the right to validate that it adheres to the schema.
 
 -----
