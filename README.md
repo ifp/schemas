@@ -9,7 +9,9 @@ This schema represents the Advert object used within the IFP systems. Currently 
 ### Public Document Examples:
 
 - [Public Sale Advert JSON v1.0.0 example](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-example.json)
-- [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-notes.json) - This document provides notes about the use for each field.
+- [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-notes.json) - This document provides notes about the use for each field. There are two top-level objects:
+    - advert: Information about the advert, i.e. the advertising details.
+    - property: Information about the actual property being advertised.
 - [Public Sale Advert JSON v1.0.0 list of enums available](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-example.json) - see this for the full list of the enums in the schema that can be used for the lookup values in their respective keys.
 
 ### JSON resources:
