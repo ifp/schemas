@@ -1,131 +1,93 @@
 {
   "advert": {
-    "agency_name": "Test Immobilier",
-    "agency_phone": "+33-(0)1-23-45-67-89",
-    "agency_email": "testimmo@example.com",
-    "agency_website": "http://www.example.com",
-    "agency_microsite": "https://www.french-property.com/agents/testimmo/",
-    "agency_office_name": "Test Immobilier Paris",
-    "agency_office_code": null,
-    "agency_office_phone": "+33-(0)4-44 44 44 44",
-    "agency_office_email": "testimmoparis@example.com",
-    "agent_name": "Jean-Michel Jarre",
-    "agent_phone": "+33(0)7-77-77-77-77",
-    "agent_email": "testimmojmj@example.com",
-    "reference": "ABC123456789",
-    "status": "online",
-    "url": "http://www.example.com/testimmo/ABC123456789",
-    "created_at": "2013-10-27T13:06:00Z",
-    "updated_at": "2016-02-26T15:10:10Z"
+    "agency_name": "REQUIRED: The name of the real estate company advertising this property.",
+    "agency_phone": "The telephone number of the real estate company's head office.",
+    "agency_email": "REQUIRED: The email address of the real estate company's head office; a copy of all enquiries to this advert will be sent to this address.",
+    "agency_website": "The website of the real estate company.",
+    "agency_office_name": "The branch name (if applicable).",
+    "agency_office_code": "The branch code (if applicable).",
+    "agency_office_phone": "The branch telephone number (if applicable).",
+    "agency_office_email": "The branch email address (if applicable); a copy of all enquiries to this advert will also be sent to this address if supplied.",
+    "agent_name": "The name of the estate agent (agent commercial etc.) responsible for the property.",
+    "agent_phone": "The direct / mobile telephone of the estate agent.",
+    "agent_email": "The email address of the estate agent; a copy of all enquiries to this advert will also be sent to this address if supplied.",
+    "reference": "REQUIRED: The estate agent's reference of the advert.",
+    "status": "REQUIRED: Allows the estate agent to flag whether the advert should be online or offline. Used in cases where estate agents send through all properties and not just properties to advertise. Defaults to 'online'.",
+    "url": "The URL of the advert on the estate agent's website.",
+    "created_at": "When the advert was created on the estate agent's system; date-time in ISO 8601 combined date and time; i.e. yyyy-mm-ddThh:mm:ssZ https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations.",
+    "updated_at": "When the advert was last updated on the estate agent's system; date-time in ISO 8601 combined date and time; i.e. yyyy-mm-ddThh:mm:ssZ https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations."
   },
   "property": {
-    "status": "for_sale",
-    "title_en": "Delightful, fully renovated detached stone property, village centre, attached garden",
-    "title_fr": "Charmante, entièrement rénové, maison indépendante en pierre, centre du village, jardin attenant",
-    "description_en": "Beautifully presented, two bedroom property in the heart of this typical Haute Vienne village, which offers basic, yet welcome facilities. The present French owners have restored and modernised the house, whilst retaining many original features, such as the delicate oak staircase, beams and fireplace. Electrics are new, the property has been well insulated, there are new pvc double glazed windows and doors throughout, there are electric radiators throughout and the house is connected to mains drains. The larger town of Bellac, which provides schools for all ages, doctors, hospital, supermarkets, train station and theatres is 15 kms, whilst Limoges Airport is 30 kms",
-    "description_fr": "Magnifiquement présenté, propriété de deux chambres dans le coeur de ce village typique de Haute Vienne, qui propose des installations de base, encore bienvenue. Les propriétaires actuels françaises ont restauré et modernisé la maison, tout en conservant de nombreuses caractéristiques originales, comme les chênes délicates escalier, poutres et cheminée. Electrics sont nouvelles, la propriété a été bien isolée, il ya de nouvelles fenêtres à double vitrage en PVC et des portes partout, il ya des radiateurs électriques partout et la maison est raccordée au tout à l'égout. La plus grande ville de Bellac, qui fournit des écoles pour tous les âges, les médecins, hôpital, supermarchés, de la gare et des théâtres est à 15 km, tandis que l'aéroport de Limoges est à 30 kms",
-    "highlights": [
-      "Pretty garden",
-      "Recently re-wired"
-    ],
+    "status": "REQUIRED: The sale status of the property: for sale, withdrawn from market, under offer etc. Defaults to 'for sale'.",
+    "title_en": "REQUIRED (either title_en or title_fr): The title of the advert in English; There is no maximum length, but please note that the titles will be cropped by the responsive templates in the advert search as required.",
+    "title_fr": "REQUIRED (either title_en or title_fr): The title of the advert in French; There is no maximum length, but please note that the titles will be cropped by the responsive templates in the advert search as required.",
+    "description_en": "REQUIRED (either description_en or description_fr): The description of the advert in English; New lines will be converted to <br />. Accepts the following HTML elements: <b><u><i><strong><em><ul><ol><li>.",
+    "description_fr": "REQUIRED (either description_en or description_fr): The description of the advert in French; New lines will be converted to <br />. Accepts the following HTML elements: <b><u><i><strong><em><ul><ol><li>.",
+    "highlights": "Short highlights about the property. No Length limit for each one, nor a limit for the total number that can be displayed, but we recommend to keep them short and sweet and not have more than 10.",
     "geo": {
       "user_data": {
-        "location": "5 minute walk from village centre",
-        "commune_name": "ADRIERS",
-        "post_code": "86430",
-        "department_name": null,
-        "department_code": null
+        "location": "A brief description about the location of the property.",
+        "commune_name": "REQUIRED * (see readme for explanation): The name of the commune where you wish to advertise the property as being located",
+        "post_code": "REQUIRED * (see readme for explanation): The post code of the commune where you wish to advertise the property as being located.",
+        "department_name": "REQUIRED * (see readme for explanation): The department name of the commune where you wish to advertise the property as being located.",
+        "department_code": "REQUIRED * (see readme for explanation): The department code of the commune where you wish to advertise the property as being located."
       }
     },
     "price": {
-      "amount": 91300,
-      "currency": "EUR",
-      "comment": "Inc. agency fees",
-      "tenure": "freehold",
-      "qualifier": "asking_price"
+      "amount": "The price in Euros",
+      "currency": "Always listed as EUR",
+      "comment": "Any comments about the price, such as 'Including agency fees'",
+      "tenure": "The tenure of the property sale; 'viager', 'fractional' etc. defaults to 'freehold'",
+      "qualifier": "Information about the price offered; e.g. 'offers_in_excess_of', 'price_on_application' etc. defaults to 'asking_price"
     },
     "room_counts": {
-      "total_rooms": 12,
-      "total_bathrooms": 3,
-      "bedrooms": 4,
-      "bathrooms": 2,
-      "reception_rooms": 3,
-      "shower_rooms": 1,
-      "water_closets": 2
+      "total_rooms": "Total number of useable rooms in the property.",
+      "total_bathrooms": "Total number of bathrooms in the property, i.e. sum of bathrooms and shower_rooms - not including water_closets.",
+      "bedrooms": "Number of bedrooms in the property.",
+      "bathrooms": "Number of full bathrooms in the property.",
+      "reception_rooms": "Number of reception rooms (lounges, dining rooms, living rooms etc.) in the property.",
+      "shower_rooms": "Number of shower rooms in the property.",
+      "water_closets": "Number of separate toilets in the property."
     },
     "floor_area": {
-      "size": 60,
-      "unit": "m²"
+      "size": "Total habitable floor size of the property, in metres squared."
     },
     "land_area": {
-      "size": 841,
-      "unit": "m²"
+      "size": "Total size of the grounds of the property, in metres squared"
     },
     "energy_certificates": {
       "dpe": {
-        "number": 145,
-        "letter": "C",
-        "date": null
+        "number": "The numeric value of the DPE certificate for the property.",
+        "letter": "The letter value of the DPE certificate for the property.",
+        "date": "The date that the DPE certificate was obtained."
       },
       "ges": {
-        "number": 22,
-        "letter": "D",
-        "date": null
+        "number": "The numeric value of the GES certificate for the property.",
+        "letter": "The letter value of the GES certificate for the property.",
+        "date": "The date that the GES certificate was obtained."
       }
     },
     "attributes": {
-      "types": [
-        "residential",
-        "house"
-      ],
-      "features": [
-        "balcony",
-        "double_glazing"
-      ]
+      "types": "The type/s of the property being advertised. Try to also include a top-level type of 'residential' or 'business', or both in case of properties such as 'house with a gite', 'bed and breakfast' etc. If the property type is unknown, please leave this array empty.",
+      "features": "Features of the property being advertised."
     },
     "images": [
       {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-0.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-1.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-2.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-3.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-4.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-5.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-6.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-7.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-8.jpg"
-      },
-      {
-        "title": "",
-        "original_url": "http://images.example.com/testimmo/ABC123456789-9.jpg"
+        "title": "Title of the image being displayed",
+        "original_url": "URL of the image that you wish to display. We will take a copy of this and resize as required. We then serve copies of these images."
       }
     ],
-    "floor_plans": [],
-    "virtual_tours": []
+    "floor_plans": [
+      {
+        "title": "Title of the floor plan being displayed",
+        "original_url": "URL of the floor plan image that you wish to display. We will take a copy of this and resize as required. We then serve copies of these images."
+      }
+    ],
+    "virtual_tours": [
+      {
+        "title": "Title of the virtual tour being displayed",
+        "original_url": "URL of the virtual tour that you wish to display. We do not host these and will link to them, or embed them within the advert display."
+      }
+    ]
   }
 }

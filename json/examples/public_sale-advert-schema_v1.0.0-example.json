@@ -4,7 +4,6 @@
     "agency_phone": "+33-(0)1-23-45-67-89",
     "agency_email": "testimmo@example.com",
     "agency_website": "http://www.example.com",
-    "agency_microsite": "https://www.french-property.com/agents/testimmo/",
     "agency_office_name": "Test Immobilier Paris",
     "agency_office_code": null,
     "agency_office_phone": "+33-(0)4-44 44 44 44",
@@ -54,12 +53,10 @@
       "water_closets": 2
     },
     "floor_area": {
-      "size": 60,
-      "unit": "m²"
+      "size": 60
     },
     "land_area": {
-      "size": 841,
-      "unit": "m²"
+      "size": 841
     },
     "energy_certificates": {
       "dpe": {

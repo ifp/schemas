@@ -34,16 +34,6 @@
         "price_on_application"
       ]
     },
-    "floor_area": {
-      "unit": [
-        "m²"
-      ]
-    },
-    "land_area": {
-      "unit": [
-        "m²"
-      ]
-    },
     "energy_certificates": {
       "dpe": {
         "letter": [
@@ -72,7 +62,6 @@
     },
     "attributes": {
       "types": [
-        "_unclassified",
         "residential",
         "business",
         "apartment",

@@ -31,12 +31,6 @@
             "null"
           ]
         },
-        "agency_microsite": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
         "agency_office_name": {
           "type": [
             "string",
@@ -349,18 +343,10 @@
                 "number",
                 "null"
               ]
-            },
-            "unit": {
-              "type": "string",
-              "enum": [
-                "m²"
-              ],
-              "default": "m²"
             }
           },
           "required": [
-            "size",
-            "unit"
+            "size"
           ],
           "additionalProperties": false
         },
@@ -372,18 +358,10 @@
                 "number",
                 "null"
               ]
-            },
-            "unit": {
-              "type": "string",
-              "enum": [
-                "m²"
-              ],
-              "default": "m²"
             }
           },
           "required": [
-            "size",
-            "unit"
+            "size"
           ],
           "additionalProperties": false
         },
@@ -487,7 +465,6 @@
                   "string"
                 ],
                 "enum": [
-                  "_unclassified",
                   "residential",
                   "business",
                   "apartment",
