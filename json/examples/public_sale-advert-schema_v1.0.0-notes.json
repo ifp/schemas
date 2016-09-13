@@ -41,7 +41,7 @@
       "qualifier": "Information about the price offered; e.g. 'offers_in_excess_of', 'price_on_application' etc. defaults to 'asking_price"
     },
     "room_counts": {
-      "total_rooms": "Total number of useable rooms in the property.",
+      "total_rooms": "Total number of usable rooms in the property.",
       "total_bathrooms": "Total number of bathrooms in the property, i.e. sum of bathrooms and shower_rooms - not including water_closets.",
       "bedrooms": "Number of bedrooms in the property.",
       "bathrooms": "Number of full bathrooms in the property.",

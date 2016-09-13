@@ -9,16 +9,18 @@ This schema represents the Advert object used within the IFP systems. Currently 
 ### Public Document Examples:
 
 - [Public Sale Advert JSON v1.0.0 example](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-example.json)
-- [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-notes.json) - This document provides notes about the use for each field. There are two top-level objects:
-    - advert: Information about the advert, i.e. the advertising details.
-    - property: Information about the actual property being advertised.
+- [Public Sale Advert JSON v1.0.0 list of enums available](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-example.json) - see this for the full list of the enums in the schema that can be used for the lookup values in their respective keys.
+
+- [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-notes.json)
+
+This document provides notes about the use for each field. There are two top-level objects:
+- advert: Information about the advert, i.e. the advertising details.
+- property: Information about the actual property being advertised.
     
 There is some logic to the required field of the property.geo.user_data which is required to follow in order ensure the advert is validated: It is necessary to supply one of the following combinations as a minimum:
 - post_code
 - commune_name + department_name
 - commune_name + department_code
-
-- [Public Sale Advert JSON v1.0.0 list of enums available](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-example.json) - see this for the full list of the enums in the schema that can be used for the lookup values in their respective keys.
 
 ### JSON resources:
 
