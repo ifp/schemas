@@ -10,9 +10,6 @@
   },
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string"
-    },
     "advert": {
       "type": "object",
       "properties": {
@@ -665,7 +662,6 @@
     }
   },
   "required": [
-    "id",
     "advert",
     "property"
   ],

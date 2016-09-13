@@ -1,0 +1,269 @@
+{
+  "hits": {
+    "total": 3,
+    "max_score": 1.0,
+    "hits": [
+      {
+        "_index": "test_adverts",
+        "_type": "property",
+        "_id": "leggett-FP-50034SJE06",
+        "_score": 1.0,
+        "_source": {
+          "action": "upsert",
+          "id": "leggett-FP-56647NS87",
+          "updated_at": "2015-10-09T04:07:41.190Z",
+          "created_at": "2015-10-09T04:07:41.190Z",
+          "metadata": {
+            "api_version": "1.0.0",
+            "processed_at": "2015-10-09T04:07:40.810Z",
+            "processed_at_unix_ts": 1444363660
+          },
+          "advert": {
+            "agency_id": "leggett",
+            "agency_name": "Leggett Immobilier",
+            "agency_phone": "+33-(0)5-53-56-62-54",
+            "agency_email": "frenchproperty@example.com",
+            "agency_office_name": "Leggett Immobilier Sarlat",
+            "agency_office_code": null,
+            "agency_office_phone": "+33-(0)4-44 44 44 44",
+            "agency_office_email": "sarlat@example.com",
+            "agent_name": "Jean Pierre Leggett",
+            "agent_phone": "+33(0)7-77-77-77-77",
+            "agent_email": "jpl@example.com",
+            "reference": "FP-56647NS87",
+            "type": "sale",
+            "format": "standard",
+            "status": "online",
+            "url": "http://www.frenchestateagents.com/french-property-for-sale/view/56647NS87/house-for-sale-in-roussac-haute-vienne-limousin-france",
+            "feed_url": "http://data.frenchestateagents.com/allproperties/frenchproperty.xml",
+            "created_at": "2015-09-08 10:15:19",
+            "updated_at": "2015-10-08 09:25:43",
+            "live_at": null,
+            "significantly_updated_at": "2015-10-08 09:25:43",
+            "update_conflicts": []
+          },
+          "property": {
+            "status": "for_sale",
+            "title_en": "Delightful, fully renovated detached stone property, village centre, attached garden",
+            "title_fr": "Charmante, entièrement rénové, maison indépendante en pierre, centre du village, jardin attenant",
+            "description_en": "Beautifully presented, two bedroom property in the heart of this typical Haute Vienne village, which offers basic, yet welcome facilities. The present French owners have restored and modernised the house, whilst retaining many original features, such as the delicate oak staircase, beams and fireplace. Electrics are new, the property has been well insulated, there are new pvc double glazed windows and doors throughout, there are electric radiators throughout and the house is connected to mains drains. The larger town of Bellac, which provides schools for all ages, doctors, hospital, supermarkets, train station and theatres is 15 kms, whilst Limoges Airport is 30 kms",
+            "description_fr": "Magnifiquement présenté, propriété de deux chambres dans le coeur de ce village typique de Haute Vienne, qui propose des installations de base, encore bienvenue. Les propriétaires actuels françaises ont restauré et modernisé la maison, tout en conservant de nombreuses caractéristiques originales, comme les chênes délicates escalier, poutres et cheminée. Electrics sont nouvelles, la propriété a été bien isolée, il ya de nouvelles fenêtres à double vitrage en PVC et des portes partout, il ya des radiateurs électriques partout et la maison est raccordée au tout à l'égout. La plus grande ville de Bellac, qui fournit des écoles pour tous les âges, les médecins, hôpital, supermarchés, de la gare et des théâtres est à 15 km, tandis que l'aéroport de Limoges est à 30 kms",
+            "geo": {
+              "locality": {
+                "api_version": "1.0",
+                "country_name": "France",
+                "country_code": "FR",
+                "data": {
+                  "location": {
+                    "lat": "46.07819",
+                    "lon": "1.20176"
+                  },
+                  "region_name": "Nouvelle Aquitaine",
+                  "region_tag": "nouvelle aquitaine",
+                  "old_region_name": "Limousin",
+                  "old_region_tag": "limousin",
+                  "department_name": "Haute-Vienne",
+                  "department_full_name": "Haute-Vienne (87)",
+                  "department_code": "87",
+                  "department_tag": "haute-vienne",
+                  "commune_id": 17188,
+                  "commune_name": "Roussac",
+                  "commune_tag": "roussac",
+                  "post_code": "87140",
+                  "full_location": "France, Limousin, Haute-Vienne (87), Roussac",
+                  "full_location_reverse": "Roussac, Haute-Vienne (87), Limousin, France"
+                },
+                "legacy_data": {
+                  "nearest_p_locale_id": 2558,
+                  "department_p_locale_id": 2558
+                }
+              },
+              "user_data": {
+                "location": "ROUSSAC",
+                "post_code": "87140",
+                "department": null,
+                "department_name": null,
+                "department_code": null
+              }
+            },
+            "price": {
+              "amount": 91300,
+              "currency": "EUR",
+              "user_amount": 91300,
+              "user_currency": "EUR",
+              "comment": "Inc. agency fees",
+              "tenure": "freehold",
+              "qualifier": "asking_price"
+            },
+            "room_totals": {
+              "bedrooms": 4,
+              "bathrooms": 2,
+              "reception_rooms": 6
+            },
+            "floor_area": {
+              "size": 60,
+              "unit": "m²",
+              "user_size": 60,
+              "user_unit": "m²"
+            },
+            "land_area": {
+              "size": 841,
+              "unit": "m²",
+              "user_size": 841,
+              "user_unit": "m²"
+            },
+            "energy_certificates": {
+              "dpe": {
+                "number": 145,
+                "letter": "C",
+                "date": null
+              },
+              "ges": {
+                "number": 22,
+                "letter": "D",
+                "date": null
+              }
+            },
+            "attributes": {
+              "types": ["residential", "house"],
+              "features": ["balcony", "double_glazing"],
+              "tags": ["detached", "cottage"]
+            },
+            "images": [
+              {
+                "listing_position": 0,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944266600",
+                "version": "1444363660",
+                "width": 400,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 26904,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5945.JPG",
+                "original_bytes": 38751
+              },
+              {
+                "listing_position": 1,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944266320",
+                "version": "1444363660",
+                "width": 400,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 32732,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5942.JPG",
+                "original_bytes": 46695
+              },
+              {
+                "listing_position": 2,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944266040",
+                "version": "1444363660",
+                "width": 400,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 32038,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5935.JPG",
+                "original_bytes": 45892
+              },
+              {
+                "listing_position": 3,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944265760",
+                "version": "1444363660",
+                "width": 400,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 28948,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5938.JPG",
+                "original_bytes": 41169
+              },
+              {
+                "listing_position": 4,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944265460",
+                "version": "1444363660",
+                "width": 400,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 23254,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5922.JPG",
+                "original_bytes": 33557
+              },
+              {
+                "listing_position": 5,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944265260",
+                "version": "1444363660",
+                "width": 225,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 14386,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5918.JPG",
+                "original_bytes": 20433
+              },
+              {
+                "listing_position": 6,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944265040",
+                "version": "1444363660",
+                "width": 400,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 23914,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5920.JPG",
+                "original_bytes": 33910
+              },
+              {
+                "listing_position": 7,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944264780",
+                "version": "1444363660",
+                "width": 225,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 13648,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5932.JPG",
+                "original_bytes": 19584
+              },
+              {
+                "listing_position": 8,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944264520",
+                "version": "1444363660",
+                "width": 400,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 17579,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5928.JPG",
+                "original_bytes": 25274
+              },
+              {
+                "listing_position": 9,
+                "title": "",
+                "cloudinary_account": "property-importer",
+                "public_id": "leggett-FP-56647NS87-70016944264020",
+                "version": "1444363660",
+                "width": 225,
+                "height": 300,
+                "format": "jpg",
+                "bytes": 10823,
+                "original_url": "http://media.frenchestateagents.com/images/50157/cache/400x300_SAM_5925.JPG",
+                "original_bytes": 15368
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
