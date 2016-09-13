@@ -206,12 +206,6 @@
                     "null"
                   ]
                 },
-                "department": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
                 "department_name": {
                   "type": [
                     "string",
@@ -229,7 +223,6 @@
                 "location",
                 "commune_name",
                 "post_code",
-                "department",
                 "department_name",
                 "department_code"
               ],
@@ -619,9 +612,6 @@
                   "string",
                   "null"
                 ]
-              },
-              "cloudinary_account": {
-                "type": "string"
               },
               "original_url": {
                 "type": [

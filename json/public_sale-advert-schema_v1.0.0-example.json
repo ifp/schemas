@@ -1,0 +1,131 @@
+{
+  "advert": {
+    "agency_name": "Test Immobilier",
+    "agency_phone": "+33-(0)1-23-45-67-89",
+    "agency_email": "testimmo@example.com",
+    "agency_website": "http://www.example.com",
+    "agency_microsite": "https://www.french-property.com/agents/testimmo/",
+    "agency_office_name": "Test Immobilier Paris",
+    "agency_office_code": null,
+    "agency_office_phone": "+33-(0)4-44 44 44 44",
+    "agency_office_email": "testimmoparis@example.com",
+    "agent_name": "Jean-Michel Jarre",
+    "agent_phone": "+33(0)7-77-77-77-77",
+    "agent_email": "testimmojmj@example.com",
+    "reference": "ABC123456789",
+    "status": "online",
+    "url": "http://www.example.com/testimmo/ABC123456789",
+    "created_at": "2013-10-27T13:06:00Z",
+    "updated_at": "2016-02-26T15:10:10Z"
+  },
+  "property": {
+    "status": "for_sale",
+    "title_en": "Delightful, fully renovated detached stone property, village centre, attached garden",
+    "title_fr": "Charmante, entièrement rénové, maison indépendante en pierre, centre du village, jardin attenant",
+    "description_en": "Beautifully presented, two bedroom property in the heart of this typical Haute Vienne village, which offers basic, yet welcome facilities. The present French owners have restored and modernised the house, whilst retaining many original features, such as the delicate oak staircase, beams and fireplace. Electrics are new, the property has been well insulated, there are new pvc double glazed windows and doors throughout, there are electric radiators throughout and the house is connected to mains drains. The larger town of Bellac, which provides schools for all ages, doctors, hospital, supermarkets, train station and theatres is 15 kms, whilst Limoges Airport is 30 kms",
+    "description_fr": "Magnifiquement présenté, propriété de deux chambres dans le coeur de ce village typique de Haute Vienne, qui propose des installations de base, encore bienvenue. Les propriétaires actuels françaises ont restauré et modernisé la maison, tout en conservant de nombreuses caractéristiques originales, comme les chênes délicates escalier, poutres et cheminée. Electrics sont nouvelles, la propriété a été bien isolée, il ya de nouvelles fenêtres à double vitrage en PVC et des portes partout, il ya des radiateurs électriques partout et la maison est raccordée au tout à l'égout. La plus grande ville de Bellac, qui fournit des écoles pour tous les âges, les médecins, hôpital, supermarchés, de la gare et des théâtres est à 15 km, tandis que l'aéroport de Limoges est à 30 kms",
+    "highlights": [
+      "Pretty garden",
+      "Recently re-wired"
+    ],
+    "geo": {
+      "user_data": {
+        "location": "5 minute walk from village centre",
+        "commune_name": "ADRIERS",
+        "post_code": "86430",
+        "department_name": null,
+        "department_code": null
+      }
+    },
+    "price": {
+      "amount": 91300,
+      "currency": "EUR",
+      "comment": "Inc. agency fees",
+      "tenure": "freehold",
+      "qualifier": "asking_price"
+    },
+    "room_counts": {
+      "total_rooms": 12,
+      "total_bathrooms": 3,
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "reception_rooms": 3,
+      "shower_rooms": 1,
+      "water_closets": 2
+    },
+    "floor_area": {
+      "size": 60,
+      "unit": "m²"
+    },
+    "land_area": {
+      "size": 841,
+      "unit": "m²"
+    },
+    "energy_certificates": {
+      "dpe": {
+        "number": 145,
+        "letter": "C",
+        "date": null
+      },
+      "ges": {
+        "number": 22,
+        "letter": "D",
+        "date": null
+      }
+    },
+    "attributes": {
+      "types": [
+        "residential",
+        "house"
+      ],
+      "features": [
+        "balcony",
+        "double_glazing"
+      ]
+    },
+    "images": [
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-0.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-1.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-2.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-3.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-4.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-5.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-6.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-7.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-8.jpg"
+      },
+      {
+        "title": "",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-9.jpg"
+      }
+    ],
+    "floor_plans": [],
+    "virtual_tours": []
+  }
+}
