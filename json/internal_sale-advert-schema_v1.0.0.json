@@ -252,6 +252,7 @@
         },
         "update_conflicts": {
           "type": [
+            "array",
             "object",
             "null"
           ],
