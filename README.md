@@ -17,7 +17,7 @@ This document provides notes about the use for each field. There are two top-lev
 - advert: Information about the advert, i.e. the advertising details.
 - property: Information about the actual property being advertised.
     
-There is some logic to the required field of the property.geo.user_data which is required to follow in order ensure the advert is validated: It is necessary to supply one of the following combinations as a minimum:
+There is some logic to the required fields of the property.geo.user_data, which must be followed in order ensure the advert is validated. It is necessary to supply one of the following combinations as a minimum:
 - post_code
 - commune_name + department_name
 - commune_name + department_code
