@@ -1,0 +1,113 @@
+{
+  "advert": {
+    "status": [
+      "online",
+      "offline"
+    ]
+  },
+  "property": {
+    "status": [
+      "for_sale",
+      "let",
+      "sold",
+      "sold_subject_to_contract",
+      "to_let",
+      "under_offer",
+      "withdrawn"
+    ],
+    "price": {
+      "currency": [
+        "EUR"
+      ],
+      "tenure": [
+        "fractional",
+        "freehold",
+        "leasehold",
+        "viager"
+      ],
+      "qualifier": [
+        "asking_price",
+        "auction_guide_price",
+        "offers_in_excess_of",
+        "offers_in_region_of",
+        "price_from",
+        "price_on_application"
+      ]
+    },
+    "floor_area": {
+      "unit": [
+        "m²"
+      ]
+    },
+    "land_area": {
+      "unit": [
+        "m²"
+      ]
+    },
+    "energy_certificates": {
+      "dpe": {
+        "letter": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          null
+        ]
+      },
+      "ges": {
+        "letter": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          null
+        ]
+      }
+    },
+    "attributes": {
+      "types": [
+        "_unclassified",
+        "residential",
+        "business",
+        "apartment",
+        "apartment_building",
+        "bar",
+        "barn",
+        "bed_and_breakfast",
+        "cafe",
+        "campsite",
+        "chateau",
+        "farm",
+        "gite",
+        "gite_complex",
+        "hotel",
+        "house",
+        "house_boat",
+        "lake",
+        "land",
+        "mobile_home",
+        "office",
+        "restaurant",
+        "shop",
+        "vineyard"
+      ],
+      "features": [
+        "balcony",
+        "central_heating",
+        "double_glazing",
+        "lake",
+        "outbuildings",
+        "pond",
+        "swimming_pool",
+        "tennis_court",
+        "terrace"
+      ]
+    }
+  }
+}

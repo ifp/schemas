@@ -353,9 +353,7 @@
             "unit": {
               "type": "string",
               "enum": [
-                "m²",
-                "ac",
-                "ha"
+                "m²"
               ],
               "default": "m²"
             }
@@ -378,9 +376,7 @@
             "unit": {
               "type": "string",
               "enum": [
-                "m²",
-                "ac",
-                "ha"
+                "m²"
               ],
               "default": "m²"
             }
