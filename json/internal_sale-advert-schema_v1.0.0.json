@@ -141,13 +141,13 @@
         },
         "type": {
           "type": [
-            "string",
-            "null"
+            "string"
           ],
           "enum": [
             "sale",
             "other"
-          ]
+          ],
+          "default": "sale"
         },
         "format": {
           "type": [
