@@ -72,8 +72,8 @@
           "commune_name": "Adriers",
           "commune_tag": "adriers",
           "post_code": "86430",
-          "full_location": "France, Nouvelle Aquitaine (Poitou-Charentes), Vienne (86), Adriers",
-          "full_location_reverse": "Adriers, Vienne (86), Nouvelle Aquitaine (Poitou-Charentes), France"
+          "full_location": "France, Poitou-Charentes, Vienne (86), Adriers",
+          "full_location_reverse": "Adriers, Vienne (86), Poitou-Charentes, France"
         },
         "legacy_data": {
           "nearest_p_locale_id": 4622,
