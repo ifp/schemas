@@ -145,7 +145,8 @@
             "null"
           ],
           "enum": [
-            "sale"
+            "sale",
+            "other"
           ]
         },
         "format": {
