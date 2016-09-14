@@ -281,6 +281,7 @@
         "visibility",
         "pre_attributed",
         "status",
+        "approval",
         "url",
         "feed_urls",
         "created_at",
