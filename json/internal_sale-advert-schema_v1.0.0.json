@@ -169,7 +169,7 @@
             "ifp",
             "network"
           ],
-          "default": "all"
+          "default": "network"
         },
         "pre_attributed": {
           "type": "array",
