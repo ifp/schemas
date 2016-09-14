@@ -188,13 +188,11 @@
         },
         "status": {
           "type": [
-            "string",
-            "null"
+            "string"
           ],
           "enum": [
             "online",
-            "offline",
-            null
+            "offline"
           ],
           "default": "online"
         },
