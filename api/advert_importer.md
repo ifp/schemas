@@ -12,7 +12,6 @@ The adverts put onto the message queue by the Advert Importer will only have thr
 ### Outcome when processed by the Loader
 
 - Search engine database: upsert
-    - advert.status: online | offline
 - Backing database: upsert
 
 ## 2. Adverts to mark as Deleted
@@ -26,3 +25,4 @@ The adverts put onto the message queue by the Advert Importer will only have thr
 - Search engine database: upsert
     - advert.status: delete
 - Backing database: upsert
+    - advert.status: delete
