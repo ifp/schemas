@@ -40,6 +40,7 @@
             "visibility": "all",
             "pre_attributed": [],
             "status": "online",
+            "approval": "pending",
             "url": "http://www.example.com/testimmo/ABC123456789",
             "feed_urls": [
               "http://data.example.com/exports/french-property.xml"

@@ -1,30 +1,56 @@
+Notes:
+
+- all adverts coming onto system for first time will be approval:pending
+- when adverts are approved, they will go approval:approved and the significantly_updated_date will be updated, which the property spy uses as the date
+- everything goes online at Loading, then will be dealt with after to see whether it is pulled down
+
 # Loading states
 
 The queue from which the Loader will pull the adverts will be loaded by 3 separate systems:
 
-A. Old IFP
-B. Advert Import
-C. Checker
+1. Old IFP
+2. Advert Import
+3. Checker
 
 Each system will load the adverts with a set combination of action and advert.status fields. This document details these and how they will be processed by the Loader.
 
-## A. Adverts coming from the Advert Importer
+## 1. Adverts coming from Old IFP
 
-The adverts put onto the message queue by the Advert Importer will only have three pertinent states:
+## 2. Adverts coming from Advert Import
+
+The adverts will only have three pertinent states:
 
 ### 1. Adverts to Insert or Update (online)
 
-- action: upsert
-- advert.status: online
+```json
+{
+  "action": "upsert",
+  "advert": {
+    "status": "online",
+    "approval": "pending"
+  }
+}
+```
 
 ### 2. Adverts to Insert or Update (offline)
 
-- action: upsert
-- advert.status: offline
+```json
+{
+  "action": "upsert",
+  "advert": {
+    "status": "offline",
+    "approval": "pending"
+  }
+}
+```
 
 ## 3. Adverts to Delete
 
-- action: delete
+```json
+{
+  "action": "delete"
+}
+```
 
 ## B. API for adverts
 
