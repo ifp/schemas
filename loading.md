@@ -3,6 +3,7 @@ Notes:
 - all adverts coming onto system for first time will be approval:pending
 - when adverts are approved, they will go approval:approved and the significantly_updated_date will be updated, which the property spy uses as the date
 - everything goes online at Loading, then will be dealt with after to see whether it is pulled down
+- do we actually want to delete from all databases when Delete command is run? Data protection says Yes?
 
 # Loading states
 
@@ -16,11 +17,54 @@ Each system will load the adverts with a set combination of action and advert.st
 
 ## 1. Adverts coming from Old IFP
 
+The adverts will only have four pertinent states:
+
+### A. Adverts to Insert or Update as 'Online'
+
+```json
+{
+  "action": "upsert",
+  "advert": {
+    "status": "online"
+  }
+}
+```
+
+### B. Adverts to Insert or Update as 'Offline'
+
+```json
+{
+  "action": "upsert",
+  "advert": {
+    "status": "offline"
+  }
+}
+```
+
+### C. Adverts to Insert or Update as 'Archived'
+
+```json
+{
+  "action": "upsert",
+  "advert": {
+    "status": "archived"
+  }
+}
+```
+
+### D. Adverts to Delete
+
+```json
+{
+  "action": "delete"
+}
+```
+
 ## 2. Adverts coming from Advert Import
 
 The adverts will only have three pertinent states:
 
-### A. Adverts to Insert or Update (online)
+### A. Adverts to Insert or Update as 'Online'
 
 ```json
 {
@@ -32,7 +76,7 @@ The adverts will only have three pertinent states:
 }
 ```
 
-### B. Adverts to Insert or Update (offline)
+### B. Adverts to Insert or Update as 'Offline'
 
 ```json
 {
