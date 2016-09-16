@@ -20,7 +20,7 @@ Each system will load the adverts with a set combination of action and advert.st
 
 The adverts will only have three pertinent states:
 
-### 1. Adverts to Insert or Update (online)
+### A. Adverts to Insert or Update (online)
 
 ```json
 {
@@ -32,7 +32,7 @@ The adverts will only have three pertinent states:
 }
 ```
 
-### 2. Adverts to Insert or Update (offline)
+### B. Adverts to Insert or Update (offline)
 
 ```json
 {
@@ -44,7 +44,7 @@ The adverts will only have three pertinent states:
 }
 ```
 
-## 3. Adverts to Delete
+### C. Adverts to Delete
 
 ```json
 {

@@ -13,8 +13,8 @@
     "action": {
       "type": "string",
       "enum": [
-        "upsert",
-        "delete"
+        "delete",
+        "upsert"
       ]
     },
     "id": {
@@ -57,8 +57,8 @@
         },
         "agency_external_id": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_name": {
@@ -66,8 +66,8 @@
         },
         "agency_phone": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_email": {
@@ -75,68 +75,68 @@
         },
         "agency_website": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_microsite": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_office_name": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_office_code": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_office_phone": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_office_email": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agent_name": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agent_external_id": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agent_phone": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agent_email": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "reference": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "type": {
@@ -144,8 +144,8 @@
             "string"
           ],
           "enum": [
-            "sale",
-            "other"
+            "other",
+            "sale"
           ],
           "default": "sale"
         },
@@ -191,8 +191,11 @@
             "string"
           ],
           "enum": [
-            "online",
-            "offline"
+            "archived",
+            "deleted",
+            "incomplete",
+            "offline",
+            "online"
           ],
           "default": "online"
         },
@@ -210,8 +213,8 @@
         },
         "url": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "feed_urls": {
@@ -226,22 +229,22 @@
         },
         "created_at": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ],
           "format": "date-time"
         },
         "updated_at": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ],
           "format": "date-time"
         },
         "live_at": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ],
           "format": "date-time"
         },
@@ -252,8 +255,8 @@
         "update_conflicts": {
           "type": [
             "array",
-            "object",
-            "null"
+            "null",
+            "object"
           ],
           "additionalProperties": true
         }
@@ -312,8 +315,8 @@
         },
         "title_fr": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "description_en": {
@@ -321,8 +324,8 @@
         },
         "description_fr": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "highlights": {
@@ -373,10 +376,11 @@
                     },
                     "region_name": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "Auvergne-Rhône-Alpes",
                         "Brittany",
                         "Burgundy-Franche-Comté",
@@ -389,16 +393,16 @@
                         "Occitanie",
                         "Paris Ile-de-France",
                         "Pays de la Loire",
-                        "Provence-Alpes-Côte d'Azur",
-                        null
+                        "Provence-Alpes-Côte d'Azur"
                       ]
                     },
                     "region_tag": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "auvergne-rhone-alpes",
                         "brittany",
                         "burgundy-franche-comte",
@@ -411,16 +415,16 @@
                         "occitanie",
                         "paris_ile-de-france",
                         "pays_de_la_loire",
-                        "provence-alpes-cote_d'azur",
-                        null
+                        "provence-alpes-cote_d'azur"
                       ]
                     },
                     "old_region_name": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "Alsace",
                         "Aquitaine",
                         "Auvergne",
@@ -442,16 +446,16 @@
                         "Poitou-Charentes",
                         "Provence-Alpes-Côte d'Azur",
                         "Rhône-Alpes",
-                        "Upper-Normandy",
-                        null
+                        "Upper-Normandy"
                       ]
                     },
                     "old_region_tag": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "alsace",
                         "aquitaine",
                         "auvergne",
@@ -473,16 +477,16 @@
                         "poitou-charentes",
                         "provence-alpes-cote_d'azur",
                         "rhone-alpes",
-                        "upper-normandy",
-                        null
+                        "upper-normandy"
                       ]
                     },
                     "department_name": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "Ain",
                         "Aisne",
                         "Allier",
@@ -578,16 +582,16 @@
                         "Vienne",
                         "Vosges",
                         "Yonne",
-                        "Yvelines",
-                        null
+                        "Yvelines"
                       ]
                     },
                     "department_full_name": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "Ain (01)",
                         "Aisne (02)",
                         "Allier (03)",
@@ -683,16 +687,16 @@
                         "Hauts-de-Seine (92)",
                         "Seine-Saint-Denis (93)",
                         "Val-de-Marne (94)",
-                        "Val-d'Oise (95)",
-                        null
+                        "Val-d'Oise (95)"
                       ]
                     },
                     "department_code": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "01",
                         "02",
                         "03",
@@ -788,16 +792,16 @@
                         "92",
                         "93",
                         "94",
-                        "95",
-                        null
+                        "95"
                       ]
                     },
                     "department_tag": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "enum": [
+                        null,
                         "ain",
                         "aisne",
                         "allier",
@@ -893,8 +897,7 @@
                         "vienne",
                         "vosges",
                         "yonne",
-                        "yvelines",
-                        null
+                        "yvelines"
                       ]
                     },
                     "commune_id": {
@@ -905,20 +908,20 @@
                     },
                     "commune_name": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ]
                     },
                     "commune_tag": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ]
                     },
                     "post_code": {
                       "type": [
-                        "string",
-                        "null"
+                        "null",
+                        "string"
                       ],
                       "minLength": 5,
                       "maxLength": 5
@@ -980,38 +983,38 @@
               "properties": {
                 "location": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "commune_name": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "post_code": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "department": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "department_name": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "department_code": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 }
               },
@@ -1155,8 +1158,8 @@
           "properties": {
             "size": {
               "type": [
-                "number",
-                "null"
+                "null",
+                "number"
               ]
             },
             "unit": {
@@ -1170,8 +1173,8 @@
             },
             "user_size": {
               "type": [
-                "number",
-                "null"
+                "null",
+                "number"
               ]
             },
             "user_unit": {
@@ -1197,8 +1200,8 @@
           "properties": {
             "size": {
               "type": [
-                "number",
-                "null"
+                "null",
+                "number"
               ]
             },
             "unit": {
@@ -1212,8 +1215,8 @@
             },
             "user_size": {
               "type": [
-                "number",
-                "null"
+                "null",
+                "number"
               ]
             },
             "user_unit": {
@@ -1242,30 +1245,30 @@
               "properties": {
                 "number": {
                   "type": [
-                    "number",
-                    "null"
+                    "null",
+                    "number"
                   ]
                 },
                 "letter": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ],
                   "enum": [
+                    null,
                     "A",
                     "B",
                     "C",
                     "D",
                     "E",
                     "F",
-                    "G",
-                    null
+                    "G"
                   ]
                 },
                 "date": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ],
                   "format": "date-time"
                 }
@@ -1282,24 +1285,24 @@
               "properties": {
                 "number": {
                   "type": [
-                    "number",
-                    "null"
+                    "null",
+                    "number"
                   ]
                 },
                 "letter": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ],
                   "enum": [
+                    null,
                     "A",
                     "B",
                     "C",
                     "D",
                     "E",
                     "F",
-                    "G",
-                    null
+                    "G"
                   ]
                 },
                 "date": {
@@ -1439,8 +1442,8 @@
               },
               "title": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "cloudinary_account": {
@@ -1461,9 +1464,9 @@
               "format": {
                 "type": "string",
                 "enum": [
-                  "jpg",
                   "jpe",
                   "jpeg",
+                  "jpg",
                   "png"
                 ]
               },
@@ -1472,8 +1475,8 @@
               },
               "original_url": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "original_bytes": {
@@ -1511,8 +1514,8 @@
               },
               "title": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "cloudinary_account": {
@@ -1533,9 +1536,9 @@
               "format": {
                 "type": "string",
                 "enum": [
-                  "jpg",
                   "jpe",
                   "jpeg",
+                  "jpg",
                   "png"
                 ]
               },
@@ -1544,8 +1547,8 @@
               },
               "original_url": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "original_bytes": {
@@ -1583,8 +1586,8 @@
               },
               "title": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "cloudinary_account": {
@@ -1616,8 +1619,8 @@
               },
               "original_url": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "original_bytes": {

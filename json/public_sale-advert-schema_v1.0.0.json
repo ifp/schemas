@@ -18,8 +18,8 @@
         },
         "agency_phone": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_email": {
@@ -27,14 +27,14 @@
         },
         "agency_website": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_office_name": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_office_code": {
@@ -45,68 +45,68 @@
         },
         "agency_office_phone": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agency_office_email": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agent_name": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agent_phone": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "agent_email": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "reference": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "status": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ],
           "enum": [
-            "online",
-            "offline"
+            "offline",
+            "online"
           ],
           "default": "online"
         },
         "url": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "created_at": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ],
           "format": "date-time"
         },
         "updated_at": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ],
           "format": "date-time"
         }
@@ -153,8 +153,8 @@
         },
         "title_fr": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "description_en": {
@@ -162,8 +162,8 @@
         },
         "description_fr": {
           "type": [
-            "string",
-            "null"
+            "null",
+            "string"
           ]
         },
         "highlights": {
@@ -184,32 +184,32 @@
               "properties": {
                 "location": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "commune_name": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "post_code": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "department_name": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 },
                 "department_code": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ]
                 }
               },
@@ -242,8 +242,8 @@
             },
             "comment": {
               "type": [
-                "string",
-                "null"
+                "null",
+                "string"
               ]
             },
             "tenure": {
@@ -340,8 +340,8 @@
           "properties": {
             "size": {
               "type": [
-                "number",
-                "null"
+                "null",
+                "number"
               ]
             }
           },
@@ -355,8 +355,8 @@
           "properties": {
             "size": {
               "type": [
-                "number",
-                "null"
+                "null",
+                "number"
               ]
             }
           },
@@ -373,30 +373,30 @@
               "properties": {
                 "number": {
                   "type": [
-                    "number",
-                    "null"
+                    "null",
+                    "number"
                   ]
                 },
                 "letter": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ],
                   "enum": [
+                    null,
                     "A",
                     "B",
                     "C",
                     "D",
                     "E",
                     "F",
-                    "G",
-                    null
+                    "G"
                   ]
                 },
                 "date": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ],
                   "format": "date-time"
                 }
@@ -413,30 +413,30 @@
               "properties": {
                 "number": {
                   "type": [
-                    "number",
-                    "null"
+                    "null",
+                    "number"
                   ]
                 },
                 "letter": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ],
                   "enum": [
+                    null,
                     "A",
                     "B",
                     "C",
                     "D",
                     "E",
                     "F",
-                    "G",
-                    null
+                    "G"
                   ]
                 },
                 "date": {
                   "type": [
-                    "string",
-                    "null"
+                    "null",
+                    "string"
                   ],
                   "format": "date-time"
                 }
@@ -528,14 +528,14 @@
             "properties": {
               "title": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "original_url": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               }
             },
@@ -555,14 +555,14 @@
             "properties": {
               "title": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "original_url": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               }
             },
@@ -582,14 +582,14 @@
             "properties": {
               "title": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               },
               "original_url": {
                 "type": [
-                  "string",
-                  "null"
+                  "null",
+                  "string"
                 ]
               }
             },
