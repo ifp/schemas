@@ -2,7 +2,7 @@
 
 The adverts put onto the message queue by the Advert Importer will only have three pertinent states:
 
-## 1. Adverts to put upsert
+## 1. Adverts to Insert or Update
 
 ### State
 
@@ -12,7 +12,7 @@ The adverts put onto the message queue by the Advert Importer will only have thr
 ### Outcome when processed by the Loader
 
 - Search engine database: upsert
--- advert.status: online | offline
+    - advert.status: online | offline
 - Backing database: upsert
 
 ## 2. Adverts to mark as Deleted
@@ -24,5 +24,5 @@ The adverts put onto the message queue by the Advert Importer will only have thr
 ### Outcome when processed by the Loader
 
 - Search engine database: upsert
--- advert.status: delete
+    - advert.status: delete
 - Backing database: upsert
