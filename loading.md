@@ -6,7 +6,7 @@
     - advert.status:online && approval:pending
         - part of advertisers current portfolio
         - advert has been selected to advertise
-        - content and data has not yet been checked for quality
+        - content and data has not yet been checked for quality by IFP
         - can be found via the Search Engine
         - unavailable to Property Spy
     - advert.status:online && approval:approved
@@ -18,7 +18,7 @@
     - advert.status:online && approval:deferred
         - part of advertisers current portfolio
         - advert has been selected to advertise
-        - content and data is not yet complete and awaiting input from advertiser to improve it
+        - content and data is not yet complete and awaiting input from advertiser to improve it, before approval from IFP
         - can be found via the Search Engine, but unlikely to be found in targeted searches due to missing information
         - unavailable to Property Spy
     - advert.status:offline
@@ -34,6 +34,10 @@
         - unavailable to Property Spy
         - minimal version of advert can be accessed directly by URL
     - advert.status:deleted
+        - advert is deleted from the Search Engine Database
+        - advert is retained in the Backing Database
+    - advert.status:deleted && approval:denied
+        - advert has been denied by IFP
         - advert is deleted from the Search Engine Database
         - advert is retained in the Backing Database
 
