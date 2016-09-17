@@ -4,7 +4,9 @@
 - When adverts are approved, they will go approval:approved and the significantly_updated_date will be updated, which the Property Spy uses as the date to find suitable adverts.
 - Adverts in the system have the following statuses:
     - advert.status:online && approval:approved
-        - full circulation on the Search Engine and available to Property Spy
+        - part of advertisers live portfolio
+        - content and data is approved / improved by IFP
+        - in full circulation on the Search Engine and available to Property Spy
     - advert.status:online && approval:deferred -> in full circulation, but not available to Property Spy
     - advert.status:online && approval:pending -> in full circulation, but not available to Property Spy
     - advert.status:offline -> unable to find in searches, but minimal advert can be access directly by URL
