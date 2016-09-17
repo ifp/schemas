@@ -1,7 +1,7 @@
 # Loading of Adverts
 
 - All adverts coming onto system for first time will be given advert.approval:pending, yet they will have the advert.status:online, thus all adverts are put online prior to them being checked and possibly removed.
-- When adverts are approved, they will go approval:approved and the significantly_updated_date will be updated, which the Property Spy uses as the date to find suitable adverts.
+- When adverts are approved, they will be set to approval:approved and the significantly_updated_date will be updated, as this is the date field the Property Spy uses to find suitable adverts.
 - Adverts in the system have the following statuses:
     - advert.status:online && approval:pending
         - part of advertisers current portfolio
@@ -47,11 +47,11 @@ The queue from which the Loader will pull the adverts will be loaded by 3 separa
 2. Advert Import
 3. Checker
 
-Each system will load the adverts with a set combination of action and advert.status fields. This document details these and how they will be processed by the Loader.
+Each system will load the adverts with a set combination of action and advert.status fields as follows:
 
 ## 1. Adverts coming from Old IFP
 
-The adverts will only have four pertinent states:
+The adverts will be loaded with one of four states:
 
 ### A. Adverts to Insert or Update as 'Online'
 
@@ -96,7 +96,7 @@ The adverts will only have four pertinent states:
 
 ## 2. Adverts coming from Advert Import
 
-The adverts will only have three pertinent states:
+The adverts will be loaded with one of three states:
 
 ### A. Adverts to Insert or Update as 'Online'
 
@@ -132,7 +132,7 @@ The adverts will only have three pertinent states:
 
 ## 3. Adverts coming from Checker
 
-The adverts will only have three pertinent states:
+The adverts will be loaded with one of three states:
 
 ### A. Adverts to Insert or Update as 'Approved'
 
