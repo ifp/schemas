@@ -1,11 +1,14 @@
-Notes:
+# Loading of Adverts
 
-- all adverts coming onto system for first time will be approval:pending
-- when adverts are approved, they will go approval:approved and the significantly_updated_date will be updated, which the property spy uses as the date
-- everything goes online at Loading, then will be dealt with after to see whether it is pulled down
-- do we actually want to delete from all databases when Delete command is run? Data protection says Yes?
-
-# Loading states
+- All adverts coming onto system for first time will be given advert.approval:pending, yet they will have the advert.status:online, thus all adverts are put online prior to them being checked and possibly removed.
+- When adverts are approved, they will go approval:approved and the significantly_updated_date will be updated, which the Property Spy uses as the date to find suitable adverts.
+- Adverts in the system have the following statuses:
+    - advert.status:online && approval:approved
+        - full circulation on the Search Engine and available to Property Spy
+    - advert.status:online && approval:deferred -> in full circulation, but not available to Property Spy
+    - advert.status:online && approval:pending -> in full circulation, but not available to Property Spy
+    - advert.status:offline -> unable to find in searches, but minimal advert can be access directly by URL
+    - advert.status:archived -> unable to find in searches, but minimal advert can be access directly by URL
 
 The queue from which the Loader will pull the adverts will be loaded by 3 separate systems:
 
@@ -96,22 +99,44 @@ The adverts will only have three pertinent states:
 }
 ```
 
-## B. API for adverts
+## 3. Adverts coming from Checker
 
-### Outcome when processed by the Loader
+The adverts will only have three pertinent states:
 
-- Search engine database: upsert
-- Backing database: upsert
+### A. Adverts to Insert or Update as 'Approved'
 
-## B. Adverts to mark as Deleted
+```json
+{
+  "action": "upsert",
+  "advert": {
+    "status": "online",
+    "approval": "approved"
+  }
+}
+```
 
-### State
+### B. Adverts to Insert or Update as 'Deferred'
 
-- action: delete
+```json
+{
+  "action": "upsert",
+  "advert": {
+    "status": "online",
+    "approval": "deferred"
+  }
+}
+```
 
-### Outcome when processed by the Loader
+### C. Adverts to Delete
 
-- Search engine database: upsert
-    - advert.status: delete
-- Backing database: upsert
-    - advert.status: delete
+```json
+{
+  "action": "delete",
+  "advert": {
+    "status": "deleted",
+    "approval": "denied"
+  }
+}
+```
+
+Notes: Adverts will never come through from the Checker with the approval of 'pending', as this state represents the adverts which have not yet been checked.
