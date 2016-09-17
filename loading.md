@@ -3,14 +3,36 @@
 - All adverts coming onto system for first time will be given advert.approval:pending, yet they will have the advert.status:online, thus all adverts are put online prior to them being checked and possibly removed.
 - When adverts are approved, they will go approval:approved and the significantly_updated_date will be updated, which the Property Spy uses as the date to find suitable adverts.
 - Adverts in the system have the following statuses:
+    - advert.status:online && approval:pending
+        - part of advertisers current portfolio
+        - advert has been selected to advertise
+        - content and data has not yet been checked for quality
+        - can be found via the Search Engine
+        - unavailable to Property Spy
     - advert.status:online && approval:approved
-        - part of advertisers live portfolio
-        - content and data is approved / improved by IFP
-        - in full circulation on the Search Engine and available to Property Spy
-    - advert.status:online && approval:deferred -> in full circulation, but not available to Property Spy
-    - advert.status:online && approval:pending -> in full circulation, but not available to Property Spy
-    - advert.status:offline -> unable to find in searches, but minimal advert can be access directly by URL
-    - advert.status:archived -> unable to find in searches, but minimal advert can be access directly by URL
+        - part of advertisers current portfolio
+        - advert has been selected to advertise
+        - content / data quality is approved (or improved) by IFP
+        - can be found via the Search Engine
+        - available to Property Spy
+    - advert.status:online && approval:deferred
+        - part of advertisers current portfolio
+        - advert has been selected to advertise
+        - content and data is not yet complete and awaiting input from advertiser to improve it
+        - can be found via the Search Engine, but unlikely to be found in targeted searches due to missing information
+        - unavailable to Property Spy
+    - advert.status:offline
+        - part of advertisers current portfolio
+        - advert has not been selected to advertise
+        - cannot be found via the Search Engine
+        - unavailable to Property Spy
+        - minimal version of advert can be accessed directly by URL
+    - advert.status:archived
+        - part of advertisers old portfolio
+        - advert is not able to be selected to advertise, as it is an old advert
+        - cannot be found via the Search Engine
+        - unavailable to Property Spy
+        - minimal version of advert can be accessed directly by URL
 
 The queue from which the Loader will pull the adverts will be loaded by 3 separate systems:
 
