@@ -33,6 +33,9 @@
         - cannot be found via the Search Engine
         - unavailable to Property Spy
         - minimal version of advert can be accessed directly by URL
+    - advert.status:deleted
+        - advert is deleted from the Search Engine Database
+        - advert is retained in the Backing Database
 
 The queue from which the Loader will pull the adverts will be loaded by 3 separate systems:
 
