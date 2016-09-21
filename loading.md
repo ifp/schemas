@@ -2,12 +2,15 @@
 
 - All adverts coming onto system for first time will be given advert.approval:pending, yet they will have the advert.status:online, thus all adverts are put online prior to them being checked and possibly removed.
 - When adverts are approved, they will be set to approval:approved and the significantly_updated_date will be updated, as this is the date field the Property Spy uses to find suitable adverts.
+
+- Adverts 
+
 - Adverts in the system have the following statuses:
     - advert.status:online && approval:pending
         - part of advertisers current portfolio
         - advert has been selected to advertise
         - content and data has not yet been checked for quality by IFP
-        - can be found via the Search Engine
+        - can be found via the Search Engine, but possibly unable to be found in targeted searches due to missing information
         - unavailable to Property Spy
     - advert.status:online && approval:approved
         - part of advertisers current portfolio
@@ -15,12 +18,14 @@
         - content / data quality is approved (or improved) by IFP
         - can be found via the Search Engine
         - available to Property Spy
+        
     - advert.status:online && approval:deferred
         - part of advertisers current portfolio
         - advert has been selected to advertise
         - content and data is not yet complete and awaiting input from advertiser to improve it, before approval from IFP
         - can be found via the Search Engine, but unlikely to be found in targeted searches due to missing information
         - unavailable to Property Spy
+        
     - advert.status:offline
         - part of advertisers current portfolio
         - advert has not been selected to advertise
@@ -33,6 +38,7 @@
         - cannot be found via the Search Engine
         - unavailable to Property Spy
         - minimal version of advert can be accessed directly by URL
+        
     - advert.status:deleted
         - advert is deleted from the Search Engine Database
         - advert is retained in the Backing Database
@@ -132,7 +138,7 @@ The adverts will be loaded with one of three states:
 
 ## 3. Adverts coming from Checker
 
-The adverts will be loaded with one of three states:
+The adverts will be loaded with one of two states:
 
 ### A. Adverts to Insert or Update as 'Approved'
 
@@ -146,19 +152,7 @@ The adverts will be loaded with one of three states:
 }
 ```
 
-### B. Adverts to Insert or Update as 'Deferred'
-
-```json
-{
-  "action": "upsert",
-  "advert": {
-    "status": "online",
-    "approval": "deferred"
-  }
-}
-```
-
-### C. Adverts to Delete
+### B. Adverts to Delete that have been Denied
 
 ```json
 {
