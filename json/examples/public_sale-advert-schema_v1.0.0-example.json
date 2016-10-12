@@ -82,43 +82,43 @@
     },
     "images": [
       {
-        "title": "",
+        "title": "Front facacde",
         "original_url": "http://images.example.com/testimmo/ABC123456789-0.jpg"
       },
       {
-        "title": "",
+        "title": "Rear facade",
         "original_url": "http://images.example.com/testimmo/ABC123456789-1.jpg"
       },
       {
-        "title": "",
+        "title": "Lounge",
         "original_url": "http://images.example.com/testimmo/ABC123456789-2.jpg"
       },
       {
-        "title": "",
+        "title": "Kitchen",
         "original_url": "http://images.example.com/testimmo/ABC123456789-3.jpg"
       },
       {
-        "title": "",
+        "title": "Dining room",
         "original_url": "http://images.example.com/testimmo/ABC123456789-4.jpg"
       },
       {
-        "title": "",
+        "title": "Staircase",
         "original_url": "http://images.example.com/testimmo/ABC123456789-5.jpg"
       },
       {
-        "title": "",
+        "title": "Master bedroom",
         "original_url": "http://images.example.com/testimmo/ABC123456789-6.jpg"
       },
       {
-        "title": "",
+        "title": "Second bedroom",
         "original_url": "http://images.example.com/testimmo/ABC123456789-7.jpg"
       },
       {
-        "title": "",
+        "title": "Bathroom",
         "original_url": "http://images.example.com/testimmo/ABC123456789-8.jpg"
       },
       {
-        "title": "",
+        "title": "Garden",
         "original_url": "http://images.example.com/testimmo/ABC123456789-9.jpg"
       }
     ],
