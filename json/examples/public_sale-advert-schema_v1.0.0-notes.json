@@ -77,17 +77,7 @@
         "original_url": "URL of the image that you wish to display. We will take a copy of this and resize as required. We then serve copies of these images."
       }
     ],
-    "floor_plans": [
-      {
-        "title": "Title of the floor plan being displayed",
-        "original_url": "URL of the floor plan image that you wish to display. We will take a copy of this and resize as required. We then serve copies of these images."
-      }
-    ],
-    "virtual_tours": [
-      {
-        "title": "Title of the virtual tour being displayed",
-        "original_url": "URL of the virtual tour that you wish to display. We do not host these and will link to them, or embed them within the advert display."
-      }
-    ]
+    "floor_plans": "URLs of the floor plan image that you wish to display. We will take a copy of this and resize as required. We then serve copies of these images.",
+    "virtual_tours": "URLs of the virtual tour that you wish to display. We do not host these and will link to them, or embed them within the advert display."
   }
 }
