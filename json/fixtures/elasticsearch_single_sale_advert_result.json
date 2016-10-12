@@ -158,7 +158,7 @@
             "images": [
               {
                 "listing_position": 0,
-                "title": "",
+                "title": "Image zero",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944266600",
                 "version": "1444363660",
@@ -171,7 +171,7 @@
               },
               {
                 "listing_position": 1,
-                "title": "",
+                "title": "Image one",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944266320",
                 "version": "1444363660",
@@ -184,7 +184,7 @@
               },
               {
                 "listing_position": 2,
-                "title": "",
+                "title": "Image two",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944266040",
                 "version": "1444363660",
@@ -197,7 +197,7 @@
               },
               {
                 "listing_position": 3,
-                "title": "",
+                "title": "Image three",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944265760",
                 "version": "1444363660",
@@ -210,7 +210,7 @@
               },
               {
                 "listing_position": 4,
-                "title": "",
+                "title": "Image four",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944265460",
                 "version": "1444363660",
@@ -223,7 +223,7 @@
               },
               {
                 "listing_position": 5,
-                "title": "",
+                "title": "Image five",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944265260",
                 "version": "1444363660",
@@ -236,7 +236,7 @@
               },
               {
                 "listing_position": 6,
-                "title": "",
+                "title": "Image six",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944265040",
                 "version": "1444363660",
@@ -249,7 +249,7 @@
               },
               {
                 "listing_position": 7,
-                "title": "",
+                "title": "Image seven",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944264780",
                 "version": "1444363660",
@@ -262,7 +262,7 @@
               },
               {
                 "listing_position": 8,
-                "title": "",
+                "title": "Image eight",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944264520",
                 "version": "1444363660",
@@ -275,7 +275,7 @@
               },
               {
                 "listing_position": 9,
-                "title": "",
+                "title": "Image nine",
                 "cloudinary_account": "test-account",
                 "public_id": "testimmo-ABC123456789-70016944264020",
                 "version": "1444363660",
