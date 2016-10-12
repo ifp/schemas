@@ -6,7 +6,7 @@ This schema represents the Advert object used within the IFP systems. Currently 
 
 Please use the latest version of these schemas when sending us sale adverts:
 
-[Public Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/public_sale-advert-schema_changelog.json)
+[Public Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/public_sale-advert-schema_changelog.md)
 
 - [Public Sale Advert JSON Schema v1.1.0](https://github.com/ifp/schemas/blob/master/json/public_sale-advert-schema_v1.1.0.json)
 - [Public Sale Advert JSON Schema v1.0.0](https://github.com/ifp/schemas/blob/master/json/public_sale-advert-schema_v1.0.0.json)
@@ -38,6 +38,9 @@ There is some logic to the required fields of the property.geo.user_data, which 
 
 ## Internal Schemas:
 
+[Internal Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/internal_sale-advert-schema_changelog.md)
+
+- [Internal Sale Advert JSON Schema v1.1.0](https://github.com/ifp/schemas/blob/master/json/internal_sale-advert-schema_v1.1.0.json)
 - [Internal Sale Advert JSON Schema v1.0.0](https://github.com/ifp/schemas/blob/master/json/internal_sale-advert-schema_v1.0.0.json)
 
 -----
