@@ -82,53 +82,65 @@
     },
     "images": [
       {
-        "title": "",
+        "title": "Front facacde",
         "original_url": "http://images.example.com/testimmo/ABC123456789-0.jpg"
       },
       {
-        "title": "",
+        "title": "Rear facade",
         "original_url": "http://images.example.com/testimmo/ABC123456789-1.jpg"
       },
       {
-        "title": "",
+        "title": "Lounge",
         "original_url": "http://images.example.com/testimmo/ABC123456789-2.jpg"
       },
       {
-        "title": "",
+        "title": "Kitchen",
         "original_url": "http://images.example.com/testimmo/ABC123456789-3.jpg"
       },
       {
-        "title": "",
+        "title": "Dining room",
         "original_url": "http://images.example.com/testimmo/ABC123456789-4.jpg"
       },
       {
-        "title": "",
+        "title": "Staircase",
         "original_url": "http://images.example.com/testimmo/ABC123456789-5.jpg"
       },
       {
-        "title": "",
+        "title": "Master bedroom",
         "original_url": "http://images.example.com/testimmo/ABC123456789-6.jpg"
       },
       {
-        "title": "",
+        "title": "Second bedroom",
         "original_url": "http://images.example.com/testimmo/ABC123456789-7.jpg"
       },
       {
-        "title": "",
+        "title": "Bathroom",
         "original_url": "http://images.example.com/testimmo/ABC123456789-8.jpg"
       },
       {
-        "title": "",
+        "title": "Garden",
         "original_url": "http://images.example.com/testimmo/ABC123456789-9.jpg"
       }
     ],
     "floor_plans": [
-      "http://images.example.com/testimmo/ABC123456789-floorplan-1.jpg",
-      "http://images.example.com/testimmo/ABC123456789-floorplan-2.jpg"
+      {
+        "title": "Ground floor plan",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-1.jpg"
+      },
+      {
+        "title": "First floor plan",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-2.jpg"
+      }
     ],
     "virtual_tours": [
-      "http://videos.example.com/testimmo/ABC123456789-tour-1.mpg",
-      "http://videos.example.com/testimmo/ABC123456789-tour-2.mpg"
+      {
+        "title": "Tour of exterior and grounds",
+        "original_url": "http://videos.example.com/testimmo/ABC123456789-tour-1.mpg"
+      },
+      {
+        "title": "Tour of interior",
+        "original_url": "http://videos.example.com/testimmo/ABC123456789-tour-2.mpg"
+      }
     ]
   }
 }

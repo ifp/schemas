@@ -551,9 +551,26 @@
         "floor_plans": {
           "type": "array",
           "items": {
-            "type": [
-              "string"
-            ]
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "original_url": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "original_url"
+            ],
+            "additionalProperties": false
           },
           "minItems": 0,
           "uniqueItems": true
@@ -561,9 +578,26 @@
         "virtual_tours": {
           "type": "array",
           "items": {
-            "type": [
-              "string"
-            ]
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "original_url": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "original_url"
+            ],
+            "additionalProperties": false
           },
           "minItems": 0,
           "uniqueItems": true
