@@ -3,7 +3,7 @@
   "description": "Schemas and fixtures for IFP Advert Data",
   "autoload" : {
     "psr-4": {
-      "FPAPI\\Schemas\\": "src/"
+      "IFP\\Schemas\\": "src/"
     }
   },
   "require": {}
