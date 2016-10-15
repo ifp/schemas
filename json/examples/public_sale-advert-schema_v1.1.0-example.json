@@ -123,12 +123,24 @@
       }
     ],
     "floor_plans": [
-      "http://images.example.com/testimmo/ABC123456789-floorplan-1.jpg",
-      "http://images.example.com/testimmo/ABC123456789-floorplan-2.jpg"
+      {
+        "title": "Ground floor plan",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-1.jpg"
+      },
+      {
+        "title": "First floor plan",
+        "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-2.jpg"
+      }
     ],
     "virtual_tours": [
-      "http://videos.example.com/testimmo/ABC123456789-tour-1.mpg",
-      "http://videos.example.com/testimmo/ABC123456789-tour-2.mpg"
+      {
+        "title": "Tour of exterior and grounds",
+        "original_url": "http://videos.example.com/testimmo/ABC123456789-tour-1.mpg"
+      },
+      {
+        "title": "Tour of interior",
+        "original_url": "http://videos.example.com/testimmo/ABC123456789-tour-2.mpg"
+      }
     ]
   }
 }
