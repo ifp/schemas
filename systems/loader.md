@@ -6,12 +6,14 @@
 - Adverts 
 
 - Adverts in the system have the following statuses:
+
     - advert.status:online && approval:pending
         - part of advertisers current portfolio
         - advert has been selected to advertise
         - content and data has not yet been checked for quality by IFP
         - can be found via the Search Engine, but possibly unable to be found in targeted searches due to missing information
         - unavailable to Property Spy
+        
     - advert.status:online && approval:approved
         - part of advertisers current portfolio
         - advert has been selected to advertise
@@ -32,6 +34,7 @@
         - cannot be found via the Search Engine
         - unavailable to Property Spy
         - minimal version of advert can be accessed directly by URL
+        
     - advert.status:archived
         - part of advertisers old portfolio
         - advert is not able to be selected to advertise, as it is an old advert
@@ -42,6 +45,7 @@
     - advert.status:deleted
         - advert is deleted from the Search Engine Database
         - advert is retained in the Backing Database
+        
     - advert.status:deleted && approval:denied
         - advert has been denied by IFP
         - advert is deleted from the Search Engine Database
