@@ -1068,7 +1068,7 @@
                 "fractional",
                 "freehold",
                 "leasehold",
-                "viager"
+                "life_annuity"
               ],
               "default": "freehold"
             },

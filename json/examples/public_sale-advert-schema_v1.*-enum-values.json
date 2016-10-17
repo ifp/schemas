@@ -23,7 +23,7 @@
         "fractional",
         "freehold",
         "leasehold",
-        "viager"
+        "life_annuity"
       ],
       "qualifier": [
         "asking_price",

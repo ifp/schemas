@@ -37,7 +37,7 @@
       "amount": "The price in Euros",
       "currency": "Always listed as EUR",
       "comment": "Any comments about the price, such as 'Including agency fees'",
-      "tenure": "The tenure of the property sale; 'viager', 'fractional' etc. defaults to 'freehold'",
+      "tenure": "The tenure of the property sale; 'life_annuity', 'fractional' etc. defaults to 'freehold'",
       "qualifier": "Information about the price offered; e.g. 'offers_in_excess_of', 'price_on_application' etc. defaults to 'asking_price"
     },
     "room_counts": {
