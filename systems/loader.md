@@ -8,39 +8,46 @@
 - Adverts in the system have the following statuses:
 
     - advert.status:online && approval:pending
-        - part of advertisers current portfolio
+        - advert stored in the Search Engine Database and the Backing Database
+        - part of advertisers **current** portfolio
         - advert has been selected to advertise
         - content and data has not yet been checked for quality by IFP
-        - can be found via the Search Engine, but possibly unable to be found in targeted searches due to missing information
-        - unavailable to Property Spy
-        
-    - advert.status:online && approval:approved
-        - part of advertisers current portfolio
-        - advert has been selected to advertise
-        - content / data quality is approved (or improved) by IFP
-        - can be found via the Search Engine
-        - available to Property Spy
+        - **available** to the Search Engine, but unlikely to be found in targeted searches due to missing information
+        - **unavailable** to the Property Spy
+        - full advert **available** directly by URL
         
     - advert.status:online && approval:deferred
-        - part of advertisers current portfolio
+        - advert stored in the Search Engine Database and the Backing Database
+        - part of advertisers **current** portfolio
         - advert has been selected to advertise
         - content and data is not yet complete and awaiting input from advertiser to improve it, before approval from IFP
-        - can be found via the Search Engine, but unlikely to be found in targeted searches due to missing information
-        - unavailable to Property Spy
+        - **available** to the Search Engine, but unlikely to be found in targeted searches due to missing information
+        - **unavailable** to the Property Spy
+        - full advert **available** directly by URL
+        
+    - advert.status:online && approval:approved
+        - advert stored in the Search Engine Database and the Backing Database
+        - part of advertisers **current** portfolio
+        - advert has been selected to advertise
+        - content / data quality is approved (or improved) by IFP
+        - **available** to the Search Engine
+        - **available** to the Property Spy
+        - full advert **available** directly by URL
         
     - advert.status:offline
-        - part of advertisers current portfolio
-        - advert has not been selected to advertise
-        - cannot be found via the Search Engine
-        - unavailable to Property Spy
-        - minimal version of advert can be accessed directly by URL
+        - advert stored in the Search Engine Database and the Backing Database
+        - part of advertisers **current** portfolio
+        - advert has **not** been selected to advertise
+        - **unavailable** to the Search Engine
+        - **unavailable** to the Property Spy
+        - full advert **available** directly by URL
         
     - advert.status:archived
-        - part of advertisers old portfolio
-        - advert is not able to be selected to advertise, as it is an old advert
-        - cannot be found via the Search Engine
-        - unavailable to Property Spy
-        - minimal version of advert can be accessed directly by URL
+        - advert stored in the Search Engine Database and the Backing Database
+        - part of advertisers **old** portfolio
+        - **unavailable** to the Search Engine
+        - **unavailable** to Property Spy
+        - minimal advert **available** directly by URL
         
     - advert.status:deleted
         - advert is deleted from the Search Engine Database
@@ -63,35 +70,38 @@ Each system will load the adverts with a set combination of action and advert.st
 
 The adverts will be loaded with one of four states:
 
-### A. Adverts to Insert or Update as 'Online'
+### A. Adverts to Upsert as 'Online'
 
 ```json
 {
   "action": "upsert",
   "advert": {
-    "status": "online"
+    "status": "online",
+    "approval": "pending
   }
 }
 ```
 
-### B. Adverts to Insert or Update as 'Offline'
+### B. Adverts to Upsert as 'Offline'
 
 ```json
 {
   "action": "upsert",
   "advert": {
-    "status": "offline"
+    "status": "offline",
+    "approval": "pending"
   }
 }
 ```
 
-### C. Adverts to Insert or Update as 'Archived'
+### C. Adverts to Upsert as 'Archived'
 
 ```json
 {
   "action": "upsert",
   "advert": {
-    "status": "archived"
+    "status": "archived",
+    "approval": "pending"
   }
 }
 ```
@@ -108,7 +118,7 @@ The adverts will be loaded with one of four states:
 
 The adverts will be loaded with one of three states:
 
-### A. Adverts to Insert or Update as 'Online'
+### A. Adverts to Upsert as 'Online'
 
 ```json
 {
@@ -120,7 +130,7 @@ The adverts will be loaded with one of three states:
 }
 ```
 
-### B. Adverts to Insert or Update as 'Offline'
+### B. Adverts to Upsert as 'Offline'
 
 ```json
 {
@@ -144,7 +154,7 @@ The adverts will be loaded with one of three states:
 
 The adverts will be loaded with one of two states:
 
-### A. Adverts to Insert or Update as 'Approved'
+### A. Adverts to Upsert as 'Approved'
 
 ```json
 {
@@ -168,4 +178,8 @@ The adverts will be loaded with one of two states:
 }
 ```
 
-Notes: Adverts will never come through from the Checker with the approval of 'pending', as this state represents the adverts which have not yet been checked.
+Note: Adverts will never come through from the Checker with the approval of 'pending' or 'deferred', as these states represents the adverts which have not yet been approved, and therefore are not ready to leave the checker system.
+
+## Approval Funnel Trap
+
+All new adverts come onto the system as "approval": "pending", but then later on, some may be upgraded to "approval": "approved" in the Checker. If this happens and the original system that loaded the advert then upserts the advert again, it will be with "approval": "pending". As the advert has been set to "approval": "approved", the "approval" status will not change back to "pending". Thus, the change of "approval" can be seen a one-way action during the lifetime of the advert.
