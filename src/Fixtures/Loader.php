@@ -1,6 +1,6 @@
 <?php
 
-namespace FPAPI\Schemas\Fixtures;
+namespace IFP\Schemas\Fixtures;
 
 class Loader
 {

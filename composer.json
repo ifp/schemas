@@ -5,6 +5,5 @@
     "psr-4": {
       "IFP\\Schemas\\": "src/"
     }
-  },
-  "require": {}
+  }
 }
