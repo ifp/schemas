@@ -1485,6 +1485,20 @@
                   "integer",
                   "null"
                 ]
+              },
+              "updated_at": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "format": "date-time"
+              },
+              "created_at": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "format": "date-time"
               }
             },
             "required": [
@@ -1498,7 +1512,9 @@
               "format",
               "bytes",
               "original_url",
-              "original_bytes"
+              "original_bytes",
+              "updated_at",
+              "created_at"
             ],
             "additionalProperties": false
           },
