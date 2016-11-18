@@ -26,9 +26,11 @@
     "agent_email": "testimmojmj@example.com",
     "reference": "ABC123456789",
     "type": "sale",
-    "format": "standard",
-    "visibility": "all",
-    "pre_attributed": [],
+    "format": ["standard"],
+    "visibility": "network",
+    "pre_attributed": {
+      "tags": ["village"]
+    },
     "status": "online",
     "approval": "pending",
     "url": "http://www.example.com/testimmo/ABC123456789",

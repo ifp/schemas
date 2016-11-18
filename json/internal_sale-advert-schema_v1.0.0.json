@@ -150,15 +150,24 @@
           "default": "sale"
         },
         "format": {
-          "type": [
-            "string"
-          ],
-          "enum": [
-            "free",
-            "premium",
-            "standard"
-          ],
-          "default": "standard"
+          "type": "array",
+          "items": {
+            "type": [
+              "string"
+            ],
+            "enum": [
+              "free",
+              "featured",
+              "featured_network",
+              "featured_newsletter",
+              "featured_propertyspy",
+              "featured_search",
+              "featured_website",
+              "standard"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "visibility": {
           "type": [
@@ -172,19 +181,51 @@
           "default": "network"
         },
         "pre_attributed": {
-          "type": "array",
-          "items": {
-            "type": [
-              "string"
-            ],
-            "enum": [
-              "features",
-              "tags",
-              "types"
-            ]
+          "type": "object",
+          "properties": {
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "enum": [
+                  "chalet",
+                  "coastal",
+                  "cottage",
+                  "detached",
+                  "ensuite",
+                  "equestrian",
+                  "farmhouse",
+                  "gite",
+                  "gite_potential",
+                  "luxury",
+                  "maison_de_maitre",
+                  "mansion",
+                  "mill",
+                  "modern",
+                  "mountain",
+                  "newbuild_offplan",
+                  "period_features",
+                  "revenue_generating",
+                  "rural",
+                  "single_storey",
+                  "ski_in_ski_out",
+                  "ski_resort",
+                  "to_renovate",
+                  "town",
+                  "villa",
+                  "village"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            }
           },
-          "minItems": 0,
-          "uniqueItems": true
+          "required": [
+            "tags"
+          ],
+          "additionalProperties": false
         },
         "status": {
           "type": [
