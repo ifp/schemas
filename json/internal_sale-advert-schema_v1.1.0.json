@@ -158,6 +158,7 @@
             "enum": [
               "free",
               "featured",
+              "featured_banner",
               "featured_network",
               "featured_newsletter",
               "featured_propertyspy",
