@@ -1539,9 +1539,7 @@
               "format",
               "bytes",
               "original_url",
-              "original_bytes",
-              "updated_at",
-              "created_at"
+              "original_bytes"
             ],
             "additionalProperties": false
           },
