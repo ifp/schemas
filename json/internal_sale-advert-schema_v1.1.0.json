@@ -1526,20 +1526,6 @@
                   "integer",
                   "null"
                 ]
-              },
-              "updated_at": {
-                "type": [
-                  "null",
-                  "string"
-                ],
-                "format": "date-time"
-              },
-              "created_at": {
-                "type": [
-                  "null",
-                  "string"
-                ],
-                "format": "date-time"
               }
             },
             "required": [

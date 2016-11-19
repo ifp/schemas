@@ -272,15 +272,13 @@
           "type": [
             "null",
             "string"
-          ],
-          "format": "date-time"
+          ]
         },
         "updated_at": {
           "type": [
             "null",
             "string"
-          ],
-          "format": "date-time"
+          ]
         },
         "live_at": {
           "type": [
@@ -1526,20 +1524,6 @@
                   "integer",
                   "null"
                 ]
-              },
-              "updated_at": {
-                "type": [
-                  "null",
-                  "string"
-                ],
-                "format": "date-time"
-              },
-              "created_at": {
-                "type": [
-                  "null",
-                  "string"
-                ],
-                "format": "date-time"
               }
             },
             "required": [
