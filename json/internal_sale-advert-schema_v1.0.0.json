@@ -279,11 +279,7 @@
               "uniqueItems": true
             }
           },
-          "required": [
-            "types",
-            "features",
-            "tags"
-          ],
+          "required": [],
           "additionalProperties": false
         },
         "status": {
