@@ -183,6 +183,63 @@
         "pre_attributed": {
           "type": "object",
           "properties": {
+            "types": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "enum": [
+                  "_unclassified",
+                  "residential",
+                  "business",
+                  "apartment",
+                  "apartment_building",
+                  "bar",
+                  "barn",
+                  "bed_and_breakfast",
+                  "cafe",
+                  "campsite",
+                  "chateau",
+                  "farm",
+                  "gite",
+                  "gite_complex",
+                  "hotel",
+                  "house",
+                  "house_boat",
+                  "lake",
+                  "land",
+                  "mobile_home",
+                  "office",
+                  "restaurant",
+                  "shop",
+                  "vineyard"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "enum": [
+                  "balcony",
+                  "central_heating",
+                  "double_glazing",
+                  "lake",
+                  "outbuildings",
+                  "pond",
+                  "swimming_pool",
+                  "tennis_court",
+                  "terrace"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
             "tags": {
               "type": "array",
               "items": {
@@ -223,6 +280,8 @@
             }
           },
           "required": [
+            "types",
+            "features",
             "tags"
           ],
           "additionalProperties": false

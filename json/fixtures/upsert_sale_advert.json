@@ -29,6 +29,8 @@
     "format": ["standard"],
     "visibility": "network",
     "pre_attributed": {
+      "types": ["residential", "house"],
+      "features": ["double_glazing"],
       "tags": ["village"]
     },
     "status": "online",
