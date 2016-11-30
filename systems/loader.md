@@ -1,11 +1,10 @@
 # Loading of Adverts
 
-- All adverts coming onto system for first time will be given advert.approval:pending, yet they will have the advert.status:online, thus all adverts are put online prior to them being checked and possibly removed.
+- All adverts coming onto system for first time will be given advert.approval:pending and advert.status:online, thus all adverts are put online prior to them being checked and possibly removed.
+
 - When adverts are approved, they will be set to approval:approved and the significantly_updated_date will be updated, as this is the date field the Property Spy uses to find suitable adverts.
 
-- Adverts 
-
-- Adverts in the system have the following statuses:
+- Adverts within the system may have the following status and approval configurations:
 
     - advert.status:online && approval:pending
         - advert stored in the Search Engine Database and the Backing Database
@@ -50,6 +49,7 @@
         - minimal advert **available** directly by URL
         
     - advert.status:deleted
+        - advert has been deleted by the advertiser
         - advert is deleted from the Search Engine Database
         - advert is retained in the Backing Database
         
@@ -61,7 +61,7 @@
 The queue from which the Loader will pull the adverts will be loaded by 3 separate systems:
 
 1. Old IFP
-2. Advert Import
+2. Importer
 3. Checker
 
 Each system will load the adverts with a set combination of action and advert.status fields as follows:
@@ -114,7 +114,7 @@ The adverts will be loaded with one of four states:
 }
 ```
 
-## 2. Adverts coming from Advert Import
+## 2. Adverts coming from Importer
 
 The adverts will be loaded with one of three states:
 

@@ -229,6 +229,7 @@
                   "balcony",
                   "central_heating",
                   "double_glazing",
+                  "en_suite",
                   "lake",
                   "outbuildings",
                   "pond",
@@ -251,7 +252,6 @@
                   "coastal",
                   "cottage",
                   "detached",
-                  "ensuite",
                   "equestrian",
                   "farmhouse",
                   "gite",
@@ -279,7 +279,11 @@
               "uniqueItems": true
             }
           },
-          "required": [],
+          "required": [
+            "types",
+            "features",
+            "tags"
+          ],
           "additionalProperties": false
         },
         "status": {
@@ -1472,6 +1476,7 @@
                   "balcony",
                   "central_heating",
                   "double_glazing",
+                  "en_suite",
                   "lake",
                   "outbuildings",
                   "pond",
