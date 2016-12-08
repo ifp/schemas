@@ -347,7 +347,8 @@
           "format": "date-time"
         },
         "significantly_updated_at": {
-          "type": "integer"
+          "type": "string",
+          "format": "date-time"
         },
         "update_conflicts": {
           "type": [
