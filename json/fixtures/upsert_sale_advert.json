@@ -6,7 +6,8 @@
   "metadata": {
     "api_version": "1.0.0",
     "processed_at": "2015-10-09T04:07:40.810Z",
-    "processed_at_unix_ts": 1444363660
+    "processed_at_unix_ts": 1444363660,
+    "originating_system": "importer"
   },
   "advert": {
     "agency_id": "testimmo",

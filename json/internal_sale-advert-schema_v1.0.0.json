@@ -40,6 +40,17 @@
         },
         "processed_at_unix_ts": {
           "type": "integer"
+        },
+        "originating_system": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "importer",
+            "exporter",
+            "checker"
+          ],
+          "default": "importer"
         }
       },
       "required": [
