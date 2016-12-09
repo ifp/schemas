@@ -52,12 +52,12 @@
         "originating_system"
       ],
       "additionalProperties": false
-    },
+    }
   },
   "required": [
     "action",
     "id",
-    "metadata",
+    "metadata"
   ],
   "additionalProperties": false
 }
