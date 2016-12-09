@@ -13,9 +13,9 @@
     "action": {
       "type": "string",
       "enum": [
-        "delete",
         "upsert"
-      ]
+      ],
+      "default": "upsert"
     },
     "id": {
       "type": "string"
