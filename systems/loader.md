@@ -6,7 +6,7 @@
 
 - Adverts within the system may have the following status and approval configurations:
 
-    - advert.status:online && approval:pending
+    - advert.status:online && advert.approval:pending
         - advert stored in the Search Engine Database and the Backing Database
         - part of advertisers **current** portfolio
         - advert has been selected to advertise
@@ -15,7 +15,7 @@
         - **unavailable** to the Property Spy
         - full advert **available** directly by URL
         
-    - advert.status:online && approval:deferred
+    - advert.status:online && advert.approval:deferred
         - advert stored in the Search Engine Database and the Backing Database
         - part of advertisers **current** portfolio
         - advert has been selected to advertise
@@ -24,7 +24,7 @@
         - **unavailable** to the Property Spy
         - full advert **available** directly by URL
         
-    - advert.status:online && approval:approved
+    - advert.status:online && advert.approval:approved
         - advert stored in the Search Engine Database and the Backing Database
         - part of advertisers **current** portfolio
         - advert has been selected to advertise
@@ -53,10 +53,11 @@
         - advert is deleted from the Search Engine Database
         - advert is retained in the Backing Database
         
-    - advert.status:deleted && approval:denied
+    - advert.status:deleted && advert.approval:denied
         - advert has been denied by IFP
         - advert is deleted from the Search Engine Database
         - advert is retained in the Backing Database
+        - future upserts with different advert.status and advert.approvals will be ignored by the Loader whilst the advert still remains in the Backing Database with these settings
 
 The queue from which the Loader will pull the adverts will be loaded by 3 separate systems:
 
@@ -183,3 +184,7 @@ Note: Adverts will never come through from the Checker with the approval of 'pen
 ## Approval Funnel Trap
 
 All new adverts come onto the system as "approval": "pending", but then later on, some may be upgraded to "approval": "approved" in the Checker. If this happens and the original system that loaded the advert then upserts the advert again, it will be with "approval": "pending". As the advert has been set to "approval": "approved", the "approval" status will not change back to "pending". Thus, the change of "approval" can be seen a one-way action during the lifetime of the advert.
+
+## Denied Adverts
+
+If an advert has been denied in the Checker, then any time it is re-uploaded via the Importer or the Exporter, it will not be upserted into ElasticSearch. If there is a legitimate need to re-upload the advert, then it will need to be manually set to pending in the Checker prior to re-uploading via the originating system.
