@@ -1567,13 +1567,22 @@
                 "type": "string"
               },
               "version": {
-                "type": "string"
+                "type": [
+                  "null",
+                  "string"
+                ]
               },
               "width": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "height": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "format": {
                 "type": "string",
@@ -1586,7 +1595,10 @@
                 ]
               },
               "bytes": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "original_url": {
                 "type": [
@@ -1640,13 +1652,22 @@
                 "type": "string"
               },
               "version": {
-                "type": "string"
+                "type": [
+                  "null",
+                  "string"
+                ]
               },
               "width": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "height": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "format": {
                 "type": "string",
@@ -1659,7 +1680,10 @@
                 ]
               },
               "bytes": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "original_url": {
                 "type": [
@@ -1713,13 +1737,22 @@
                 "type": "string"
               },
               "version": {
-                "type": "string"
+                "type": [
+                  "null",
+                  "string"
+                ]
               },
               "width": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "height": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "format": {
                 "type": "string",
@@ -1731,7 +1764,10 @@
                 ]
               },
               "bytes": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "original_url": {
                 "type": [
