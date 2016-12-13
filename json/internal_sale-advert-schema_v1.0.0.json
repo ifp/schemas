@@ -1575,6 +1575,7 @@
               "format": {
                 "type": "string",
                 "enum": [
+                  "gif",
                   "jpe",
                   "jpeg",
                   "jpg",

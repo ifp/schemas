@@ -1578,6 +1578,7 @@
               "format": {
                 "type": "string",
                 "enum": [
+                  "gif",
                   "jpe",
                   "jpeg",
                   "jpg",
@@ -1650,6 +1651,7 @@
               "format": {
                 "type": "string",
                 "enum": [
+                  "gif",
                   "jpe",
                   "jpeg",
                   "jpg",
