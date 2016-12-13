@@ -1582,7 +1582,10 @@
                 ]
               },
               "format": {
-                "type": "string",
+                "type": [
+                  "null",
+                  "string"
+                ],
                 "enum": [
                   null,
                   "gif",

@@ -1585,7 +1585,10 @@
                 ]
               },
               "format": {
-                "type": "string",
+                "type": [
+                  "null",
+                  "string"
+                ],
                 "enum": [
                   null,
                   "gif",
@@ -1671,7 +1674,10 @@
                 ]
               },
               "format": {
-                "type": "string",
+                "type": [
+                  "null",
+                  "string"
+                ],
                 "enum": [
                   null,
                   "gif",
@@ -1757,7 +1763,10 @@
                 ]
               },
               "format": {
-                "type": "string",
+                "type": [
+                  "null",
+                  "string"
+                ],
                 "enum": [
                   null,
                   "flv",
