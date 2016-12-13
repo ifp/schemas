@@ -82,8 +82,7 @@ The adverts will be loaded with one of four states:
 {
   "action": "upsert",
   "advert": {
-    "status": "online",
-    "approval": "pending
+    "status": "online"
   }
 }
 ```
@@ -94,8 +93,7 @@ The adverts will be loaded with one of four states:
 {
   "action": "upsert",
   "advert": {
-    "status": "offline",
-    "approval": "pending"
+    "status": "offline"
   }
 }
 ```
@@ -106,8 +104,7 @@ The adverts will be loaded with one of four states:
 {
   "action": "upsert",
   "advert": {
-    "status": "archived",
-    "approval": "pending"
+    "status": "archived"
   }
 }
 ```
@@ -130,8 +127,7 @@ The adverts will be loaded with one of three states:
 {
   "action": "upsert",
   "advert": {
-    "status": "online",
-    "approval": "pending"
+    "status": "online"
   }
 }
 ```
@@ -142,8 +138,7 @@ The adverts will be loaded with one of three states:
 {
   "action": "upsert",
   "advert": {
-    "status": "offline",
-    "approval": "pending"
+    "status": "offline"
   }
 }
 ```
