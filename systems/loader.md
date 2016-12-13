@@ -14,6 +14,7 @@
         - **available** to the Search Engine, but unlikely to be found in targeted searches due to missing information
         - **unavailable** to the Property Spy
         - full advert **available** directly by URL
+        - enquiries can be made to the advert
         
     - advert.status:online && advert.approval:deferred
         - advert stored in the Search Engine Database and the Backing Database
@@ -23,6 +24,7 @@
         - **available** to the Search Engine, but unlikely to be found in targeted searches due to missing information
         - **unavailable** to the Property Spy
         - full advert **available** directly by URL
+        - enquiries can be made to the advert
         
     - advert.status:online && advert.approval:approved
         - advert stored in the Search Engine Database and the Backing Database
@@ -32,6 +34,7 @@
         - **available** to the Search Engine
         - **available** to the Property Spy
         - full advert **available** directly by URL
+        - enquiries can be made to the advert
         
     - advert.status:offline
         - advert stored in the Search Engine Database and the Backing Database
@@ -40,6 +43,7 @@
         - **unavailable** to the Search Engine
         - **unavailable** to the Property Spy
         - full advert **available** directly by URL
+        - enquiries can be made to the advert
         
     - advert.status:archived
         - advert stored in the Search Engine Database and the Backing Database
@@ -47,6 +51,7 @@
         - **unavailable** to the Search Engine
         - **unavailable** to Property Spy
         - minimal advert **available** directly by URL
+        - enquiries cannot be made to the advert
         
     - advert.status:deleted
         - advert has been deleted by the advertiser
