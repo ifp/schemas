@@ -17,6 +17,7 @@
             "api_version": "1.0.0",
             "processed_at": "2015-10-09T04:07:40.810Z",
             "processed_at_unix_ts": 1444363660
+            "originating_system": "importer"
           },
           "advert": {
             "agency_id": "testimmo",
@@ -39,6 +40,8 @@
             "format": ["standard"],
             "visibility": "network",
             "pre_attributed": {
+              "types": ["residential", "house"],
+              "features": ["double_glazing"],
               "tags": ["village"]
             },
             "status": "online",
@@ -112,7 +115,7 @@
               "qualifier": "asking_price"
             },
             "room_counts": {
-              "total_rooms": 12,
+              "total_rooms": 7,
               "total_bathrooms": 3,
               "bedrooms": 4,
               "bathrooms": 2,

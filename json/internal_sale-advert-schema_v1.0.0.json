@@ -13,9 +13,9 @@
     "action": {
       "type": "string",
       "enum": [
-        "delete",
         "upsert"
-      ]
+      ],
+      "default": "upsert"
     },
     "id": {
       "type": "string"
@@ -40,12 +40,24 @@
         },
         "processed_at_unix_ts": {
           "type": "integer"
+        },
+        "originating_system": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "importer",
+            "exporter",
+            "checker"
+          ],
+          "default": "importer"
         }
       },
       "required": [
         "api_version",
         "processed_at",
-        "processed_at_unix_ts"
+        "processed_at_unix_ts",
+        "originating_system"
       ],
       "additionalProperties": false
     },
@@ -183,6 +195,64 @@
         "pre_attributed": {
           "type": "object",
           "properties": {
+            "types": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "enum": [
+                  "_unclassified",
+                  "residential",
+                  "business",
+                  "apartment",
+                  "apartment_building",
+                  "bar",
+                  "barn",
+                  "bed_and_breakfast",
+                  "cafe",
+                  "campsite",
+                  "chateau",
+                  "farm",
+                  "gite",
+                  "gite_complex",
+                  "hotel",
+                  "house",
+                  "house_boat",
+                  "lake",
+                  "land",
+                  "mobile_home",
+                  "office",
+                  "restaurant",
+                  "shop",
+                  "vineyard"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "string"
+                ],
+                "enum": [
+                  "balcony",
+                  "central_heating",
+                  "double_glazing",
+                  "en_suite",
+                  "lake",
+                  "outbuildings",
+                  "pond",
+                  "swimming_pool",
+                  "tennis_court",
+                  "terrace"
+                ]
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
             "tags": {
               "type": "array",
               "items": {
@@ -194,7 +264,6 @@
                   "coastal",
                   "cottage",
                   "detached",
-                  "ensuite",
                   "equestrian",
                   "farmhouse",
                   "gite",
@@ -223,6 +292,8 @@
             }
           },
           "required": [
+            "types",
+            "features",
             "tags"
           ],
           "additionalProperties": false
@@ -430,7 +501,7 @@
                         "Normandy",
                         "Nouvelle Aquitaine",
                         "Occitanie",
-                        "Paris Ile-de-France",
+                        "Paris Île-de-France",
                         "Pays de la Loire",
                         "Provence-Alpes-Côte d'Azur"
                       ]
@@ -479,7 +550,7 @@
                         "Lower-Normandy",
                         "Midi-Pyrénées",
                         "Nord-Pas-de-Calais",
-                        "Paris Ile-de-France",
+                        "Paris Île-de-France",
                         "Pays de la Loire",
                         "Picardy",
                         "Poitou-Charentes",
@@ -1415,6 +1486,7 @@
                   "balcony",
                   "central_heating",
                   "double_glazing",
+                  "en_suite",
                   "lake",
                   "outbuildings",
                   "pond",
@@ -1437,7 +1509,6 @@
                   "coastal",
                   "cottage",
                   "detached",
-                  "ensuite",
                   "equestrian",
                   "farmhouse",
                   "gite",
@@ -1493,17 +1564,31 @@
                 "type": "string"
               },
               "version": {
-                "type": "string"
+                "type": [
+                  "null",
+                  "string"
+                ]
               },
               "width": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "height": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "format": {
-                "type": "string",
+                "type": [
+                  "null",
+                  "string"
+                ],
                 "enum": [
+                  null,
+                  "gif",
                   "jpe",
                   "jpeg",
                   "jpg",
@@ -1511,7 +1596,10 @@
                 ]
               },
               "bytes": {
-                "type": "integer"
+                "type": [
+                  "integer",
+                  "null"
+                ]
               },
               "original_url": {
                 "type": [

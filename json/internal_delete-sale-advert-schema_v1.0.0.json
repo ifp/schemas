@@ -1,0 +1,63 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "title": "IFP Delete JSON Advert Schema",
+  "description": "The schema to be used when deleting adverts from IFP",
+  "self": {
+    "vendor": "com.french-property.schemas.json",
+    "name": "delete_sale_property_advert",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "delete"
+      ],
+      "default": "delete"
+    },
+    "id": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "api_version": {
+          "type": "string"
+        },
+        "processed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "processed_at_unix_ts": {
+          "type": "integer"
+        },
+        "originating_system": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "importer",
+            "exporter",
+            "checker"
+          ],
+          "default": "importer"
+        }
+      },
+      "required": [
+        "api_version",
+        "processed_at",
+        "processed_at_unix_ts",
+        "originating_system"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "action",
+    "id",
+    "metadata"
+  ],
+  "additionalProperties": false
+}
