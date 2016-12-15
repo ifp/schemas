@@ -65,6 +65,9 @@
       "type": "object",
       "properties": {
         "agency_id": {
+          "type": "integer"
+        },
+        "agency_tag": {
           "type": "string"
         },
         "agency_external_id": {
