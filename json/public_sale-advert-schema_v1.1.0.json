@@ -23,7 +23,10 @@
           ]
         },
         "agency_email": {
-          "type": "string"
+          "type": [
+            "null",
+            "string"
+          ]
         },
         "agency_website": {
           "type": [
@@ -31,25 +34,25 @@
             "string"
           ]
         },
-        "agency_office_name": {
+        "agency_branch_name": {
           "type": [
             "null",
             "string"
           ]
         },
-        "agency_office_code": {
+        "agency_branch_code": {
           "type": [
             "string",
             "null"
           ]
         },
-        "agency_office_phone": {
+        "agency_branch_phone": {
           "type": [
             "null",
             "string"
           ]
         },
-        "agency_office_email": {
+        "agency_branch_email": {
           "type": [
             "null",
             "string"
@@ -117,10 +120,10 @@
         "agency_email",
         "agency_website",
         "agency_microsite",
-        "agency_office_name",
-        "agency_office_code",
-        "agency_office_phone",
-        "agency_office_email",
+        "agency_branch_name",
+        "agency_branch_code",
+        "agency_branch_phone",
+        "agency_branch_email",
         "agent_name",
         "agent_phone",
         "agent_email",
