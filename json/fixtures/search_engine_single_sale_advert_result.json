@@ -13,6 +13,7 @@
       "agency_website": "http://www.example.com",
       "agency_microsite": "https://www.french-property.com/agents/testimmo/",
       "agency_branch_name": "Test Immobilier Paris",
+      "agency_branch_code": null,
       "agency_branch_phone": "+33-(0)4-44 44 44 44",
       "agency_branch_email": "testimmoparis@example.com",
       "agent_name": "Jean-Michel Jarre",
