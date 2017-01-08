@@ -34,13 +34,13 @@
             "string"
           ]
         },
-        "agency_office_name": {
+        "agency_branch_name": {
           "type": [
             "null",
             "string"
           ]
         },
-        "agency_office_code": {
+        "agency_branch_code": {
           "type": [
             "string",
             "null"
@@ -52,7 +52,13 @@
             "string"
           ]
         },
-        "agency_office_email": {
+        "agency_branch_email": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "agency_branch_website": {
           "type": [
             "null",
             "string"
@@ -71,6 +77,12 @@
           ]
         },
         "agent_email": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "agent_website": {
           "type": [
             "null",
             "string"

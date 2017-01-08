@@ -127,6 +127,12 @@
             "string"
           ]
         },
+        "agency_branch_website": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
         "agent_name": {
           "type": [
             "null",
@@ -146,6 +152,12 @@
           ]
         },
         "agent_email": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "agent_website": {
           "type": [
             "null",
             "string"
