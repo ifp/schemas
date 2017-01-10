@@ -546,7 +546,7 @@
                         "occitanie",
                         "paris-ile-de-france",
                         "pays-de-la-loire",
-                        "provence-alpes-cote-d'azur"
+                        "provence-alpes-cote-d-azur"
                       ]
                     },
                     "old_region_name": {
@@ -606,7 +606,7 @@
                         "pays-de-la-loire",
                         "picardy",
                         "poitou-charentes",
-                        "provence-alpes-cote-d'azur",
+                        "provence-alpes-cote-d-azur",
                         "rhone-alpes",
                         "upper-normandy"
                       ]
@@ -954,8 +954,8 @@
                         "correze",
                         "corse-du-sud",
                         "creuse",
-                        "cote-d'or",
-                        "cotes-d'armor",
+                        "cote-d-or",
+                        "cotes-d-armor",
                         "deux-sevres",
                         "dordogne",
                         "doubs",
@@ -1020,7 +1020,7 @@
                         "tarn",
                         "tarn-et-garonne",
                         "territoire-de-belfort",
-                        "val-d'oise",
+                        "val-d-oise",
                         "val-de-marne",
                         "var",
                         "vaucluse",
