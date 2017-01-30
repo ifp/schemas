@@ -1649,7 +1649,7 @@
               "original_url",
               "original_bytes"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           },
           "minItems": 0,
           "uniqueItems": true
@@ -1738,7 +1738,7 @@
               "original_url",
               "original_bytes"
             ],
-            "additionalProperties": false
+            "additionalProperties": true
           },
           "minItems": 0,
           "uniqueItems": true
