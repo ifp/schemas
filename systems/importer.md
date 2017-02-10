@@ -89,5 +89,5 @@ water_closets => property.room_counts.water_closets
 
 Missing in empty_template => 
 
-lake => property.attributes.features[en_suite]
+en_suite => property.attributes.features[en_suite]
 ```
