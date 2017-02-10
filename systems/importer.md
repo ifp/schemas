@@ -1,5 +1,6 @@
 # Importer Template to JSON Schema field mapping
 
+```
 advert_approval => advert.approval
 advert_format => advert.format
 advert_type => advert.type
@@ -89,3 +90,4 @@ water_closets => property.room_counts.water_closets
 Missing in empty_template => 
 
 lake => property.attributes.features[en_suite]
+```
