@@ -226,6 +226,12 @@
                     "null",
                     "string"
                   ]
+                },
+                "country": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
                 }
               },
               "required": [
@@ -233,7 +239,8 @@
                 "commune_name",
                 "post_code",
                 "department_name",
-                "department_code"
+                "department_code",
+                "country"
               ],
               "additionalProperties": false
             }

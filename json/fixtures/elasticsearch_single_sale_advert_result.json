@@ -105,7 +105,8 @@
                 "post_code": "86430",
                 "department": null,
                 "department_name": null,
-                "department_code": null
+                "department_code": null,
+                "country": "France"
               }
             },
             "price": {

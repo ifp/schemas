@@ -1062,23 +1062,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "location",
-                    "region_name",
-                    "region_tag",
-                    "old_region_name",
-                    "old_region_tag",
-                    "department_name",
-                    "department_full_name",
-                    "department_code",
-                    "department_tag",
-                    "commune_id",
-                    "commune_name",
-                    "commune_tag",
-                    "post_code",
-                    "full_location",
-                    "full_location_reverse"
-                  ],
+                  "required": [],
                   "additionalProperties": false
                 },
                 "legacy_data": {
@@ -1091,10 +1075,7 @@
                       "type": "integer"
                     }
                   },
-                  "required": [
-                    "nearest_p_locale_id",
-                    "department_p_locale_id"
-                  ],
+                  "required": [],
                   "additionalProperties": false
                 }
               },
@@ -1145,6 +1126,12 @@
                     "null",
                     "string"
                   ]
+                },
+                "country": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
                 }
               },
               "required": [
@@ -1153,7 +1140,8 @@
                 "post_code",
                 "department",
                 "department_name",
-                "department_code"
+                "department_code",
+                "country"
               ],
               "additionalProperties": false
             }
