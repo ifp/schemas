@@ -1077,6 +1077,73 @@
                   },
                   "required": [],
                   "additionalProperties": false
+                },
+                "criteria": {
+                  "type": "object",
+                  "properties": {
+                    "country": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "department": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "department_name": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "department_code": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "commune_name": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "post_code": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "lang": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "request_uri": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "country",
+                    "department",
+                    "department_name",
+                    "department_code",
+                    "commune_name",
+                    "post_code",
+                    "lang",
+                    "request_uri"
+                  ],
+                  "additionalProperties": false
+                },
+                "identifier": {
+                  "type": "string"
                 }
               },
               "required": [
@@ -1084,7 +1151,9 @@
                 "country_name",
                 "country_code",
                 "data",
-                "legacy_data"
+                "legacy_data",
+                "criteria",
+                "identifier"
               ],
               "additionalProperties": false
             },
