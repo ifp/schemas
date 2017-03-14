@@ -30,12 +30,21 @@
     "agent_website": "http:\/\/www.example.com\/paris\/jm-jarre",
     "reference": "ABC123456789",
     "type": "sale",
-    "format": ["standard"],
+    "format": [
+      "standard"
+    ],
     "visibility": "network",
     "pre_attributed": {
-      "types": ["residential", "house"],
-      "features": ["double_glazing"],
-      "tags": ["village"]
+      "types": [
+        "residential",
+        "house"
+      ],
+      "features": [
+        "double_glazing"
+      ],
+      "tags": [
+        "village"
+      ]
     },
     "status": "online",
     "approval": "pending",
@@ -87,7 +96,18 @@
         "legacy_data": {
           "nearest_p_locale_id": 4622,
           "department_p_locale_id": 1965
-        }
+        },
+        "criteria": {
+          "country": "France",
+          "department": null,
+          "department_name": null,
+          "department_code": null,
+          "commune_name": "ADRIERS",
+          "post_code": "86430",
+          "lang": "en",
+          "request_uri": "/identify?country=France&post_code=86430&commune_name=ADRIERS&lang=en"
+        },
+        "identifier": "IFP\\Locality\\Search\\Strategy\\PostCodeAndCommuneName[IFP\\Locality\\Search\\Strategy\\Matcher\\Tidied]"
       },
       "user_data": {
         "location": "5 minute walk from village centre",
