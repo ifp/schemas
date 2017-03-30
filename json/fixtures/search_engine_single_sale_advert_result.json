@@ -92,161 +92,161 @@
           "department_code": null,
           "country": "France"
         }
-      }
-    },
-    "price": {
-      "amount": 91300,
-      "currency": "EUR",
-      "comment": "Inc. agency fees",
-      "tenure": "freehold",
-      "qualifier": "asking_price"
-    },
-    "room_counts": {
-      "total_rooms": 7,
-      "total_bathrooms": 3,
-      "bedrooms": 4,
-      "bathrooms": 2,
-      "reception_rooms": 3,
-      "shower_rooms": 1,
-      "water_closets": 2
-    },
-    "floor_area": {
-      "size": 60,
-      "unit": "m²"
-    },
-    "land_area": {
-      "size": 841,
-      "unit": "m²"
-    },
-    "energy_certificates": {
-      "dpe": {
-        "number": 145,
-        "letter": "C",
-        "date": null
       },
-      "ges": {
-        "number": 22,
-        "letter": "D",
-        "date": null
-      }
-    },
-    "attributes": {
-      "types": [
-        "residential",
-        "house"
+      "price": {
+        "amount": 91300,
+        "currency": "EUR",
+        "comment": "Inc. agency fees",
+        "tenure": "freehold",
+        "qualifier": "asking_price"
+      },
+      "room_counts": {
+        "total_rooms": 7,
+        "total_bathrooms": 3,
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "reception_rooms": 3,
+        "shower_rooms": 1,
+        "water_closets": 2
+      },
+      "floor_area": {
+        "size": 60,
+        "unit": "m²"
+      },
+      "land_area": {
+        "size": 841,
+        "unit": "m²"
+      },
+      "energy_certificates": {
+        "dpe": {
+          "number": 145,
+          "letter": "C",
+          "date": null
+        },
+        "ges": {
+          "number": 22,
+          "letter": "D",
+          "date": null
+        }
+      },
+      "attributes": {
+        "types": [
+          "residential",
+          "house"
+        ],
+        "features": [
+          "balcony",
+          "double_glazing"
+        ],
+        "tags": [
+          "detached",
+          "cottage"
+        ]
+      },
+      "images": [
+        {
+          "listing_position": 0,
+          "title": "Image zero",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944266600",
+          "version": "1444363660",
+          "width": 400,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 1,
+          "title": "Image one",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944266320",
+          "version": "1444363660",
+          "width": 400,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 2,
+          "title": "Image two",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944266040",
+          "version": "1444363660",
+          "width": 400,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 3,
+          "title": "Image three",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944265760",
+          "version": "1444363660",
+          "width": 400,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 4,
+          "title": "Image four",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944265460",
+          "version": "1444363660",
+          "width": 400,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 5,
+          "title": "Image five",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944265260",
+          "version": "1444363660",
+          "width": 225,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 6,
+          "title": "Image six",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944265040",
+          "version": "1444363660",
+          "width": 400,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 7,
+          "title": "Image seven",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944264780",
+          "version": "1444363660",
+          "width": 225,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 8,
+          "title": "Image eight",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944264520",
+          "version": "1444363660",
+          "width": 400,
+          "height": 300,
+          "format": "jpg"
+        },
+        {
+          "listing_position": 9,
+          "title": "Image nine",
+          "cloudinary_account": "test-account",
+          "public_id": "testimmo-ABC123456789-70016944264020",
+          "version": "1444363660",
+          "width": 225,
+          "height": 300,
+          "format": "jpg"
+        }
       ],
-      "features": [
-        "balcony",
-        "double_glazing"
-      ],
-      "tags": [
-        "detached",
-        "cottage"
-      ]
-    },
-    "images": [
-      {
-        "listing_position": 0,
-        "title": "Image zero",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944266600",
-        "version": "1444363660",
-        "width": 400,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 1,
-        "title": "Image one",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944266320",
-        "version": "1444363660",
-        "width": 400,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 2,
-        "title": "Image two",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944266040",
-        "version": "1444363660",
-        "width": 400,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 3,
-        "title": "Image three",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944265760",
-        "version": "1444363660",
-        "width": 400,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 4,
-        "title": "Image four",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944265460",
-        "version": "1444363660",
-        "width": 400,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 5,
-        "title": "Image five",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944265260",
-        "version": "1444363660",
-        "width": 225,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 6,
-        "title": "Image six",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944265040",
-        "version": "1444363660",
-        "width": 400,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 7,
-        "title": "Image seven",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944264780",
-        "version": "1444363660",
-        "width": 225,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 8,
-        "title": "Image eight",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944264520",
-        "version": "1444363660",
-        "width": 400,
-        "height": 300,
-        "format": "jpg"
-      },
-      {
-        "listing_position": 9,
-        "title": "Image nine",
-        "cloudinary_account": "test-account",
-        "public_id": "testimmo-ABC123456789-70016944264020",
-        "version": "1444363660",
-        "width": 225,
-        "height": 300,
-        "format": "jpg"
-      }
-    ],
-    "floor_plans": [],
-    "virtual_tours": []
+      "floor_plans": [],
+      "virtual_tours": []
+    }
   }
 }
