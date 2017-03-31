@@ -531,7 +531,8 @@
                   "pond",
                   "swimming_pool",
                   "tennis_court",
-                  "terrace"
+                  "terrace",
+                  "vineyard"
                 ]
               },
               "minItems": 0,
