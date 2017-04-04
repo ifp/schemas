@@ -151,7 +151,7 @@
       "type": "object",
       "properties": {
         "types": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/types-schema-enum.json"
+          "$ref": "file://enums/types-schema-enum.json"
         },
         "features": {
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/features-schema-enum.json"
