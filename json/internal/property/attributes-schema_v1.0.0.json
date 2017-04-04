@@ -2,13 +2,13 @@
   "type": "object",
   "properties": {
     "types":  {
-      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/types-schema-enums.json"
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/type-schema-enum.json"
     },
     "features": {
-      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/features-schema-enums.json"
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/features-schema-enum.json"
     },
     "tags": {
-      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/tags-schema-enums.json"
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/tags-schema-enum.json"
     }
   },
   "required": [
