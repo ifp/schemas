@@ -1,102 +1,14 @@
 {
   "type": "object",
   "properties": {
-    "types": {
-      "type": "array",
-      "items": {
-        "type": [
-          "string"
-        ],
-        "enum": [
-          "_unclassified",
-          "residential",
-          "business",
-          "apartment",
-          "apartment_building",
-          "bar",
-          "barn",
-          "bed_and_breakfast",
-          "cafe",
-          "campsite",
-          "chateau",
-          "farm",
-          "gite",
-          "gite_complex",
-          "hotel",
-          "house",
-          "house_boat",
-          "lake",
-          "land",
-          "mobile_home",
-          "office",
-          "restaurant",
-          "shop",
-          "vineyard"
-        ]
-      },
-      "minItems": 1,
-      "uniqueItems": true
+    "types":  {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/types-schema-enums.json"
     },
     "features": {
-      "type": "array",
-      "items": {
-        "type": [
-          "string"
-        ],
-        "enum": [
-          "balcony",
-          "central_heating",
-          "double_glazing",
-          "en_suite",
-          "lake",
-          "outbuildings",
-          "pond",
-          "swimming_pool",
-          "tennis_court",
-          "terrace",
-          "vineyard"
-        ]
-      },
-      "minItems": 0,
-      "uniqueItems": true
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/features-schema-enums.json"
     },
     "tags": {
-      "type": "array",
-      "items": {
-        "type": [
-          "string"
-        ],
-        "enum": [
-          "chalet",
-          "coastal",
-          "cottage",
-          "detached",
-          "ensuite",
-          "equestrian",
-          "farmhouse",
-          "gite",
-          "gite_potential",
-          "luxury",
-          "maison_de_maitre",
-          "mansion",
-          "mill",
-          "modern",
-          "mountain",
-          "newbuild_offplan",
-          "period_features",
-          "revenue_generating",
-          "rural",
-          "single_storey",
-          "ski_in_ski_out",
-          "ski_resort",
-          "to_renovate",
-          "town",
-          "villa",
-          "village"
-        ]
-      },
-      "minItems": 0,
-      "uniqueItems": true
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/tags-schema-enums.json"
     }
   },
   "required": [

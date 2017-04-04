@@ -593,7 +593,6 @@
               "type": "string"
             }
           },
-          "required": [],
           "additionalProperties": false
         },
         "legacy_data": {
@@ -606,7 +605,6 @@
               "type": "integer"
             }
           },
-          "required": [],
           "additionalProperties": false
         },
         "criteria": {

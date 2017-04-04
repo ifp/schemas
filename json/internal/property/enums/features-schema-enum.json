@@ -1,0 +1,23 @@
+{
+  "type": "array",
+  "items": {
+    "type": [
+      "string"
+    ],
+    "enum": [
+      "balcony",
+      "central_heating",
+      "double_glazing",
+      "en_suite",
+      "lake",
+      "outbuildings",
+      "pond",
+      "swimming_pool",
+      "tennis_court",
+      "terrace",
+      "vineyard"
+    ]
+  },
+  "minItems": 0,
+  "uniqueItems": true
+}
