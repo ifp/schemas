@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "api_version": {
+      "type": "string"
+    },
+    "processed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "processed_at_unix_ts": {
+      "type": "integer"
+    },
+    "originating_system": {
+      "type": [
+        "string"
+      ],
+      "enum": [
+        "importer",
+        "exporter",
+        "checker"
+      ],
+      "default": "importer"
+    }
+  },
+  "required": [
+    "api_version",
+    "processed_at",
+    "processed_at_unix_ts",
+    "originating_system"
+  ],
+  "additionalProperties": false
+}

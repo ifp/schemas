@@ -1,0 +1,365 @@
+{
+  "type": "object",
+  "properties": {
+    "agency_id": {
+      "type": "integer"
+    },
+    "agency_tag": {
+      "type": "string"
+    },
+    "agency_external_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_name": {
+      "type": "string"
+    },
+    "agency_phone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_website": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_microsite": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_branch_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_branch_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_branch_phone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_branch_email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agency_branch_website": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agent_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agent_external_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agent_phone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agent_email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "agent_website": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "reference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "type": {
+      "type": [
+        "string"
+      ],
+      "enum": [
+        "other",
+        "sale"
+      ],
+      "default": "sale"
+    },
+    "format": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string"
+        ],
+        "enum": [
+          "free",
+          "featured_banner",
+          "featured_network",
+          "featured_newsletter",
+          "featured_propertyspy",
+          "featured_search",
+          "featured_website",
+          "standard"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "visibility": {
+      "type": [
+        "string"
+      ],
+      "enum": [
+        "all",
+        "ifp",
+        "network"
+      ],
+      "default": "network"
+    },
+    "pre_attributed": {
+      "type": "object",
+      "properties": {
+        "types": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string"
+            ],
+            "enum": [
+              "_unclassified",
+              "residential",
+              "business",
+              "apartment",
+              "apartment_building",
+              "bar",
+              "barn",
+              "bed_and_breakfast",
+              "cafe",
+              "campsite",
+              "chateau",
+              "farm",
+              "gite",
+              "gite_complex",
+              "hotel",
+              "house",
+              "house_boat",
+              "lake",
+              "land",
+              "mobile_home",
+              "office",
+              "restaurant",
+              "shop",
+              "vineyard"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string"
+            ],
+            "enum": [
+              "balcony",
+              "central_heating",
+              "double_glazing",
+              "en_suite",
+              "lake",
+              "outbuildings",
+              "pond",
+              "swimming_pool",
+              "tennis_court",
+              "terrace",
+              "vineyard"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string"
+            ],
+            "enum": [
+              "chalet",
+              "coastal",
+              "cottage",
+              "detached",
+              "equestrian",
+              "farmhouse",
+              "gite",
+              "gite_potential",
+              "luxury",
+              "maison_de_maitre",
+              "mansion",
+              "mill",
+              "modern",
+              "mountain",
+              "newbuild_offplan",
+              "period_features",
+              "revenue_generating",
+              "rural",
+              "single_storey",
+              "ski_in_ski_out",
+              "ski_resort",
+              "to_renovate",
+              "town",
+              "villa",
+              "village"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "types",
+        "features",
+        "tags"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "type": [
+        "string"
+      ],
+      "enum": [
+        "archived",
+        "deleted",
+        "incomplete",
+        "offline",
+        "online"
+      ],
+      "default": "online"
+    },
+    "approval": {
+      "type": [
+        "string"
+      ],
+      "enum": [
+        "approved",
+        "deferred",
+        "denied",
+        "pending"
+      ],
+      "default": "pending"
+    },
+    "url": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "feed_urls": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string"
+        ]
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "created_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "live_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "significantly_updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "update_conflicts": {
+      "type": [
+        "array",
+        "null",
+        "object"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "agency_id",
+    "agency_tag",
+    "agency_external_id",
+    "agency_name",
+    "agency_phone",
+    "agency_email",
+    "agency_website",
+    "agency_microsite",
+    "agency_branch_name",
+    "agency_branch_code",
+    "agency_branch_phone",
+    "agency_branch_email",
+    "agent_name",
+    "agent_external_id",
+    "agent_phone",
+    "agent_email",
+    "reference",
+    "type",
+    "format",
+    "visibility",
+    "pre_attributed",
+    "status",
+    "approval",
+    "url",
+    "feed_urls",
+    "created_at",
+    "updated_at",
+    "live_at",
+    "significantly_updated_at",
+    "update_conflicts"
+  ],
+  "additionalProperties": false
+}

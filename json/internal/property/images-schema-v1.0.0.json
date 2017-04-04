@@ -1,0 +1,89 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "listing_position": {
+        "type": "integer"
+      },
+      "title": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "cloudinary_account": {
+        "type": "string"
+      },
+      "public_id": {
+        "type": "string"
+      },
+      "version": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "width": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "height": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "format": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "enum": [
+          null,
+          "gif",
+          "jpe",
+          "jpeg",
+          "jpg",
+          "png"
+        ]
+      },
+      "bytes": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "original_url": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "original_bytes": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "listing_position",
+      "title",
+      "cloudinary_account",
+      "public_id",
+      "version",
+      "width",
+      "height",
+      "format",
+      "bytes",
+      "original_url",
+      "original_bytes"
+    ],
+    "additionalProperties": true
+  },
+  "minItems": 0,
+  "uniqueItems": true
+}

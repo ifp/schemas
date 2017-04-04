@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "properties": {
+    "dpe": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "letter": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "enum": [
+            null,
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        },
+        "date": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "number",
+        "letter",
+        "date"
+      ],
+      "additionalProperties": false
+    },
+    "ges": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "letter": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "enum": [
+            null,
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "number",
+        "letter",
+        "date"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "dpe",
+    "ges"
+  ],
+  "additionalProperties": false
+}

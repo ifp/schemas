@@ -192,63 +192,7 @@
           "uniqueItems": true
         },
         "geo": {
-          "type": "object",
-          "properties": {
-            "user_data": {
-              "type": "object",
-              "properties": {
-                "location": {
-                  "type": [
-                    "null",
-                    "string"
-                  ]
-                },
-                "commune_name": {
-                  "type": [
-                    "null",
-                    "string"
-                  ]
-                },
-                "post_code": {
-                  "type": [
-                    "null",
-                    "string"
-                  ]
-                },
-                "department_name": {
-                  "type": [
-                    "null",
-                    "string"
-                  ]
-                },
-                "department_code": {
-                  "type": [
-                    "null",
-                    "string"
-                  ]
-                },
-                "country": {
-                  "type": [
-                    "null",
-                    "string"
-                  ]
-                }
-              },
-              "required": [
-                "location",
-                "commune_name",
-                "post_code",
-                "department_name",
-                "department_code",
-                "country"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "required": [
-            "user_data"
-          ],
-          "additionalProperties": false
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/geo-public-schema_v1.0.0.json"
         },
         "price": {
           "type": "object",
@@ -575,26 +519,9 @@
         "floor_plans": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              },
-              "original_url": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              }
-            },
-            "required": [
-              "title",
-              "original_url"
-            ],
-            "additionalProperties": false
+            "type": [
+              "string"
+            ]
           },
           "minItems": 0,
           "uniqueItems": true
@@ -602,26 +529,9 @@
         "virtual_tours": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              },
-              "original_url": {
-                "type": [
-                  "null",
-                  "string"
-                ]
-              }
-            },
-            "required": [
-              "title",
-              "original_url"
-            ],
-            "additionalProperties": false
+            "type": [
+              "string"
+            ]
           },
           "minItems": 0,
           "uniqueItems": true

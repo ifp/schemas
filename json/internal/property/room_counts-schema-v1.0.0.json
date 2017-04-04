@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "total_rooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "total_bathrooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "bathrooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "bedrooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "reception_rooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "shower_rooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "water_closets": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "total_rooms",
+    "total_bathrooms",
+    "bathrooms",
+    "bedrooms",
+    "reception_rooms",
+    "shower_rooms",
+    "water_closets"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "EUR"
+      ]
+    },
+    "user_amount": {
+      "type": "number"
+    },
+    "user_currency": {
+      "type": "string",
+      "enum": [
+        "EUR"
+      ]
+    },
+    "comment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tenure": {
+      "type": "string",
+      "enum": [
+        "fractional",
+        "freehold",
+        "leasehold",
+        "life_annuity"
+      ],
+      "default": "freehold"
+    },
+    "qualifier": {
+      "type": "string",
+      "enum": [
+        "asking_price",
+        "auction_guide_price",
+        "offers_in_excess_of",
+        "offers_in_region_of",
+        "price_from",
+        "price_on_application"
+      ],
+      "default": "asking_price"
+    }
+  },
+  "required": [
+    "amount",
+    "currency",
+    "user_amount",
+    "user_currency",
+    "comment",
+    "tenure",
+    "qualifier"
+  ],
+  "additionalProperties": false
+}

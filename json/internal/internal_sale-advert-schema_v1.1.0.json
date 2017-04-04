@@ -1,0 +1,130 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "title": "IFP Internal JSON Advert Schema",
+  "description": "The full internal JSON schema of property adverts within the IFP systems. Currently supports sale properties only. Do not use this schema if sending us data. Instead, please use https://github.com/ifp/schemas/blob/master/json/public_advert-schema_v1.0.0.json",
+  "self": {
+    "vendor": "com.french-property.schemas.json",
+    "name": "internal_sale_property_advert",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "upsert"
+      ],
+      "default": "upsert"
+    },
+    "id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metadata": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/metadata-schema_v1.0.0.json"
+    },
+    "advert": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/advert-schema_v1.0.0.json"
+    },
+    "property": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/status-schema_v1.0.0.json"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "title_fr": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "description_en": {
+          "type": "string"
+        },
+        "description_fr": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "highlights": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/highlights-schema_v1.0.0.json"
+        },
+        "geo": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo-locality-schema_v1.0.0.json"
+        },
+        "price": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/price-schema_v1.0.0.json"
+        },
+        "room_counts": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/room_counts-schema_v1.0.0.json"
+        },
+        "floor_area": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/floor_area-schema_v1.0.0.json"
+        },
+        "land_area": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/land_area-schema_v1.0.0.json"
+        },
+        "energy_certificates": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/energy_certificates-schema_v1.0.0.json"
+        },
+        "attributes": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/attributes-schema_v1.0.0.json"
+        },
+        "images": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/images-schema_v1.0.0.json"
+        },
+        "floor_plans": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/floor_plans-schema_v1.1.0.json"
+        },
+        "virtual_tours": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/virtual_tours-schema_v1.0.0.json"
+        }
+      },
+      "required": [
+        "status",
+        "title_en",
+        "title_fr",
+        "description_en",
+        "description_fr",
+        "highlights",
+        "geo",
+        "price",
+        "room_counts",
+        "floor_area",
+        "land_area",
+        "energy_certificates",
+        "attributes",
+        "images",
+        "floor_plans",
+        "virtual_tours"
+      ],
+      "additionalProperties": false
+    },
+    "original_property": {
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "action",
+    "id",
+    "updated_at",
+    "created_at",
+    "metadata",
+    "advert",
+    "property",
+    "original_property"
+  ],
+  "additionalProperties": false
+}

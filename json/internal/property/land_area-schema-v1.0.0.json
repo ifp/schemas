@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "size": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "m²",
+        "ac",
+        "ha"
+      ],
+      "default": "m²"
+    },
+    "user_size": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "user_unit": {
+      "type": "string",
+      "enum": [
+        "m²",
+        "ac",
+        "ha"
+      ],
+      "default": "m²"
+    }
+  },
+  "required": [
+    "size",
+    "unit",
+    "user_size",
+    "user_unit"
+  ],
+  "additionalProperties": false
+}
