@@ -1,0 +1,146 @@
+{
+  "type": "object",
+  "properties": {
+    "distances": {
+      "type": "object",
+      "properties": {
+        "airport": {
+          "type": "number"
+        },
+        "ferry_port": {
+          "type": "number"
+        },
+        "tgv_station": {
+          "type": "number"
+        },
+        "autoroute": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "airport",
+        "ferry_ports",
+        "tgv_station",
+        "autoroute"
+      ],
+      "additionalProperties": false
+    },
+    "places": {
+      "type": "object",
+      "properties": {
+        "airports": {
+          "type": "object",
+          "properties": {
+            "type": [
+              "string"
+            ],
+            "enum": [
+              "balcony",
+              "central_heating",
+              "double_glazing",
+              "en_suite",
+              "lake",
+              "outbuildings",
+              "pond",
+              "swimming_pool",
+              "tennis_court",
+              "terrace",
+              "vineyard"
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "ferry_ports": {
+          "type": "number"
+        },
+        "tgv_stations": {
+          "type": "number"
+        },
+        "autoroutes": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "airport",
+        "ferry_ports",
+        "tgv_station",
+        "autoroute"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "distances": {
+    "airport": 123,
+    "ferry_port": 123,
+    "tgv_station": 123,
+    "autoroute": 123
+  },
+  "places": {
+    "airports": [
+      {
+        "name": "Toulouse Airport",
+        "code": "TLS",
+        "location": {
+          "lat": 45.344,
+          "lon": 0.611
+        },
+        "distance_km": 127,
+        "drive_time_minutes": 120
+      },
+      {
+        "name": "Bordeaux Airport",
+        "code": "BOD",
+        "location": {
+          "lat": 41.345,
+          "lon": 0.456
+        },
+        "distance_km": 145,
+        "drive_time_minutes": 135
+      }
+    ],
+    "ferry_ports": [
+      {
+        "name": "Caen",
+        "location": {
+          "lat": 45.344,
+          "lon": 0.611
+        },
+        "distance_km": 127,
+        "drive_time_minutes": 120
+      },
+      {
+        "name": "Calais",
+        "location": {
+          "lat": 41.345,
+          "lon": 0.456
+        },
+        "distance_km": 145,
+        "drive_time_minutes": 135
+      }
+    ],
+    "tgv_stations": [
+      {
+        "name": "Caen",
+        "location": {
+          "lat": 45.344,
+          "lon": 0.611
+        },
+        "distance_km": 127,
+        "drive_time_minutes": 120
+      },
+      {
+        "name": "Calais",
+        "location": {
+          "lat": 41.345,
+          "lon": 0.456
+        },
+        "distance_km": 145,
+        "drive_time_minutes": 135
+      }
+    ],
+    "autoroutes": [
+    ]
+  }
+}

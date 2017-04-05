@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "commune_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "post_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "department": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "department_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "department_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "country": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  },
+  "required": [
+    "location",
+    "commune_name",
+    "post_code",
+    "department",
+    "department_name",
+    "department_code",
+    "country"
+  ],
+  "additionalProperties": false
+}

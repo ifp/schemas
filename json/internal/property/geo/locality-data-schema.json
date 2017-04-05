@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lon": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "lat",
+        "lon"
+      ],
+      "additionalProperties": false
+    },
+    "region_name": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/region_name-schema.json"
+    },
+    "region_tag": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/region_tag-schema.json"
+    },
+    "old_region_name": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/old_region_name-schema.json"
+    },
+    "old_region_tag": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/old_region_tag-schema.json"
+    },
+    "department_name": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/department_name-schema.json"
+    },
+    "department_full_name": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/department_full_name-schema.json"
+    },
+    "department_code": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/department_code-schema.json"
+    },
+    "department_tag": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/department_tag-schema.json"
+    },
+    "commune_id": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "commune_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "commune_tag": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "post_code": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "minLength": 5,
+      "maxLength": 5
+    },
+    "full_location": {
+      "type": "string"
+    },
+    "full_location_reverse": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

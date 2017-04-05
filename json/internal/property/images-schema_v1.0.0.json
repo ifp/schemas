@@ -84,6 +84,6 @@
     ],
     "additionalProperties": true
   },
-  "minItems": 0,
+  "minItems": 1,
   "uniqueItems": true
 }

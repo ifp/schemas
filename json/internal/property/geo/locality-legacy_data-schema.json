@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "nearest_p_locale_id": {
+      "type": "integer"
+    },
+    "department_p_locale_id": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false
+}

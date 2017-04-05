@@ -1,0 +1,22 @@
+{
+  "type": [
+    "null",
+    "string"
+  ],
+  "enum": [
+    null,
+    "Auvergne-Rhône-Alpes",
+    "Brittany",
+    "Burgundy-Franche-Comté",
+    "Centre-Val de Loire",
+    "Corsica",
+    "Grand Est",
+    "Hauts-de-France",
+    "Normandy",
+    "Nouvelle Aquitaine",
+    "Occitanie",
+    "Paris Île-de-France",
+    "Pays de la Loire",
+    "Provence-Alpes-Côte d'Azur"
+  ]
+}
