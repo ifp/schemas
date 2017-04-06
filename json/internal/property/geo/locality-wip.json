@@ -1,0 +1,147 @@
+{
+  "airports": {
+    "nearest_drive_distance_km": 110,
+    "nearest_drive_time_minutes": 90,
+    "nearest_list": [
+      {
+        "name": "Toulouse Airport",
+        "code": "TLS",
+        "location": {
+          "lat": 43.629435,
+          "lon": 1.367511
+        },
+        "drive_distance_km": 110,
+        "drive_time_minutes": 90
+      },
+      {
+        "name": "Bordeaux Airport",
+        "code": "BOD",
+        "location": {
+          "lat": 44.828770,
+          "lon": 0.711240
+        },
+        "drive_distance_km": 170,
+        "drive_time_minutes": 120
+      }
+    ]
+  },
+  "uk_ferry_ports": {
+    "nearest_drive_distance_km": 700,
+    "nearest_drive_time_minutes": 400,
+    "nearest_list": [
+      {
+        "name": "Caen",
+        "location": {
+          "lat": 45.344,
+          "lon": 0.611
+        },
+        "drive_distance_km": 700,
+        "drive_time_minutes": 400
+      },
+      {
+        "name": "Calais",
+        "location": {
+          "lat": 50.966363,
+          "lon": 1.862334
+        },
+        "drive_distance_km": 1050,
+        "drive_time_minutes": 630
+      }
+    ]
+  },
+  "eurotunnel": {
+    "nearest_drive_distance_km": 1050,
+    "nearest_drive_time_minutes": 630,
+    "nearest_list": [
+      {
+        "name": "Eurotunnel Calais",
+        "location": {
+          "lat": 50.924944,
+          "lon": 1.811140
+        },
+        "drive_distance_km": 1050,
+        "drive_time_minutes": 630
+      }
+    ]
+  },
+  "train_stations": {
+    "nearest_drive_distance_km": 15,
+    "nearest_drive_time_minutes": 10,
+    "nearest_list": [
+      {
+        "name": "Ranchot",
+        "code": "00613",
+        "location": {
+          "lat": 47.1525633,
+          "lon": 5.7246607
+        },
+        "drive_distance_km": 15,
+        "drive_time_minutes": 10
+      },
+      {
+        "name": "Saint-Vit",
+        "code": "00614",
+        "location": {
+          "lat": 47.183507,
+          "lon": 5.809057
+        },
+        "drive_distance_km": 20,
+        "drive_time_minutes": 15
+      }
+    ]
+  },
+  "tgv_stations": {
+    "nearest_drive_distance_km": 35,
+    "nearest_drive_time_minutes": 30,
+    "nearest_list": [
+      {
+        "name": "Dole",
+        "code": "00663",
+        "location": {
+          "lat": 47.096084,
+          "lon": 5.488105
+        },
+        "drive_distance_km": 35,
+        "drive_time_minutes": 30
+      },
+      {
+        "name": "Besançon Franche-Comté TGV",
+        "code": "02318",
+        "location": {
+          "lat": 47.307361058531725,
+          "lon": 5.953195095062256
+        },
+        "drive_distance_km": 35,
+        "drive_time_minutes": 45
+      }
+    ]
+  },
+  "autoroutes": {
+    "nearest_drive_distance_km": 60,
+    "nearest_drive_time_minutes": 45,
+    "nearest_list": [
+      {
+        "name": "Autoroute du Nord",
+        "code": "A1",
+        "junction": "1",
+        "location": {
+          "lat": 45.344,
+          "lon": 0.611
+        },
+        "drive_distance_km": 60,
+        "drive_time_minutes": 45
+      },
+      {
+        "name": "La Francilienne",
+        "code": "A104",
+        "junction": "6b",
+        "location": {
+          "lat": 45.344,
+          "lon": 0.611
+        },
+        "drive_distance_km": 70,
+        "drive_time_minutes": 50
+      }
+    ]
+  }
+}
