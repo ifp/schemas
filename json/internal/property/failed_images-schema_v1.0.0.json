@@ -21,12 +21,6 @@
           "string"
         ]
       },
-      "original_bytes": {
-        "type": [
-          "integer",
-          "null"
-        ]
-      },
       "response_code": {
         "type": [
           "integer",
@@ -51,7 +45,6 @@
       "title",
       "cloudinary_account",
       "original_url",
-      "original_bytes",
       "response_code",
       "response_message",
       "response_duration"
