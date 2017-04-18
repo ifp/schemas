@@ -26,16 +26,14 @@
         },
         "identifier": {
           "type": "string"
+        },
+        "error": {
+          "type": "string"
         }
       },
       "required": [
         "api_version",
-        "country_name",
-        "country_code",
-        "data",
-        "legacy_data",
-        "criteria",
-        "identifier"
+        "criteria"
       ],
       "additionalProperties": false
     },
