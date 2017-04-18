@@ -40,7 +40,8 @@
           "enum": [
             "importer",
             "exporter",
-            "checker"
+            "checker",
+            "config"
           ],
           "default": "importer"
         }
