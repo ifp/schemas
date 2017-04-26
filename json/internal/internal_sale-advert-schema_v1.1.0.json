@@ -41,7 +41,9 @@
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/status-schema_v1.0.0.json"
         },
         "title_en": {
-          "type": "string"
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 3
         },
         "title_fr": {
           "type": [
@@ -50,7 +52,9 @@
           ]
         },
         "description_en": {
-          "type": "string"
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 3
         },
         "description_fr": {
           "type": [
