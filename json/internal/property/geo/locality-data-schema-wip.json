@@ -73,8 +73,8 @@
     "full_location_reverse": {
       "type": "string"
     },
-    "proximities": {
-      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/locality-data-nearest-schema.json"
+    "distances_from": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/locality-data-distances_from-schema.json"
     }
   },
   "additionalProperties": false

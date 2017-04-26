@@ -69,8 +69,6 @@
     "department_code",
     "commune_name",
     "post_code",
-    "lat",
-    "lon",
     "lang",
     "request_uri"
   ],
