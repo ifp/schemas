@@ -42,8 +42,7 @@
         },
         "title_en": {
           "type": "string",
-          "minLength": 3,
-          "maxLength": 3
+          "minLength": 3
         },
         "title_fr": {
           "type": [
@@ -53,8 +52,7 @@
         },
         "description_en": {
           "type": "string",
-          "minLength": 3,
-          "maxLength": 3
+          "minLength": 3
         },
         "description_fr": {
           "type": [
