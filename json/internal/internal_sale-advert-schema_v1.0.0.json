@@ -66,7 +66,7 @@
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/highlights-schema_v1.0.0.json"
         },
         "geo": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo-locality-schema_v1.0.0.json"
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo-schema_v1.0.0.json"
         },
         "price": {
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/price-schema_v1.0.0.json"

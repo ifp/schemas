@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "locality": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/locality-schema.json"
+    },
+    "user_data": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/user_data-schema.json"
+    }
+  },
+  "required": [
+    "locality",
+    "user_data"
+  ],
+  "additionalProperties": false
+}

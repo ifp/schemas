@@ -144,10 +144,34 @@
       }
     ]
   }
-  "beaches": {
-
+  "coast": {
+    "nearest_drive_distance_km": 110,
+    "nearest_drive_time_minutes": 90
   },
   "ski_resorts": {
-
+    "nearest_drive_distance_km": 110,
+    "nearest_drive_time_minutes": 90,
+    "nearest_list": [
+      {
+        "name": "Toulouse Airport",
+        "code": "TLS",
+        "location": {
+          "lat": 43.629435,
+          "lon": 1.367511
+        },
+        "drive_distance_km": 110,
+        "drive_time_minutes": 90
+      },
+      {
+        "name": "Bordeaux Airport",
+        "code": "BOD",
+        "location": {
+          "lat": 44.828770,
+          "lon": 0.711240
+        },
+        "drive_distance_km": 170,
+        "drive_time_minutes": 120
+      }
+    ]
   }
 }
