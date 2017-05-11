@@ -119,6 +119,9 @@
     },
     "original_property": {
       "additionalProperties": true
+    },
+    "translations": {
+      "additionalProperties": true
     }
   },
   "required": [
@@ -129,7 +132,8 @@
     "metadata",
     "advert",
     "property",
-    "original_property"
+    "original_property",
+    "translations"
   ],
   "additionalProperties": false
 }
