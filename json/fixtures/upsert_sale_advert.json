@@ -1,6 +1,6 @@
 {
   "action": "upsert",
-  "id": "testimmo-ABC123456789",
+  "id": "123456-ABC123456789",
   "updated_at": "2015-10-09T04:07:41.190Z",
   "created_at": "2015-10-09T04:07:41.190Z",
   "metadata": {
@@ -10,7 +10,7 @@
     "originating_system": "importer"
   },
   "advert": {
-    "agency_id": 123,
+    "agency_id": 123456,
     "agency_tag": "testimmo",
     "agency_external_id": null,
     "agency_name": "Test Immobilier",
