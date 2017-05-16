@@ -120,6 +120,9 @@
     "original_property": {
       "additionalProperties": true
     },
+    "pre_checker_original_property": {
+      "additionalProperties": true
+    },
     "translations": {
       "additionalProperties": true
     }

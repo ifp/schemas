@@ -1,11 +1,11 @@
 {
   "data": {
-    "id": "testimmo-ABC123456789",
+    "id": "123456-ABC123456789",
     "metadata": {
       "api_version": "1.0.0"
     },
     "advert": {
-      "agency_id": 123,
+      "agency_id": 123456,
       "agency_tag": "testimmo",
       "agency_name": "Test Immobilier",
       "agency_phone": "+33-(0)1-23-45-67-89",

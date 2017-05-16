@@ -6,7 +6,7 @@
       {
         "_index": "test_adverts",
         "_type": "property",
-        "_id": "testimmo-ABC123456789",
+        "_id": "123456-ABC123456789",
         "_score": 1.0,
         "_source": {
           "action": "upsert",
@@ -20,7 +20,7 @@
             "originating_system": "importer"
           },
           "advert": {
-            "agency_id": 123,
+            "agency_id": 123456,
             "agency_tag": "testimmo",
             "agency_external_id": null,
             "agency_name": "Test Immobilier",
@@ -322,6 +322,11 @@
           },
           "original_property": {
             "title_en": "Lovely, fully renovated detached stone property, village centre, attached garden"
+          },
+          "pre_checker_original_property": {
+            "title_en": "Lovely, fully renovated detached stone property, village centre, attached garden"
+          },
+          "translations": {
           }
         }
       }
