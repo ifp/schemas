@@ -124,6 +124,7 @@
         ],
         "enum": [
           "free",
+          "featured_all",
           "featured_banner",
           "featured_network",
           "featured_newsletter",
