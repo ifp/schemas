@@ -19,6 +19,20 @@
         "string"
       ]
     },
+    "lat": {
+      "type": [
+        "null",
+        "string",
+        "number"
+      ]
+    },
+    "lon": {
+      "type": [
+        "null",
+        "string",
+        "number"
+      ]
+    },
     "department": {
       "type": [
         "null",
@@ -48,6 +62,8 @@
     "location",
     "commune_name",
     "post_code",
+    "lat",
+    "lon",
     "department",
     "department_name",
     "department_code",
