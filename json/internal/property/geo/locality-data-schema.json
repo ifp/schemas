@@ -11,10 +11,6 @@
           "type": "number"
         }
       },
-      "required": [
-        "lat",
-        "lon"
-      ],
       "additionalProperties": false
     },
     "region_name": {
