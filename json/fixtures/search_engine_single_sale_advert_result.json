@@ -87,6 +87,8 @@
           "location": "5 minute walk from village centre",
           "commune_name": "ADRIERS",
           "post_code": "86430",
+          "lat": null,
+          "lon": null,
           "department": null,
           "department_name": null,
           "department_code": null,
