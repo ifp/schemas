@@ -10,7 +10,7 @@
         "_score": 1.0,
         "_source": {
           "action": "upsert",
-          "id": "testimmo-ABC123456789",
+          "id": "123456-ABC123456789",
           "updated_at": "2015-10-09T04:07:41.190Z",
           "created_at": "2015-10-09T04:07:41.190Z",
           "metadata": {
