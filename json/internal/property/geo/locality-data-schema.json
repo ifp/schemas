@@ -5,10 +5,16 @@
       "type": "object",
       "properties": {
         "lat": {
-          "type": "number"
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "lon": {
-          "type": "number"
+          "type": [
+            "number",
+            "null"
+          ]
         }
       },
       "additionalProperties": false
