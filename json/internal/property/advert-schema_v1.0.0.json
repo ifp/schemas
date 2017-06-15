@@ -189,7 +189,8 @@
         "approved",
         "deferred",
         "denied",
-        "pending"
+        "pending",
+        "to_review"
       ],
       "default": "pending"
     },
