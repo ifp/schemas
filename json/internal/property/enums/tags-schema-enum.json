@@ -5,18 +5,11 @@
       "string"
     ],
     "enum": [
-      "chalet",
       "coastal",
-      "cottage",
       "detached",
       "equestrian",
-      "farmhouse",
-      "gite",
       "gite_potential",
       "luxury",
-      "maison_de_maitre",
-      "mansion",
-      "mill",
       "modern",
       "mountain",
       "newbuild_offplan",
@@ -28,7 +21,6 @@
       "ski_resort",
       "to_renovate",
       "town",
-      "villa",
       "village"
     ]
   },
