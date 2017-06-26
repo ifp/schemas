@@ -175,8 +175,9 @@
       "enum": [
         "archived",
         "deleted",
-        "incomplete",
-        "offline",
+        "invalid_archived",
+        "invalid_deleted",
+        "invalid_online",
         "online"
       ],
       "default": "online"
