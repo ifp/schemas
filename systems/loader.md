@@ -36,21 +36,12 @@
         - full advert **available** directly by URL
         - enquiries can be made to the advert
         
-    - advert.status:offline
-        - advert stored in the Search Engine Database and the Backing Database
-        - part of advertisers **current** portfolio
-        - advert has **not** been selected to advertise
-        - **unavailable** to the Search Engine
-        - **unavailable** to the Property Spy
-        - full advert **available** directly by URL
-        - enquiries can be made to the advert
-        
     - advert.status:archived
         - advert stored in the Search Engine Database and the Backing Database
         - part of advertisers **old** portfolio
         - **unavailable** to the Search Engine
         - **unavailable** to Property Spy
-        - minimal advert **available** directly by URL
+        - full advert **available** directly by URL
         - enquiries cannot be made to the advert
         
     - advert.status:deleted

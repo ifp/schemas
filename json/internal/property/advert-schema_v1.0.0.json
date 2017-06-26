@@ -173,14 +173,16 @@
         "string"
       ],
       "enum": [
+        "active",
         "archived",
-        "deleted",
-        "invalid_archived",
-        "invalid_deleted",
-        "invalid_online",
-        "online"
+        "deleted"
       ],
-      "default": "online"
+      "default": "active"
+    },
+    "valid": {
+      "type": [
+        "boolean"
+      ]
     },
     "approval": {
       "type": [
