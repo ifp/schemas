@@ -46,7 +46,8 @@
         "village"
       ]
     },
-    "status": "online",
+    "status": "active",
+    "valid": false,
     "approval": "pending",
     "url": "http://www.example.com/testimmo/ABC123456789",
     "feed_urls": [
