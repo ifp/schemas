@@ -6,7 +6,7 @@
 
 - Adverts within the system may have the following status and approval configurations:
 
-    - advert.status:online && advert.approval:pending
+    - advert.status:active && advert.approval:pending
         - advert stored in the Search Engine Database and the Backing Database
         - part of advertisers **current** portfolio
         - advert has been selected to advertise
@@ -16,7 +16,7 @@
         - full advert **available** directly by URL
         - enquiries can be made to the advert
         
-    - advert.status:online && advert.approval:deferred
+    - advert.status:active && advert.approval:deferred
         - advert stored in the Search Engine Database and the Backing Database
         - part of advertisers **current** portfolio
         - advert has been selected to advertise
@@ -26,7 +26,7 @@
         - full advert **available** directly by URL
         - enquiries can be made to the advert
         
-    - advert.status:online && advert.approval:approved
+    - advert.status:active && advert.approval:approved
         - advert stored in the Search Engine Database and the Backing Database
         - part of advertisers **current** portfolio
         - advert has been selected to advertise
