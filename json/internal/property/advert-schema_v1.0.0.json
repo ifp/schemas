@@ -184,6 +184,12 @@
         "boolean"
       ]
     },
+    "invalid_advert_message": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "approval": {
       "type": [
         "string"
