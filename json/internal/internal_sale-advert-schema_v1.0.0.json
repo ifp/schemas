@@ -29,10 +29,10 @@
       "format": "date-time"
     },
     "metadata": {
-      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/metadata-schema_v1.0.0.json"
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/metadata-schema_v1.0.0.json"
     },
     "advert": {
-      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/advert-schema_v1.0.0.json"
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/advert-schema_v1.0.0.json"
     },
     "property": {
       "type": "object",
