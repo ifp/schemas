@@ -284,5 +284,5 @@
     "significantly_updated_at",
     "update_conflicts"
   ],
-  "additionalProperties": false
+  "additionalProperties": true
 }
