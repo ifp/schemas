@@ -5,16 +5,14 @@
       "type": "string"
     },
     "country_name": {
-      "type": [
-        "string"
-      ],
-      "enum": [
-        "FR"
-      ],
-      "default": "FR"
+      "type": "string"
     },
     "country_code": {
       "type": "string",
+      "enum": [
+        "FR"
+      ],
+      "default": "FR",
       "minLength": 2,
       "maxLength": 2
     },
