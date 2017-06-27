@@ -5,7 +5,13 @@
       "type": "string"
     },
     "country_name": {
-      "type": "string"
+      "type": [
+        "string"
+      ],
+      "enum": [
+        "FR"
+      ],
+      "default": "FR"
     },
     "country_code": {
       "type": "string",
