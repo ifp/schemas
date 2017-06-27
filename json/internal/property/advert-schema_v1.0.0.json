@@ -185,12 +185,10 @@
       ]
     },
     "invalid_advert_messages": {
-      "type": "array",
-      "items": {
-        "type": [
-          "string"
-        ]
-      }
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "approval": {
       "type": [
