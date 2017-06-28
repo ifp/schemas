@@ -150,13 +150,12 @@ The adverts will be loaded with one of two states:
 }
 ```
 
-#### B. Adverts to Delete that have been Denied
+#### B. Adverts to load as 'Denied'
 
 ```json
 {
-  "action": "delete",
+  "action": "upsert",
   "advert": {
-    "status": "deleted",
     "approval": "denied"
   }
 }
