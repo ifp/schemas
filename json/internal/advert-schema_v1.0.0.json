@@ -196,7 +196,7 @@
       ],
       "enum": [
         "approved",
-        "deferred",
+        "conflict",
         "denied",
         "pending",
         "to_review"
