@@ -165,7 +165,7 @@ Note: Adverts will never come through from the Checker with the approval of 'pen
 
 ## Approval Funnel Trap
 
-All new adverts come onto the system as "approval": "pending", but then later on, some may be upgraded to "approval": "approved" in the Checker. If this happens and the original system that loaded the advert then upserts the advert again, it will be with "approval": "pending". As the advert has been set to "approval": "approved", the "approval" status will not change back to "pending". Thus, the change of "approval" can be seen a one-way action during the lifetime of the advert.
+All new adverts come onto the system as "approval": "pending", but then later on, some may be upgraded to "approval": "approved|conflict|denied|to_review" in the Checker. If this happens and the original system that loaded the advert then upserts the advert again, it will be with "approval": "pending". As the advert has been set to "approval": "approved|conflict|denied|to_review", the "approval" status will not change back to "pending". Thus, the change of "approval" can only be seen as a one-way change from pending.
 
 ## Denied Adverts
 
