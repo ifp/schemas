@@ -1,0 +1,10 @@
+{
+  "action":"archive",
+  "id":"2345",
+  "metadata":{
+    "api_version":"1.0.0",
+    "processed_at":"2015-06-19T15:56:14.968Z",
+    "processed_at_unix_ts":1445904884,
+    "originating_system": "importer"
+  }
+}
