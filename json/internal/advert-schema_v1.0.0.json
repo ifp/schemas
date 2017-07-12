@@ -139,9 +139,11 @@
     },
     "visibility": {
       "type": [
+        "null",
         "string"
       ],
       "enum": [
+        null,
         "all",
         "french-property",
         "network"
