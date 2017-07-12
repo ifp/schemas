@@ -1,7 +1,7 @@
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "title": "IFP Delete JSON Advert Schema",
-  "description": "The schema to be used when deleting adverts from IFP",
+  "description": "The schema to be used when deleting or purging adverts from IFP",
   "self": {
     "vendor": "com.french-property.schemas.json",
     "name": "delete_sale_property_advert",
@@ -13,7 +13,8 @@
     "action": {
       "type": "string",
       "enum": [
-        "delete"
+        "delete",
+        "purge"
       ],
       "default": "delete"
     },
