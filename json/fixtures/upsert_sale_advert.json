@@ -36,8 +36,8 @@
     "visibility": "network",
     "pre_attributed": {
       "types": [
-        "residential",
-        "house"
+        "house",
+        "residential"
       ],
       "features": [
         "double_glazing"
@@ -167,8 +167,8 @@
     },
     "attributes": {
       "types": [
-        "residential",
-        "house"
+        "house",
+        "residential"
       ],
       "features": [
         "balcony",

@@ -135,8 +135,8 @@
       },
       "attributes": {
         "types": [
-          "residential",
-          "house"
+          "house",
+          "residential"
         ],
         "features": [
           "balcony",
