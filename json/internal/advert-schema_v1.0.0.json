@@ -175,6 +175,7 @@
         "string"
       ],
       "enum": [
+        "online",
         "active",
         "archived",
         "deleted"
