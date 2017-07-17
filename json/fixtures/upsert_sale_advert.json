@@ -33,7 +33,7 @@
     "format": [
       "standard"
     ],
-    "visibility": "network",
+    "visibility": ["network"],
     "pre_attributed": {
       "types": [
         "house",
