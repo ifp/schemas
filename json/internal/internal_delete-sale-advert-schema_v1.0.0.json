@@ -13,6 +13,7 @@
     "action": {
       "type": "string",
       "enum": [
+        "archive",
         "delete",
         "purge"
       ],
