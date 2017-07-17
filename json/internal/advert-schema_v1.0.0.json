@@ -138,17 +138,19 @@
       "uniqueItems": true
     },
     "visibility": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "enum": [
-        null,
-        "all",
-        "french-property",
-        "network"
-      ],
-      "default": "network"
+      "type": "array",
+      "items": {
+        "type": [
+          "string"
+        ],
+        "enum": [
+          "all",
+          "french-property",
+          "network"
+        ]
+      },
+      "minItems": 0,
+      "uniqueItems": true
     },
     "pre_attributed": {
       "type": "object",
