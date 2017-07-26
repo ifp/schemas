@@ -47,7 +47,7 @@
       ]
     },
     "status": "active",
-    "valid": false,
+    "valid": true,
     "invalid_advert_messages": null,
     "approval": "pending",
     "url": "http://www.example.com/testimmo/ABC123456789",
