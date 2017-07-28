@@ -19,7 +19,8 @@
         "importer",
         "exporter",
         "checker",
-        "config"
+        "config",
+        "quota"
       ],
       "default": "importer"
     }
