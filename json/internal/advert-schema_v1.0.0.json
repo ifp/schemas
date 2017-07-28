@@ -144,7 +144,6 @@
           "string"
         ],
         "enum": [
-          "all",
           "french-property",
           "network"
         ]
