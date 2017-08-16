@@ -29,6 +29,10 @@ There is some logic to the required fields of the property.geo.user_data, which 
 - commune_name + department_name
 - commune_name + department_code
 
+### Notes:
+
+See the wiki: https://github.com/ifp/schemas/wiki/Schema-notes
+
 ### JSON resources:
 
 - [Tutorials](https://www.google.co.uk/search?q=json%20tutorial)
