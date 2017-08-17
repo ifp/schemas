@@ -19,6 +19,7 @@
       "chalet",
       "chateau",
       "cottage",
+      "country_house",
       "farm",
       "farmhouse",
       "gite",
@@ -30,11 +31,13 @@
       "land",
       "maison_de_maitre",
       "mansion",
+      "newbuild_offplan",
       "mill",
       "mobile_home",
       "office",
       "restaurant",
       "shop",
+      "town_house",
       "villa",
       "vineyard"
     ]
