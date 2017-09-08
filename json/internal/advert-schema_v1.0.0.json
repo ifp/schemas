@@ -145,6 +145,7 @@
         ],
         "enum": [
           "french-property",
+          "invisible",
           "network"
         ]
       },
