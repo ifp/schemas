@@ -26,6 +26,7 @@
       "format": [
         "standard"
       ],
+      "visibility": ["network"],
       "status": "active",
       "valid": true,
       "invalid_advert_messages": null,
