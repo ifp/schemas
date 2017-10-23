@@ -152,6 +152,21 @@
       "minItems": 0,
       "uniqueItems": true
     },
+    "external_visibility": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string"
+        ],
+        "enum": [
+          "french-property",
+          "invisible",
+          "network"
+        ]
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
     "pre_attributed": {
       "type": "object",
       "properties": {
