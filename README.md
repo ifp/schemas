@@ -6,19 +6,19 @@ This schema represents the Advert object used within the IFP systems. Currently 
 
 Please use the latest version of these schemas when sending us sale adverts:
 
-[Public Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/public_sale-advert-schema_changelog.md)
+[Public Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/public/public_sale-advert-schema_changelog.md)
 
 - [Public Sale Advert JSON Schema v1.1.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/public_sale-advert-schema_v1.1.0.json)
 - [Public Sale Advert JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/public_sale-advert-schema_v1.0.0.json)
 
 ### Public Document Examples:
 
-- [Public Sale Advert JSON v1.1.0 example](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.1.0-example.json)
-- [Public Sale Advert JSON v1.0.0 example](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-example.json)
+- [Public Sale Advert JSON v1.1.0 example](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.1.0-example.json)
+- [Public Sale Advert JSON v1.0.0 example](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.0.0-example.json)
 - [Public Sale Advert JSON v1.* list of enums available](https://raw.githubusercontent.com/ifp/schemas/master/json/public/examples/public_sale-advert-schema_v1.*-enum-values.json) - see this for the full list of the enums in the schema that can be used for the lookup values in their respective keys.
 
-- [Public Sale Advert JSON v1.1.0 notes](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.1.0-notes.json) (only notes the changes/additions to v1.0.0)
-- [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/examples/public_sale-advert-schema_v1.0.0-notes.json)
+- [Public Sale Advert JSON v1.1.0 notes](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.1.0-notes.json) (only notes the changes/additions to v1.0.0)
+- [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.0.0-notes.json)
 
 This document provides notes about the use for each field. There are two top-level objects:
 - advert: Information about the advert, i.e. the advertising details.
@@ -28,10 +28,6 @@ There is some logic to the required fields of the property.geo.user_data, which 
 - post_code
 - commune_name + department_name
 - commune_name + department_code
-
-### Notes:
-
-See the wiki: https://github.com/ifp/schemas/wiki/Schema-notes
 
 ### JSON resources:
 
