@@ -124,6 +124,9 @@
     "pre_checker_original_property": {
       "additionalProperties": true
     },
+    "importer_property": {
+      "additionalProperties": true
+    },
     "translations": {
       "additionalProperties": true
     }

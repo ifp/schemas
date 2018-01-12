@@ -33,7 +33,9 @@
     "format": [
       "standard"
     ],
-    "visibility": ["network"],
+    "visibility": [
+      "network"
+    ],
     "pre_attributed": {
       "types": [
         "house",
@@ -319,6 +321,34 @@
   },
   "pre_checker_original_property": {
     "title_en": "Lovely, fully renovated detached stone property, village centre, attached garden"
+  },
+  "importer_property": {
+    "room_counts": {
+      "bedrooms": 4,
+      "total_bathrooms": 3
+    },
+    "floor_area": {
+      "size": 60,
+      "user_size": 60
+    },
+    "land_area": {
+      "size": 841,
+      "user_size": 841
+    },
+    "attributes": {
+      "types": [
+        "house",
+        "residential"
+      ],
+      "features": [
+        "balcony",
+        "double_glazing"
+      ],
+      "tags": [
+        "detached",
+        "furnished"
+      ]
+    }
   },
   "translations": {
   }
