@@ -249,7 +249,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "description": "Updated-at timestamp in the external feed. Simply copied through, it is not in a standard date format."
     },
     "live_at": {
       "type": [
@@ -259,7 +260,8 @@
     },
     "significantly_updated_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Advert creation date, or date of recent significant price drop, if any."
     },
     "update_conflicts": {
       "type": [
