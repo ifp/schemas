@@ -67,6 +67,12 @@
           "integer",
           "null"
         ]
+      },
+      "archived_at": {
+        "type": [
+          "null",
+          "string"
+        ]
       }
     },
     "required": [
