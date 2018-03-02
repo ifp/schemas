@@ -23,6 +23,9 @@
         "quota"
       ],
       "default": "importer"
+    },
+    "importer_task_id": {
+      "type": "string"
     }
   },
   "required": [
