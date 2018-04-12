@@ -26,6 +26,9 @@
     },
     "importer_task_id": {
       "type": "string"
+    },
+    "importer_run_token": {
+      "type": "string"
     }
   },
   "required": [
