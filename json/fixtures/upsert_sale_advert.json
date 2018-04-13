@@ -8,7 +8,8 @@
     "processed_at": "2015-10-09T04:07:40.810Z",
     "processed_at_unix_ts": 1444363660,
     "originating_system": "importer",
-    "importer_task_id": "5a98e15ae17d88000bc1ef9c"
+    "importer_task_id": "5a98e15ae17d88000bc1ef9c",
+    "importer_run_token": "run1234"
   },
   "advert": {
     "agency_id": 123456,
