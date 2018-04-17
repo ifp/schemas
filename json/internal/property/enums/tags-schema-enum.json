@@ -25,7 +25,8 @@
       "ski_in_ski_out",
       "ski_resort",
       "town",
-      "village"
+      "village",
+      "gite_auto_keyword"
     ]
   },
   "minItems": 0,
