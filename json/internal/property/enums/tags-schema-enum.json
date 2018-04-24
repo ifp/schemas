@@ -10,8 +10,10 @@
       "equestrian_potential",
       "fishing",
       "furnished",
+      "gite_auto_keyword",
       "gite_potential",
       "high_altitude",
+      "lake_auto_keyword",
       "luxury",
       "modern",
       "mountain",
@@ -25,8 +27,7 @@
       "ski_in_ski_out",
       "ski_resort",
       "town",
-      "village",
-      "gite_auto_keyword"
+      "village"
     ]
   },
   "minItems": 0,
