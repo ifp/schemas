@@ -152,6 +152,9 @@
       "minItems": 0,
       "uniqueItems": true
     },
+    "first_visible_at": {
+      "type": "array"
+    },
     "external_visibility": {
       "type": "array",
       "items": {
