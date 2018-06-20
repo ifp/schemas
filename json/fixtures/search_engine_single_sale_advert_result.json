@@ -96,6 +96,10 @@
           "department_name": null,
           "department_code": null,
           "country": "France"
+        },
+        "proximity": {
+          "chateaudun,eure-et-loire": 13,
+          "sancerre,cher": 139
         }
       },
       "price": {

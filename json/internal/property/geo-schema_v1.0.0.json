@@ -12,5 +12,5 @@
     "locality",
     "user_data"
   ],
-  "additionalProperties": false
+  "additionalProperties": true
 }

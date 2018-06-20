@@ -333,6 +333,14 @@
           },
           "translations": {
           }
+        },
+        "fields": {
+          "distance_chateaudun,eure-et-loire": [
+            13
+          ],
+          "distance_sancerre,cher": [
+            139
+          ]
         }
       }
     ]
