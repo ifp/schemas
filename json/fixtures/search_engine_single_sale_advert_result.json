@@ -1,9 +1,6 @@
 {
   "data": {
     "id": "123456-ABC123456789",
-    "metadata": {
-      "api_version": "1.0.0"
-    },
     "advert": {
       "agency_id": 123456,
       "agency_tag": "testimmo",
@@ -256,8 +253,6 @@
       ],
       "floor_plans": [],
       "virtual_tours": []
-    },
-    "translations": {
     }
   }
 }
