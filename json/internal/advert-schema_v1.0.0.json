@@ -263,7 +263,12 @@
     "significantly_updated_at": {
       "type": "string",
       "format": "date-time",
-      "description": "Advert creation date, or date of recent significant price drop, if any."
+      "description": "The most recent date of: created, 5% price drop, bedroom change, land size change or made visible first-time on french-property.com"
+    },
+    "significantly_updated_except_visibility_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "significantly_updated_at timestamp, excluding updates when made visible first-time on french-property.com"
     },
     "update_conflicts": {
       "type": [
