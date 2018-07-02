@@ -46,6 +46,22 @@
         "price_on_application"
       ],
       "default": "asking_price"
+    },
+    "last_reduction": {
+      "type": "object",
+      "properties": {
+        "date":{
+          "type": ["string"],
+          "format": "date-time"
+        },
+        "previous_amount": {
+          "type": ["integer"]
+        }
+      },
+      "required": [
+        "date",
+        "previous_amount"
+      ]
     }
   },
   "required": [
