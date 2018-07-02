@@ -47,7 +47,7 @@
           ],
           "default": "importer"
         },
-        "importer_task_id": {
+        "importer_run_token": {
           "type": "string"
         }
       },

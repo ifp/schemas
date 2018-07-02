@@ -6,6 +6,6 @@
     "processed_at":"2015-06-19T15:56:14.968Z",
     "processed_at_unix_ts":1445904884,
     "originating_system": "importer",
-    "importer_task_id": "5a98e15ae17d88000bc1ef9c"
+    "importer_run_token": "5a98e15ae17d88000bc1ef9c"
   }
 }
