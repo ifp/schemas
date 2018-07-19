@@ -141,7 +141,11 @@
               "user_currency": "EUR",
               "comment": "Inc. agency fees",
               "tenure": "freehold",
-              "qualifier": "asking_price"
+              "qualifier": "asking_price",
+              "last_reduction": {
+                "date": "2016-06-11T03:14:33.120Z", 
+                "previous_amount": 140000
+              }
             },
             "room_counts": {
               "total_rooms": 7,
