@@ -91,6 +91,9 @@
         "failed_images": {
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/failed_images-schema_v1.0.0.json"
         },
+        "invalid_images": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/invalid_images-schema_v1.0.0.json"
+        },
         "floor_plans": {
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/floor_plans-schema_v1.0.0.json"
         },

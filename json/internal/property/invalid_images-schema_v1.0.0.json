@@ -12,25 +12,38 @@
           "string"
         ]
       },
-      "cloudinary_account": {
-        "type": "string"
-      },
       "original_url": {
         "type": [
           "null",
           "string"
         ]
       },
-      "failure_message": {
-        "type": "string"
+      "response_code": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "response_message": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "response_duration": {
+        "type": [
+          "integer",
+          "null"
+        ]
       }
     },
     "required": [
       "listing_position",
       "title",
-      "cloudinary_account",
       "original_url",
-      "failure_message"
+      "response_code",
+      "response_message",
+      "response_duration"
     ],
     "additionalProperties": false
   },
