@@ -19,15 +19,18 @@
       "mountain",
       "period_features",
       "renovation_project",
+      "renovated",
       "revenue_generating",
       "river",
       "rural",
       "single_storey",
+      "stone",
       "ski",
       "ski_in_ski_out",
       "ski_resort",
       "town",
-      "village"
+      "village",
+      "woodland"
     ]
   },
   "minItems": 0,
