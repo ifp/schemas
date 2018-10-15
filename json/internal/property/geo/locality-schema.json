@@ -34,7 +34,8 @@
   },
   "required": [
     "api_version",
-    "criteria"
+    "criteria",
+    "data"
   ],
   "additionalProperties": true
 }
