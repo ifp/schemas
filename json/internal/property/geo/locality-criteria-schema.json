@@ -55,6 +55,12 @@
         "string"
       ]
     },
+    "use_lat_lon": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "request_uri": {
       "type": [
         "null",
@@ -70,6 +76,7 @@
     "commune_name",
     "post_code",
     "lang",
+    "use_lat_lon",
     "request_uri"
   ],
   "additionalProperties": false
