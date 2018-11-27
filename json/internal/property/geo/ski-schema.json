@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "mountain": {
+      "type": "string"
+    },
+    "mountain_tag": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "domain_tag": {
+      "type": "string"
+    },
+    "resort": {
+      "type": "string"
+    },
+    "resort_tag": {
+      "type": "string"
+    },
+    "sub_resort": {
+      "type": "string"
+    },
+    "sub_resort_tag": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
