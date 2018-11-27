@@ -74,6 +74,9 @@
     },
     "full_location_reverse": {
       "type": "string"
+    },
+    "ski": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/ski-schema.json"
     }
   },
   "additionalProperties": false
