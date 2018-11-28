@@ -61,6 +61,12 @@
         "string"
       ]
     },
+    "ignore_lat_lon": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "request_uri": {
       "type": [
         "null",
