@@ -76,7 +76,6 @@
     "commune_name",
     "post_code",
     "lang",
-    "use_lat_lon",
     "request_uri"
   ],
   "additionalProperties": false
