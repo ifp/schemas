@@ -58,12 +58,14 @@
     "use_lat_lon": {
       "type": [
         "null",
+        "boolean",
         "string"
       ]
     },
     "ignore_lat_lon": {
       "type": [
         "null",
+        "boolean",
         "string"
       ]
     },
