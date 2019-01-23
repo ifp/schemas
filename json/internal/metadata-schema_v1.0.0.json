@@ -20,7 +20,8 @@
         "exporter",
         "checker",
         "config",
-        "quota"
+        "quota",
+        "reloader"
       ],
       "default": "importer"
     },
