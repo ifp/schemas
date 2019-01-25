@@ -19,11 +19,11 @@
     },
     "id": {
       "type": "string"
-    },
+    }
   },
   "required": [
     "action",
-    "id",
+    "id"
   ],
   "additionalProperties": false
 }
