@@ -3,6 +3,7 @@
     "id": "123456-ABC123456789",
     "advert": {
       "agency_id": 123456,
+      "agency_status": "active",
       "agency_tag": "testimmo",
       "agency_name": "Test Immobilier",
       "agency_phone": "+33-(0)1-23-45-67-89",
