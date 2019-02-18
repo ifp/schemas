@@ -13,6 +13,7 @@
   },
   "advert": {
     "agency_id": 123456,
+    "agency_status": "active",
     "agency_tag": "testimmo",
     "agency_external_id": null,
     "agency_name": "Test Immobilier",
