@@ -7,6 +7,16 @@
     "agency_tag": {
       "type": "string"
     },
+    "agency_status": {
+      "type": [
+        "string"
+      ],
+      "enum": [
+        "active",
+        "archived"
+      ],
+      "default": "active"
+    },
     "agency_external_id": {
       "type": [
         "null",
