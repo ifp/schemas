@@ -132,6 +132,12 @@
     },
     "translations": {
       "additionalProperties": true
+    },
+    "unmapped_fields": {
+      "additionalProperties": true
+    },
+    "mapped_enums": {
+      "additionalProperties": true
     }
   },
   "required": [
