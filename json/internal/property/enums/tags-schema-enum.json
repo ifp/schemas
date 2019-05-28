@@ -5,6 +5,7 @@
       "string"
     ],
     "enum": [
+      "boating_sailing",
       "coastal",
       "detached",
       "equestrian_potential",
@@ -12,6 +13,7 @@
       "furnished",
       "gite_auto_keyword",
       "gite_potential",
+      "hamlet",
       "high_altitude",
       "lake_auto_keyword",
       "luxury",
@@ -30,6 +32,7 @@
       "ski_resort",
       "town",
       "village",
+      "wheelchair_friendly",
       "woodland"
     ]
   },
