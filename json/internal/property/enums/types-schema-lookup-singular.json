@@ -1,12 +1,12 @@
 {
   "residential": "Residential",
-  "bungalow": "Bungalow",
   "business": "Business",
   "apartment": "Apartment",
   "apartment_building": "Apartment Building",
   "bar": "Bar",
   "barn": "Barn",
   "bed_and_breakfast": "Bed and Breakfast",
+  "bungalow": "Bungalow",
   "cafe": "Cafe",
   "campsite": "Campsite",
   "chalet": "Chalet",
