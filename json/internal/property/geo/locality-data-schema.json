@@ -79,5 +79,5 @@
       "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo/ski-schema.json"
     }
   },
-  "additionalProperties": false
+  "additionalProperties": true
 }
