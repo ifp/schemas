@@ -249,7 +249,7 @@
         ]
       },
       "minItems": 0,
-      "uniqueItems": true
+      "uniqueItems": false
     },
     "created_at": {
       "type": [
