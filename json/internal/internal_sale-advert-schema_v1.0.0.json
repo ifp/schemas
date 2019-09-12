@@ -138,6 +138,9 @@
     },
     "mapped_enums": {
       "additionalProperties": true
+    },
+    "missing_fields": {
+      "additionalProperties": true
     }
   },
   "required": [
