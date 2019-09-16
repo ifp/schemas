@@ -133,6 +133,9 @@
     "translations": {
       "additionalProperties": true
     },
+    "unexpected_fields": {
+      "additionalProperties": true
+    },
     "unmapped_fields": {
       "additionalProperties": true
     },
