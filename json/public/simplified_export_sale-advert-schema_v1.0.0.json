@@ -1,0 +1,143 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "title": "IFP Simplified Export JSON Advert Schema",
+  "description": "The simplified export JSON schema of property adverts within the IFP systems. Currently supports sale properties only. We use this schema to send you property adverts",
+  "self": {
+    "vendor": "com.french-property.schemas.json",
+    "name": "simplified_export_sale-advert-schema",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "reference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "title_en": {
+      "type": "string",
+      "minLength": 3
+    },
+    "description_en": {
+      "type": "string",
+      "minLength": 3
+    },
+    "department_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "post_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "commune_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "location": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "price_eur": {
+      "type": "number"
+    },
+    "bathrooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "bedrooms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "floor_size_m2": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "land_size_m2": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "dpe_number": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "ges_number": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "attributes": {
+      "type": "object",
+      "properties": {
+        "types": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/types-schema-enum.json"
+        },
+        "features": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/features-schema-enum.json"
+        },
+        "tags": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/tags-schema-enum.json"
+        }
+      },
+      "required": [
+        "types",
+        "features",
+        "tags"
+      ],
+      "additionalProperties": false
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "url"
+        ],
+        "additionalProperties": true
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "advert",
+    "property"
+  ],
+  "additionalProperties": false
+}
