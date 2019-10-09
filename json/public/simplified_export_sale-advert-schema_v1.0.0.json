@@ -135,9 +135,5 @@
       "uniqueItems": true
     }
   },
-  "required": [
-    "advert",
-    "property"
-  ],
-  "additionalProperties": false
+  "additionalProperties": true
 }
