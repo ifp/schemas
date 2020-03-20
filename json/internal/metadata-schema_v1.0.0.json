@@ -21,7 +21,8 @@
         "checker",
         "config",
         "quota",
-        "reloader"
+        "reloader",
+        "sell"
       ],
       "default": "importer"
     },
