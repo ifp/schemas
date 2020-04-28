@@ -12,6 +12,12 @@
           "string"
         ]
       },
+      "cdn": {
+        "type": "integer"
+      },
+      "path": {
+        "type": "string"
+      },
       "cloudinary_account": {
         "type": "string"
       },
@@ -77,16 +83,7 @@
     },
     "required": [
       "listing_position",
-      "title",
-      "cloudinary_account",
-      "public_id",
-      "version",
-      "width",
-      "height",
-      "format",
-      "bytes",
-      "original_url",
-      "original_bytes"
+      "title"
     ],
     "additionalProperties": true
   },
