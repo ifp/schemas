@@ -59,7 +59,7 @@
       "vineyard",
       "water_source",
       "well",
-      "workshop",
+      "workshop"
     ]
   },
   "minItems": 0,
