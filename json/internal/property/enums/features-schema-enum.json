@@ -9,6 +9,7 @@
       "alarm_cctv",
       "balcony",
       "basement",
+      "broadband_internet",
       "car_port",
       "cellar",
       "central_heating",
@@ -21,6 +22,7 @@
       "driveway",
       "en_suite",
       "equestrian_facilities",
+      "fireplace",
       "fireplace_stove",
       "garage",
       "garden",
@@ -39,6 +41,7 @@
       "off_street_parking",
       "orchard",
       "outbuildings",
+      "parking",
       "pigeonnier",
       "planning_permission",
       "pond",
@@ -59,6 +62,7 @@
       "vineyard",
       "water_source",
       "well",
+      "woodburner_stove",
       "workshop"
     ]
   },
