@@ -13,7 +13,10 @@
         ]
       },
       "cloudinary_account": {
-        "type": "string"
+        "type": [
+          "null",
+          "string"
+        ]
       },
       "original_url": {
         "type": [
@@ -28,11 +31,10 @@
     "required": [
       "listing_position",
       "title",
-      "cloudinary_account",
       "original_url",
       "failure_message"
     ],
-    "additionalProperties": false
+    "additionalProperties": true
   },
   "minItems": 0,
   "uniqueItems": true
