@@ -1,6 +1,7 @@
 {
   "air_con": "Air Conditioning",
   "alarm_cctv": "Alarm \/ CCTV",
+  "attic": "Attic",
   "balcony": "Balcony",
   "basement": "Basement",
   "broadband_internet": "Broadband Internet",
@@ -35,6 +36,7 @@
   "off_street_parking": "Off-Street Parking",
   "orchard": "Orchard",
   "outbuildings": "Outbuildings",
+  "outdoor_kitchen_bbq": "Outdoor Kitchen / BBQ",
   "parking": "Parking",
   "pigeonnier": "Pigeonnier",
   "planning_permission": "Planning Permission",
@@ -56,9 +58,6 @@
   "vineyard": "Vineyard",
   "water_source": "Water Source",
   "well": "Well",
-  "woodburner_stove":  "Woodburner Stove",
-  "workshop": "Workshop",
-
-  "outdoor_kitchen_bbq": "Outdoor Kitchen / BBQ",
-  "attic": "Attic"
+  "woodburner_stove": "Woodburner Stove",
+  "workshop": "Workshop"
 }

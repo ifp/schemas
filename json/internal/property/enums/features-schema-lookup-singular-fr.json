@@ -1,6 +1,7 @@
 {
     "air_con": "Climatisation",
     "alarm_cctv": "Alarme \/ CCTV",
+    "attic": "Grenier",
     "balcony": "Balcon",
     "basement": "Sous-sol",
     "broadband_internet": "Internet haut d\u00e9bit",
@@ -35,6 +36,7 @@
     "off_street_parking": "Stationnement hors rue",
     "orchard": "Verger",
     "outbuildings": "d\u00e9pendances",
+    "outdoor_kitchen_bbq": "Cuisine d'été / BBQ",
     "parking": "Parking",
     "pigeonnier": "Pigeonnier",
     "planning_permission": "Permis de construire",
@@ -57,8 +59,5 @@
     "water_source": "Source d'eau",
     "well": "bien",
     "woodburner_stove": "Po\u00eale \u00e0 bois Po\u00eale",
-    "workshop": "Atelier",
-
-    "outdoor_kitchen_bbq": "Cuisine d'été / BBQ",
-    "attic": "Grenier"
+    "workshop": "Atelier"
 }
