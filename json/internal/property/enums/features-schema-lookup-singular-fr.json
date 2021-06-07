@@ -57,5 +57,8 @@
     "water_source": "Source d'eau",
     "well": "bien",
     "woodburner_stove": "Po\u00eale \u00e0 bois Po\u00eale",
-    "workshop": "Atelier"
+    "workshop": "Atelier",
+
+    "outdoor_kitchen_bbq": "Cuisine d'été / BBQ",
+    "attic": "Grenier"
 }

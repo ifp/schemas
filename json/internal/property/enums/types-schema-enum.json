@@ -54,7 +54,26 @@
       "town_house",
       "villa",
       "village_house",
-      "vineyard"
+      "vineyard",
+
+      "maison_bourgeoise",
+      "residence_de_tourisme",
+      "maison_vigneronne",
+      "building_land",
+      "leisure_land",
+      "domaine_viticole",
+      "propriete_equestre",
+      "building",
+      "maison_provencale",
+      "maison_traditionnelle",
+      "maison_ancienne",
+      "hotel_particulier",
+      "hunting_property",
+      "residence_senior",
+      "investment_property",
+      "woodland",
+      "group_of_buildings",
+      "duplex_triplex_apartment"
     ]
   },
   "minItems": 0,

@@ -57,5 +57,8 @@
   "water_source": "Water Sources",
   "well": "Wells",
   "woodburner_stove":  "Woodburner Stoves",
-  "workshop": "Workshops"
+  "workshop": "Workshops",
+
+  "outdoor_kitchen_bbq": "Outdoor Kitchens / BBQs",
+  "attic": "Attics"
 }

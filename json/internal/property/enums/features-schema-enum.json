@@ -63,7 +63,9 @@
       "water_source",
       "well",
       "woodburner_stove",
-      "workshop"
+      "workshop",
+      "outdoor_kitchen_bbq",
+      "attic"
     ]
   },
   "minItems": 0,

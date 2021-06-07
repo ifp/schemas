@@ -37,5 +37,23 @@
   "village": "Villages",
   "wheelchair_friendly": "Wheelchair Friendly",
   "wooden_timberframe": "Wooden / Timberframe",
-  "woodland": "Woodland"
+  "woodland": "Woodland",
+
+  "forest": "Forest",
+  "not_overlooked": "Not Overlooked",
+  "waterfront": "Waterfront",
+  "bargain": "Bargain",
+  "isolated": "Isolated",
+  "viager": "Life Annuity",
+  "leaseback": "Leaseback",
+  "shared_ownership": "Shared Ownership",
+  "timeshare_fractional": "Timeshare/Fractional",
+  "exclusive_sale": "Exclusive Sale",
+  "featured_property": "Featured",
+  "inter_agence": "Inter Agence",
+  "town_centre": "Town Centre",
+  "south_facing": "South Facing",
+  "north_facing": "North Facing",
+  "west_facing": "West Facing",
+  "east_facing": "East Facing"
 }

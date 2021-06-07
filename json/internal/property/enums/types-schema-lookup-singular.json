@@ -46,5 +46,24 @@
   "town_house": "Town House",
   "villa": "Villa",
   "village_house": "Village House",
-  "vineyard": "Vineyard"
+  "vineyard": "Vineyard",
+
+  "maison_bourgeoise": "Maison Bourgeoise",
+  "residence_de_tourisme": "Résidence de Tourisme",
+  "maison_vigneronne": "Wine Growers House",
+  "building_land": "Building Land",
+  "leisure_land": "Leisure Land",
+  "domaine_viticole": "Wine Domaine",
+  "propriete_equestre": "Equestrian Property",
+  "building": "Building",
+  "maison_provencale": "Maison Provençale",
+  "maison_traditionnelle": "Maison Traditionnelle",
+  "maison_ancienne": "Maison Ancienne",
+  "hotel_particulier": "Hôtel Particulier",
+  "hunting_property": "Hunting Property",
+  "residence_senior": "Retirement Home",
+  "investment_property": "Investment Property",
+  "woodland": "Woodland",
+  "group_of_buildings": "Group of Buildings / Hamlet",
+  "duplex_triplex_apartment": "Duplex / Triplex Apartment"
 }

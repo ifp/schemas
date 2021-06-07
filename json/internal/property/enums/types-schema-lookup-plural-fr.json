@@ -46,5 +46,23 @@
     "town_house": "Maisons de village",
     "villa": "villas",
     "village_house": "Maisons de village",
-    "vineyard": "vignobles"
+    "vineyard": "vignobles",
+
+    "maison_bourgeoise": "Maisons Bourgeoises",
+    "residence_de_tourisme": "Résidences de Tourisme",
+    "maison_vigneronne": "Maisons Vigneronnes",
+    "building_land": "Terrain Constructible",
+    "leisure_land": "Terrain de Loisir",
+    "domaine_viticole": "Domaines Viticole",
+    "propriete_equestre": "Propriétés Equestre",
+    "building": "Bâtiments",
+    "maison_provencale": "Maisons Provençales",
+    "maison_traditionnelle": "Maisons Traditionnelles",
+    "maison_ancienne": "Maisons Ancienne",
+    "hotel_particulier": "Hôtels Particuliers",
+    "hunting_property": "Propriétés de Chasse",
+    "residence_senior": "Résidences Seniors",
+    "woodland": "Terrains boisés",
+    "group_of_buildings": "Hameeaux",
+    "duplex_triplex_apartment": "Appartments Duplex / Triplex"
 }

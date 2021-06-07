@@ -37,5 +37,23 @@
     "village": "Village",
     "wheelchair_friendly": "Amical en fauteuil roulant",
     "wooden_timberframe": "Bois \/ Charpenterie",
-    "woodland": "Des bois"
+    "woodland": "Des bois",
+
+    "forest": "Forestière",
+    "not_overlooked": "Sans vis-à-vis",
+    "waterfront": "Au bord de'l'eau",
+    "bargain": "Petit prix",
+    "isolated": "Isolée",
+    "viager": "En viager",
+    "leaseback": "Leaseback",
+    "shared_ownership": "En copropriété",
+    "timeshare_fractional": "À temps partagé",
+    "exclusive_sale": "En exclusivité",
+    "featured_property": "Coup de coeur",
+    "inter_agence": "Inter-agence",
+    "town_centre": "Au centre ville",
+    "south_facing": "Exposition sud",
+    "north_facing": "Exposition nord",
+    "west_facing": "Exposition ouest",
+    "east_facing": "Exposition est"
 }
