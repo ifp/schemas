@@ -5,6 +5,10 @@
       "string"
     ],
     "enum": [
+      "_unclassified",
+      "_unmapped",
+      "residential",
+      "business",
       "apartment",
       "apartment_building",
       "bar",
@@ -15,7 +19,6 @@
       "building",
       "building_land",
       "bungalow",
-      "business",
       "cafe",
       "campsite",
       "chalet",
@@ -61,7 +64,6 @@
       "propriete_equestre",
       "residence_de_tourisme",
       "residence_senior",
-      "residential",
       "restaurant",
       "shop",
       "small_holding",
