@@ -338,8 +338,13 @@
   },
   "importer_property": {
     "room_counts": {
+      "total_rooms": 7,
+      "total_bathrooms": 3,
       "bedrooms": 4,
-      "total_bathrooms": 3
+      "bathrooms": 2,
+      "reception_rooms": 3,
+      "shower_rooms": 1,
+      "water_closets": 2
     },
     "floor_area": {
       "size": 60,
