@@ -16,13 +16,13 @@
     "chalet_alpage": "Chalet d'Alpage",
     "charentaise": "Maison Charentaise",
     "chateau": "Château",
-    "cottage": "Cottage",
+    "cottage": "Fermette",
     "country_estate": "Domaine",
-    "country_house": "Maison de campagne",
+    "country_house": "Maison de Campagne",
     "domaine_viticole": "Domaine Viticole",
     "duplex_triplex_apartment": "Appartement Duplex / Triplex",
-    "eco_home": "Maison écologique",
-    "farm": "Ferme agricole",
+    "eco_home": "Maison Ecologique",
+    "farm": "Ferme Agricole",
     "farmhouse": "Corps de Ferme",
     "fishery": "Pêcherie",
     "gite": "Gîte",
@@ -68,7 +68,7 @@
     "T4_apartment": "T4 Appartement", 
     "T5_apartment": "T5 Appartement", 
     "villa": "Villa",
-    "village_house": "Maison de village",
+    "village_house": "Maison de Village",
     "vineyard": "Vignoble",
-    "woodland": "Terrain boisé"
+    "woodland": "Terrain Boisé"
 }
