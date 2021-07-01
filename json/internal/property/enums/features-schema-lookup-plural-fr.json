@@ -1,6 +1,7 @@
 {
     "air_con": "Climatisation",
     "alarm_cctv": "Alarmes \/ CCTV",
+    "attic": "Greniers",
     "balcony": "balcons",
     "basement": "Sous-sols",
     "broadband_internet": "Internet haut d\u00e9bit",
@@ -35,6 +36,7 @@
     "off_street_parking": "Stationnement hors rue",
     "orchard": "vergers",
     "outbuildings": "d\u00e9pendances",
+    "outdoor_kitchen_bbq": "Cuisines d'été / BBQs",
     "parking": "Parking",
     "pigeonnier": "pigeonniers",
     "planning_permission": "Permis de construire",
