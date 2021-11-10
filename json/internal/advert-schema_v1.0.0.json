@@ -216,6 +216,12 @@
         "boolean"
       ]
     },
+    "ignore_significant_updates": {
+      "type": [
+        "boolean"
+      ],
+      "default": false
+    },
     "invalid_advert_messages": {
       "type": [
         "null",
