@@ -28,7 +28,7 @@
   "north_facing": "North Facing",
   "not_overlooked": "Not Overlooked",
   "period_features": "Character / Period Features",
-  "renovated": "Renovated",
+  "renovated": "Renovated / Restored",
   "renovation_potential": "Renovation / Development Potential",
   "renovation_project": "Renovation Project",
   "revenue_generating": "Revenue Generating",
@@ -54,5 +54,5 @@
   "west_facing": "West Facing",
   "wheelchair_friendly": "Wheelchair Friendly",
   "wooden_timberframe": "Wooden / Timberframe",
-  "woodland": "Woodland"
+  "woodland": "Woodland / Wooded"
 }
