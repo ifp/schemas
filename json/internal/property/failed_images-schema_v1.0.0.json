@@ -12,6 +12,12 @@
           "string"
         ]
       },
+      "title_fr": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "cloudinary_account": {
         "type": [
           "null",
@@ -31,6 +37,7 @@
     "required": [
       "listing_position",
       "title",
+      "title_fr",
       "original_url",
       "failure_message"
     ],

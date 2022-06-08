@@ -12,6 +12,12 @@
           "string"
         ]
       },
+      "title_fr": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "cdn": {
         "type": "integer"
       },
@@ -83,7 +89,8 @@
     },
     "required": [
       "listing_position",
-      "title"
+      "title",
+      "title_fr"
     ],
     "additionalProperties": true
   },

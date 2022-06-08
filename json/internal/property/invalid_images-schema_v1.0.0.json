@@ -12,6 +12,12 @@
           "string"
         ]
       },
+      "title_fr": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
       "original_url": {
         "type": [
           "null",
@@ -40,6 +46,7 @@
     "required": [
       "listing_position",
       "title",
+      "title_fr",
       "original_url",
       "response_code",
       "response_message",

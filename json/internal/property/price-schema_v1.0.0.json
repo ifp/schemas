@@ -25,6 +25,12 @@
         "null"
       ]
     },
+    "comment_fr": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "tenure": {
       "type": "string",
       "enum": [
@@ -70,6 +76,7 @@
     "user_amount",
     "user_currency",
     "comment",
+    "comment_fr",
     "tenure",
     "qualifier"
   ],
