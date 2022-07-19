@@ -31,7 +31,8 @@
         "fractional",
         "freehold",
         "leasehold",
-        "life_annuity"
+        "life_annuity",
+        "tenancy"
       ],
       "default": "freehold"
     },
@@ -42,6 +43,7 @@
         "auction_guide_price",
         "offers_in_excess_of",
         "offers_in_region_of",
+        "per_month",
         "price_from",
         "price_on_application"
       ],

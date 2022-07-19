@@ -2,8 +2,10 @@
   "type": "string",
   "enum": [
     "for_sale",
+    "rented",
     "sold",
     "sold_subject_to_contract",
+    "to_rent",
     "under_offer",
     "withdrawn",
     "_unclassified"
