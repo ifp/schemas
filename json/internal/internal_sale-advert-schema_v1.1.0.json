@@ -64,6 +64,9 @@
         "highlights": {
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/highlights-schema_v1.0.0.json"
         },
+        "highlights_fr": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/highlights-schema_v1.0.0.json"
+        },
         "geo": {
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo-schema_v1.0.0.json"
         },
