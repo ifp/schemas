@@ -77,7 +77,8 @@
       "Recently re-wired"
     ],
     "highlights_fr": [
-
+      "Joli jardin",
+      "Récemment recâblé"
     ],
     "geo": {
       "locality": {
@@ -148,7 +149,7 @@
       "user_amount": 91300,
       "user_currency": "EUR",
       "comment": "Inc. agency fees",
-      "comment_fr": null,
+      "comment_fr": "Frais d'agence inclus",
       "tenure": "freehold",
       "qualifier": "asking_price"
     },
@@ -202,8 +203,8 @@
     "images": [
       {
         "listing_position": 0,
-        "title": "",
-        "title_fr": null,
+        "title": "The first and best image",
+        "title_fr": "La première et la meilleure image",
         "cloudinary_account": "test-account",
         "public_id": "testimmo-ABC123456789-70016944266600",
         "version": "1444363660",

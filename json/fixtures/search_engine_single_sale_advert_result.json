@@ -43,6 +43,10 @@
         "Pretty garden",
         "Recently re-wired"
       ],
+      "highlights_fr": [
+        "Joli jardin",
+        "Récemment re-câblé"
+      ],
       "geo": {
         "locality": {
           "api_version": "1.0",
@@ -114,6 +118,7 @@
         "amount": 91300,
         "currency": "EUR",
         "comment": "Inc. agency fees",
+        "comment_fr": "Frais d'agence inclus",
         "tenure": "freehold",
         "qualifier": "asking_price",
         "last_reduction": {
@@ -168,6 +173,7 @@
         {
           "listing_position": 0,
           "title": "Image zero",
+          "title_fr": "Image zéro",
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944266600",
           "version": "1444363660",
@@ -178,6 +184,7 @@
         {
           "listing_position": 1,
           "title": "Image one",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944266320",
           "version": "1444363660",
@@ -188,6 +195,7 @@
         {
           "listing_position": 2,
           "title": "Image two",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944266040",
           "version": "1444363660",
@@ -198,6 +206,7 @@
         {
           "listing_position": 3,
           "title": "Image three",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944265760",
           "version": "1444363660",
@@ -208,6 +217,7 @@
         {
           "listing_position": 4,
           "title": "Image four",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944265460",
           "version": "1444363660",
@@ -218,6 +228,7 @@
         {
           "listing_position": 5,
           "title": "Image five",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944265260",
           "version": "1444363660",
@@ -228,6 +239,7 @@
         {
           "listing_position": 6,
           "title": "Image six",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944265040",
           "version": "1444363660",
@@ -238,6 +250,7 @@
         {
           "listing_position": 7,
           "title": "Image seven",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944264780",
           "version": "1444363660",
@@ -248,6 +261,7 @@
         {
           "listing_position": 8,
           "title": "Image eight",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944264520",
           "version": "1444363660",
@@ -258,6 +272,7 @@
         {
           "listing_position": 9,
           "title": "Image nine",
+          "title_fr": null,
           "cloudinary_account": "test-account",
           "public_id": "testimmo-ABC123456789-70016944264020",
           "version": "1444363660",
