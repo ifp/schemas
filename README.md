@@ -15,7 +15,7 @@ Please use the latest version of these schemas when sending us sale adverts:
 
 - [Public Sale Advert JSON v1.1.0 example](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.1.0-example.json)
 - [Public Sale Advert JSON v1.0.0 example](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.0.0-example.json)
-- [Public Sale Advert JSON v1.* list of enums available](https://raw.githubusercontent.com/ifp/schemas/master/json/public/examples/public_sale-advert-schema_v1.*-enum-values.json) - see this for the full list of the enums in the schema that can be used for the lookup values in their respective keys.
+- [Public Sale Advert JSON v1.* list of enums available](https://raw.githubusercontent.com/ifp/schemas/master/json/public/examples/public_sale-advert-schema_v1.x-enum-values.json) - see this for the full list of the enums in the schema that can be used for the lookup values in their respective keys.
 
 - [Public Sale Advert JSON v1.1.0 notes](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.1.0-notes.json) (only notes the changes/additions to v1.0.0)
 - [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.0.0-notes.json)
