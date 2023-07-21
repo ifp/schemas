@@ -55,6 +55,12 @@
         "string"
       ]
     },
+    "commune_name_fr": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "commune_tag": {
       "type": [
         "null",
