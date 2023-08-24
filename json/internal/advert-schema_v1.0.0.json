@@ -296,6 +296,17 @@
         "object"
       ],
       "additionalProperties": true
+    },
+    "images_deleted": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "enum": [
+        null,
+        "all_images_deleted",
+        "image_4+_deleted"
+      ]
     }
   },
   "required": [
