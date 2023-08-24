@@ -110,6 +110,10 @@
         "string"
       ]
     },
+
+
+
+
     "reference": {
       "type": [
         "null",
@@ -296,6 +300,12 @@
         "object"
       ],
       "additionalProperties": true
+    },
+    "images_deleted": {
+      "type": [
+        "null",
+        "string"
+      ]
     }
   },
   "required": [
