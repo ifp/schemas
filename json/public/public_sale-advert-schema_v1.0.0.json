@@ -192,7 +192,7 @@
           "uniqueItems": true
         },
         "geo": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/geo-public-schema_v1.0.0.json"
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/public/geo-public-schema_v1.0.0.json"
         },
         "price": {
           "type": "object",
