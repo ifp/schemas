@@ -50,6 +50,18 @@
         "string"
       ]
     },
+    "agency_logo": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "syndicator_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "agency_branch_name": {
       "type": [
         "null",
@@ -306,6 +318,18 @@
         null,
         "all_images_deleted",
         "image_4+_deleted"
+      ]
+    },
+    "syndicator_tag": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "syndicator_name": {
+      "type": [
+        "null",
+        "string"
       ]
     }
   },
