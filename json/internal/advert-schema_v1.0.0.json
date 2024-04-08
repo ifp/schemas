@@ -56,12 +56,6 @@
         "string"
       ]
     },
-    "syndicator_name": {
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "agency_branch_name": {
       "type": [
         "null",
