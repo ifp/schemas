@@ -122,6 +122,12 @@
         "string"
       ]
     },
+    "external_reference": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "external_id": {
       "type": [
         "null",
