@@ -257,6 +257,7 @@
         "approved",
         "conflict",
         "denied",
+        "part_approved",
         "pending",
         "to_review"
       ],
