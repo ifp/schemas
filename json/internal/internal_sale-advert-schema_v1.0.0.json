@@ -46,20 +46,16 @@
           "minLength": 3
         },
         "title_fr": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "string",
+          "minLength": 3
         },
         "description_en": {
           "type": "string",
           "minLength": 3
         },
         "description_fr": {
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": "string",
+          "minLength": 3
         },
         "highlights": {
           "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/highlights-schema_v1.0.0.json"
