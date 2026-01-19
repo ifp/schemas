@@ -4,10 +4,16 @@
     "mountain": {
       "type": "string"
     },
+    "mountain_fr": {
+      "type": ["string", "null"]
+    },
     "mountain_tag": {
       "type": "string"
     },
     "domain": {
+      "type": ["string", "null"]
+    },
+    "domain_fr": {
       "type": ["string", "null"]
     },
     "domain_tag": {
