@@ -74,8 +74,10 @@
             "full_location_reverse": "Adriers, Vienne (86), Poitou-Charentes, France",
             "ski": {
               "domain": "The Three Valleys",
+              "domain_fr": "Les Trois Vall\u00e9es",
               "resort": "Courchevel",
               "mountain": "Northern Alps",
+              "mountain_fr": "Alpes du Nord (Ski)",
               "domain_tag": "the-three-valleys",
               "resort_tag": "courchevel",
               "sub_resort": "Courchevel",
