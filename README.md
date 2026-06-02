@@ -1,6 +1,6 @@
 # IFP Schemas
 
-This schema represents the Advert object used within the IFP systems. Currently it only supports Sale Adverts.
+This schema is for the Advert JSON data used within the IFP systems. While it is called "sale-advert-schema" it supports both sale and rental adverts.
 
 ## Public Schemas:
 
