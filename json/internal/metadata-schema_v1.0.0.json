@@ -22,7 +22,8 @@
         "config",
         "quota",
         "reloader",
-        "french-property"
+        "french-property",
+        "e1"
       ],
       "default": "importer"
     },
