@@ -43,6 +43,23 @@ git describe --tags --abbrev=0 && git log --oneline $(git describe --tags --abbr
 Any commits listed are merged but not released to consumers. Surface them and the tag that
 should be cut. Tags are bare SemVer with no `v` prefix.
 
+## Verification tiers
+
+Nothing in this repo is user-visible — it is JSON Schemas, fixtures and a validator, consumed by
+other services rather than read by anyone. So the human-tier list is deliberately empty and every
+history doc here is **auto tier**: the reconcile verifies it itself and promotes it.
+
+```yaml
+human_verify_paths: []
+```
+
+`verify_default: review` is **not** set. This is not a docs repo — `bin/validate.py` runs in CI on
+every branch and can make a real claim about the schemas, so "the reviewer read the diff" is not
+the strongest check available. An auto-tier promotion here means CI green on the merge commit
+**plus** a named spot-check of the behaviour that changed — a validator run, or a document that
+should now be accepted or rejected. Record the check in the doc body; "CI was green" alone is
+inference from the merge, not a check.
+
 ## Code directories — for stable-doc deep-audit (10a)
 
 - `json/public/` — the third-party feed contract, examples and changelog

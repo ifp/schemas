@@ -1,7 +1,7 @@
 ---
 title: ifp/schemas — situation report
 updated: 2026-09-11
-reconcile: 5
+reconcile: 6
 ---
 
 # ifp/schemas — situation report
@@ -31,7 +31,8 @@ release model and the conventions that read as bugs but aren't.
 
 ## In flight
 
-- `fix/fixture-must-cover-both-image-generations` — plus this reconcile. Unmerged.
+- `chore/verify-history-docs` — closes out the five history docs under the new two-tier rule.
+  Unmerged.
 
 ## Settled — do not reopen
 
@@ -60,7 +61,8 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 2. Merge this, cut the release, then update `RentalSearchControllerTest`'s five changed URLs in
    `french-property.com` (verified locally with `php83`).
 3. Tell `advert-collector`'s owner that emitting floor plan objects is now possible.
-4. Verify the four history docs currently `status: in-progress`.
+4. Nothing awaiting human verification — every history doc here is auto tier and now carries
+   `verified: ci` with the check that promoted it.
 
 ## Roadmap
 
