@@ -1,6 +1,6 @@
 {
   "type": "array",
-  "description": "Floor plans for the advert. Mirrors images-schema: the three keys knowable when the advert is collected are required, and everything a CDN adds later is optional. Which CDN generation processed an entry is given by `cdn` — 2 is the legacy Cloudinary path (cloudinary_account / public_id / version), 3 and 4 are Bunny (path). See the changelog for why v1.1.0 could not express this.",
+  "description": "Floor plans for the advert. Mirrors images-schema: only listing_position and title are required, and everything added later is optional. Which CDN generation processed an entry is given by `cdn`: 2 is the legacy Cloudinary path (cloudinary_account / public_id / version), 3 and 4 are Bunny (path). Two shapes occur in live data and both must validate — feed-imported media carries original_url / original_bytes / archived_at, private-vendor media carries none of them because it is uploaded to us directly rather than fetched from a source. See the changelog for why v1.1.0 could not express this, and why v1.2.0's first cut required original_url and was wrong.",
   "items": {
     "type": "object",
     "properties": {
@@ -25,7 +25,7 @@
           "null",
           "string"
         ],
-        "description": "The URL the floor plan was collected from. Required — an entry that names no source cannot be fetched or re-fetched — but nullable, because an archived entry may no longer have one."
+        "description": "The URL the file was collected from. Optional, and absent entirely on private-vendor media: those files are uploaded to us directly, so there is no source URL to record. Feed-imported media carries it."
       },
       "original_bytes": {
         "type": [
@@ -109,8 +109,7 @@
     },
     "required": [
       "listing_position",
-      "title",
-      "original_url"
+      "title"
     ],
     "additionalProperties": true
   },
