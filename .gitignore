@@ -4,3 +4,6 @@ wiki/
 test.json
 test.xml
 test2.json
+
+# Claude Code — per-user permissions (settings.json is committed, this is not)
+.claude/settings.local.json
