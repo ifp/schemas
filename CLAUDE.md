@@ -97,6 +97,25 @@ in `bin/validate.py` if you add a fixture.
 are downstream response shapes, not schema-validated — they wrap an advert in `hits.hits[]._source`
 and `data` respectively, and they still have to be updated by hand when a field moves.
 
+## Images and floor plans — one lifecycle, three CDN generations
+
+An image or floor plan arrives from the agency's feed with only a source URL and maybe a title.
+Everything else is added later, by whichever CDN processed it. The `cdn` integer says which:
+
+| `cdn` | CDN | Fields it populates |
+|---|---|---|
+| 2 | Cloudinary — **legacy**, dropped years ago | `cloudinary_account`, `public_id`, `version` |
+| 3, 4 | Bunny — current (`precache_cdns` in the loader) | `path` |
+
+`IFP\Basebox\AdvertImage\Cdn2AdvertImage` still reads the Cloudinary trio, which is why those
+fields survive in the schemas. Both `images-schema` and `floor_plans-schema_v1.2.0` therefore
+require **only what is knowable at collection time** and leave every CDN field optional.
+
+**`floor_plans-schema_v1.1.0` is the exception, and it is wrong** — it requires all eleven keys
+including `cloudinary_account` and `public_id`, so it mandates a dead vendor and values no
+producer can know before upload. Use v1.2.0 (via `internal_sale-advert-schema_v1.2.0`). Both old
+versions stay published.
+
 ## Layout
 
 ```
@@ -159,12 +178,9 @@ Genuinely open, and each needing a decision rather than a patch:
 
 - `advert.first_visible_at` is `{"type": "array"}` with no `items`; every producer found emits
   a hardcoded `[]` and nothing populates it.
-- `advert-collector` describes its output as `internal_sale-advert-schema` but emits the
-  **pre-importer** shape — flat URLs for `floor_plans`, no Cloudinary fields. The internal
-  `floor_plans-schema_v1.1.0` requires all eleven keys including `public_id`, which a producer
-  cannot know before upload, while `images-schema` requires only the three pre-CDN keys. One of
-  the two is wrong; no fixture exercises either, because `floor_plans` and `virtual_tours` are
-  both `[]` in `upsert_sale_advert.json`.
+- `self.version` says `1-0-0` in every published schema regardless of its filename — public and
+  internal, v1.0.0 and v1.1.0 alike. `internal_sale-advert-schema_v1.2.0.json` is the first to
+  carry its real version. The older files are left alone; don't copy their value into new ones.
 
 Background and the full external cross-reference: Company Memory
 `reports/schemas/atlas-cross-reference/report.md`. Current state and next actions:

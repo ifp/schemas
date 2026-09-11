@@ -56,6 +56,7 @@ It runs in CI on every branch and pull request.
 
 [Internal Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/internal/internal_sale-advert-schema_changelog.md)
 
+- [Internal Sale Advert JSON Schema v1.2.0](https://raw.githubusercontent.com/ifp/schemas/master/json/internal/internal_sale-advert-schema_v1.2.0.json)
 - [Internal Sale Advert JSON Schema v1.1.0](https://raw.githubusercontent.com/ifp/schemas/master/json/internal/internal_sale-advert-schema_v1.1.0.json)
 - [Internal Sale Advert JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/internal/internal_sale-advert-schema_v1.0.0.json)
 

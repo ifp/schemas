@@ -1,0 +1,38 @@
+[
+  {
+    "listing_position": 1,
+    "title": "Ground floor plan",
+    "title_fr": null,
+    "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-1.jpg",
+    "original_bytes": 184320
+  },
+  {
+    "listing_position": 2,
+    "title": "First floor plan",
+    "title_fr": null,
+    "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-2.jpg",
+    "original_bytes": 201114,
+    "cdn": 3,
+    "path": "/adverts/123456/ABC123456789-floorplan-2.jpg",
+    "width": 1200,
+    "height": 900,
+    "format": "jpg",
+    "bytes": 96410,
+    "archived_at": null
+  },
+  {
+    "listing_position": 3,
+    "title": "Outbuilding plan",
+    "title_fr": null,
+    "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-3.jpg",
+    "original_bytes": 150022,
+    "cdn": 2,
+    "cloudinary_account": "ifp",
+    "public_id": "testimmo-ABC123456789-floorplan-3",
+    "version": "1444363660",
+    "width": 800,
+    "height": 600,
+    "format": "jpg",
+    "bytes": 71204
+  }
+]

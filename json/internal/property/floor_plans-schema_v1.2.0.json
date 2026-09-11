@@ -1,0 +1,119 @@
+{
+  "type": "array",
+  "description": "Floor plans for the advert. Mirrors images-schema: the three keys knowable when the advert is collected are required, and everything a CDN adds later is optional. Which CDN generation processed an entry is given by `cdn` — 2 is the legacy Cloudinary path (cloudinary_account / public_id / version), 3 and 4 are Bunny (path). See the changelog for why v1.1.0 could not express this.",
+  "items": {
+    "type": "object",
+    "properties": {
+      "listing_position": {
+        "type": "integer"
+      },
+      "title": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "title_fr": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "Not currently populated for floor plans. Present so they can adopt the same bilingual treatment as images without another version bump."
+      },
+      "original_url": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "The URL the floor plan was collected from. Required — an entry that names no source cannot be fetched or re-fetched — but nullable, because an archived entry may no longer have one."
+      },
+      "original_bytes": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "cdn": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Which CDN generation holds this file. 2 = Cloudinary (legacy), 3 and 4 = Bunny. Absent until the file has been processed."
+      },
+      "path": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "Bunny path, appended to the CDN's base_uri to build a URL (cdn 3 and 4)."
+      },
+      "cloudinary_account": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "Legacy, cdn 2 only. Retained because IFP\\Basebox\\AdvertImage\\Cdn2AdvertImage still reads it."
+      },
+      "public_id": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "Legacy, cdn 2 only."
+      },
+      "version": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "description": "Legacy, cdn 2 only."
+      },
+      "width": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "height": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "format": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "enum": [
+          null,
+          "gif",
+          "jpe",
+          "jpeg",
+          "jpg",
+          "png"
+        ]
+      },
+      "bytes": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "archived_at": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    "required": [
+      "listing_position",
+      "title",
+      "original_url"
+    ],
+    "additionalProperties": true
+  },
+  "minItems": 0,
+  "uniqueItems": true
+}
