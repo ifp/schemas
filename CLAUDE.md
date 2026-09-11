@@ -15,10 +15,9 @@ JSON files so consumers can pull them into their test suites.
 
 ## Project status — read at session start
 
-- `SITREP.md` — situation report _(created by the first `reconcile-everything` run)_
-- `docs/TODO.md` — follow-ups _(same)_
-
-Neither exists yet. Both appear once the first reconcile runs.
+- [`SITREP.md`](SITREP.md) — where the repo is right now, open questions, next actions
+- [`docs/TODO.md`](docs/TODO.md) — forward-looking backlog, mostly contract decisions
+- [`docs/README.md`](docs/README.md) — index of the internal docs
 
 ## The release model — read this before changing anything
 
@@ -34,10 +33,10 @@ register the VCS repository and pull it transitively. So any change that consume
 requires **a new git tag** after the PR merges. Tags are bare SemVer, no `v` prefix
 (`1.16.0`, not `v1.16.0`).
 
-> **As of 2026-09-11 the latest tag is `1.16.0`, and [#138](https://github.com/ifp/schemas/pull/138)
-> and [#139](https://github.com/ifp/schemas/pull/139) are merged to `master` but untagged — so
-> neither fix has reached a single consumer.** Check `git log $(git describe --tags --abbrev=0)..master`
-> before assuming a merged change is live.
+> **Check `git log $(git describe --tags --abbrev=0)..master` before assuming a merged change is
+> live.** This has bitten already: [#138](https://github.com/ifp/schemas/pull/138) and
+> [#139](https://github.com/ifp/schemas/pull/139) sat merged and untagged, reaching no consumer,
+> until `1.17.0` was cut on 11 Sep 2026.
 
 ### Two version axes, easily confused
 
@@ -105,7 +104,8 @@ json/public/          the third-party feed contract + examples + changelog
 json/internal/        the pipeline envelope; advert-schema and metadata-schema sit here
   property/           one file per property sub-object (price, geo, images, attributes, …)
     geo/              French admin hierarchy: locality, department, region, commune, ski
-      distances_from/ airports, autoroutes, eurotunnel, TGV, train, ferry — ALL 0 BYTES
+      distances_from/ airports, autoroutes, eurotunnel, TGV, train, ferry — ALL 0 BYTES,
+                      abandoned proximity WIP; locality*-wip / -nearest files here are broken too
     enums/            types / features / tags: the enum + singular/plural EN/FR lookups
 json/fixtures/        canonical documents the consuming systems test against
 src/Fixtures/         the Composer package's only PHP — loadFixture() / loadEnum()
@@ -144,9 +144,15 @@ Not bugs to fix casually — each needs a decision, and most need a version bump
   and sets top-level `additionalProperties: false`.
 - `advert.first_visible_at` is `{"type": "array"}` with no `items`; every producer found emits
   a hardcoded `[]` and nothing populates it.
+- **`simplified_export_sale-advert-schema_v1.0.0.json` still `$ref`s the strict enum files**, so a
+  type accepted by `property.attributes` is rejected by our own partner-export schema. Third
+  occurrence of the divergence [#137](https://github.com/ifp/schemas/pull/137) opened;
+  [#139](https://github.com/ifp/schemas/pull/139) closed the second. That file also sets no
+  `required` and leaves `additionalProperties` open, so it validates `{}`.
 
 Background and the full external cross-reference: Company Memory
-`reports/schemas/atlas-cross-reference/report.md`.
+`reports/schemas/atlas-cross-reference/report.md`. Current state and next actions:
+[SITREP.md](SITREP.md).
 
 ## Stack
 
