@@ -109,7 +109,23 @@ Everything else is added later, by whichever CDN processed it. The `cdn` integer
 
 `IFP\Basebox\AdvertImage\Cdn2AdvertImage` still reads the Cloudinary trio, which is why those
 fields survive in the schemas. Both `images-schema` and `floor_plans-schema_v1.2.0` therefore
-require **only what is knowable at collection time** and leave every CDN field optional.
+require **only `listing_position` and `title`** (images also requires `title_fr`) and leave
+everything else optional.
+
+**Two shapes occur in live data, and anything you write must accept both:**
+
+| Source | `cdn` | Carries |
+|---|---|---|
+| Feed-imported | 3 | `path`, `original_url`, `original_bytes`, `archived_at`, `width`, `height` |
+| Private vendor | 4 | `path`, `width`, `height` — **no `original_url`**, no bytes, no `archived_at` |
+
+Private-vendor files are uploaded to us directly, so there is no source URL to record. This has
+now caused the same bug twice: v1.1.0 required `cloudinary_account` (unknowable before upload),
+and v1.2.0's first cut required `original_url` (never exists for private vendors). **Do not add
+anything to a `required` list here without checking it against a live advert** —
+`https://config.french-property.com/adverts/full_json/{advert_id}` (login required); `1-IFPC47364`
+is a private vendor and `1634-BVI84819` is feed-imported. Note also that `format` and `bytes`
+appear in `images-schema` but in neither live sample.
 
 **`floor_plans-schema_v1.1.0` is the exception, and it is wrong** — it requires all eleven keys
 including `cloudinary_account` and `public_id`, so it mandates a dead vendor and values no

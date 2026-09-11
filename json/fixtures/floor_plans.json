@@ -1,38 +1,42 @@
 [
   {
-    "listing_position": 1,
+    "listing_position": 0,
     "title": "Ground floor plan",
     "title_fr": null,
-    "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-1.jpg",
-    "original_bytes": 184320
+    "original_url": "https://media.apimo.pro/cache/ab209364fdf501ab930e1ebfb7c6a940_c84965d95f_1920-original.jpg",
+    "original_bytes": 609266,
+    "archived_at": null,
+    "cdn": 3,
+    "path": "/agency_1634/BVI84819/1634-BVI84819-aabb8afb28f9c806c55b-floorplan.jpg",
+    "width": 1920,
+    "height": 1440
+  },
+  {
+    "listing_position": 1,
+    "title": null,
+    "title_fr": null,
+    "cdn": 4,
+    "path": "/private-vendors/IFPC47364/c02eca3d-545f-419c-bd9a-8f9da630d972-floorplan.jpg",
+    "width": 1200,
+    "height": 1600
   },
   {
     "listing_position": 2,
-    "title": "First floor plan",
-    "title_fr": null,
-    "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-2.jpg",
-    "original_bytes": 201114,
-    "cdn": 3,
-    "path": "/adverts/123456/ABC123456789-floorplan-2.jpg",
-    "width": 1200,
-    "height": 900,
-    "format": "jpg",
-    "bytes": 96410,
-    "archived_at": null
-  },
-  {
-    "listing_position": 3,
     "title": "Outbuilding plan",
     "title_fr": null,
     "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-3.jpg",
-    "original_bytes": 150022,
+    "original_bytes": 150022
+  },
+  {
+    "listing_position": 3,
+    "title": "Legacy plan still on the old CDN",
+    "title_fr": null,
+    "original_url": "http://images.example.com/testimmo/ABC123456789-floorplan-4.jpg",
     "cdn": 2,
     "cloudinary_account": "ifp",
-    "public_id": "testimmo-ABC123456789-floorplan-3",
+    "public_id": "testimmo-ABC123456789-floorplan-4",
     "version": "1444363660",
     "width": 800,
-    "height": 600,
-    "format": "jpg",
-    "bytes": 71204
+    "height": 600
   }
 ]

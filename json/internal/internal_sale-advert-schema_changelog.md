@@ -1,5 +1,32 @@
 # Internal Sale Advert Schema Changelog
 
+### Fix to v1.2.0, in place (2026-09-11)
+
+- **`floor_plans-schema_v1.2.0` no longer requires `original_url`.** Required is now
+  `listing_position` and `title` only.
+
+  As first cut, v1.2.0 required `original_url` — and then a live advert showed that
+  **private-vendor media has no `original_url` at all**. Those files are uploaded to us
+  directly, so there is no source URL to record; only feed-imported media carries one. So the
+  first cut of v1.2.0 would have rejected every private vendor's floor plans.
+
+  That is precisely the fault v1.2.0 was written to correct — v1.1.0 required
+  `cloudinary_account`, a value no producer could know at that point, and the first v1.2.0
+  required `original_url`, a value that for half of all adverts never exists. The lesson is the
+  one this repo keeps teaching: a `required` list derived from a document rather than from
+  production data will be wrong.
+
+  Fixed in place rather than bumped again: v1.2.0 was hours old, had reached no consumer, and
+  was wrong. Same reasoning as the `agency_microsite` fix.
+
+  Both live shapes are now covered by `json/fixtures/floor_plans.json`, so the regression is
+  locked in:
+
+  | Source | `cdn` | Carries |
+  |---|---|---|
+  | Feed-imported | 3 | `original_url`, `original_bytes`, `archived_at`, `path` |
+  | Private vendor | 4 | `path` only — no source URL, no bytes, no `archived_at` |
+
 ### v1.2.0 (2026-09-11)
 
 - Change of `{property.floor_plans}` to `floor_plans-schema_v1.2.0`, which mirrors

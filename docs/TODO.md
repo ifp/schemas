@@ -11,17 +11,24 @@ production bug if "fixed". Check there before adding anything back.
 
 ## Decisions needed
 
-- [ ] **Rebuild the fixtures from a live advert record.** `upsert_sale_advert.json` and both
-  response fixtures describe images in Cloudinary terms — `cloudinary_account: "test-account"`,
-  `public_id`, `version`, and no `cdn` or `path`. The live pipeline has been Bunny (`cdn` 3 and 4)
-  for years, so every test in every consuming repo that loads these fixtures is exercising a shape
-  production no longer produces. Even the new `floor_plans.json` has a `path` value inferred from
-  `BunnyCdnHelperTrait` rather than copied from a real row. **Biggest open item in this repo.**
-  Read-only, one record is enough:
+- [ ] **`french-property.com`'s test suite cannot run on PHP 8.5.** `spatie/ray` calls
+  `curl_close()`, and Laravel's deprecation handling turns that into a 500 on every request — 74
+  of 76 failures in `RentalSearchControllerTest` before any change of ours. Not this repo's bug,
+  but it blocks verifying anything against that suite.
 
-  ```bash
-  ssh forge@134.122.108.169 'cd /home/forge/loader.french-property.com/current && php8.3 artisan tinker'
-  ```
+- [ ] **`RentalSearchControllerTest:52` (french-property.com) probably needs a one-line change.**
+  It sets `public_id` on the fixture's first image to distinguish two adverts; under the rebuilt
+  `cdn: 3` fixture both resolve through `Cdn3AdvertImage` from the same `path`. Setting `path`
+  instead is the likely fix. Unverified — see above.
+
+- [ ] **`ifp/system` has its own Cloudinary-shaped test data.**
+  `AdvertHelper::setImageTitlesOnAdvertData` builds an `$example_image` with `cloudinary_account`,
+  `public_id` and `version`, and replaces the fixture's images with it — so rebuilding our
+  fixtures does not reach it.
+
+- [ ] **`images-schema` describes `format` and `bytes`, which neither live record carries.**
+  Both optional, so nothing breaks — but the schema claims fields the pipeline no longer
+  populates. Confirm, then remove or document.
 
 - [ ] **`advert-collector` emits floor plans as bare URL strings** (`PublicAdvertMapper::flatUrls`)
   where the schema wants objects. `floor_plans-schema_v1.2.0` now makes the obvious fix possible —
