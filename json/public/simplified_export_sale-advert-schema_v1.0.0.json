@@ -92,15 +92,31 @@
     },
     "attributes": {
       "type": "object",
+      "description": "Lookup values describing the property. Deliberately not a closed enum: the internal vocabulary these are drawn from currently accepts any string, so this schema cannot promise a fixed set without rejecting our own output. The values in use are published at json/public/examples/public_sale-advert-schema_v1.x-enum-values.json.",
       "properties": {
         "types": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/types-schema-enum.json"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": true
         },
         "features": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/features-schema-enum.json"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": true
         },
         "tags": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/tags-schema-enum.json"
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": true
         }
       },
       "required": [
@@ -135,5 +151,24 @@
       "uniqueItems": true
     }
   },
-  "additionalProperties": true
+  "required": [
+    "id",
+    "reference",
+    "title_en",
+    "description_en",
+    "department_code",
+    "post_code",
+    "commune_name",
+    "location",
+    "price_eur",
+    "bathrooms",
+    "bedrooms",
+    "floor_size_m2",
+    "land_size_m2",
+    "dpe_number",
+    "ges_number",
+    "attributes",
+    "images"
+  ],
+  "additionalProperties": false
 }

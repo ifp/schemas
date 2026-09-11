@@ -1,0 +1,32 @@
+{
+  "id": "123456-ABC123456789",
+  "reference": "ABC123456789",
+  "title_en": "Delightful, fully renovated detached stone property, village centre, attached garden",
+  "description_en": "Beautifully presented, two bedroom property in the heart of this typical Haute Vienne village, with an attached garden and far-reaching countryside views.",
+  "department_code": "86",
+  "post_code": "86430",
+  "commune_name": "Adriers",
+  "location": "5 minute walk from village centre",
+  "price_eur": 91300,
+  "bathrooms": 3,
+  "bedrooms": 4,
+  "floor_size_m2": 60,
+  "land_size_m2": 841,
+  "dpe_number": 145,
+  "ges_number": 22,
+  "attributes": {
+    "types": ["house", "residential"],
+    "features": ["balcony", "double_glazing"],
+    "tags": ["detached", "furnished"]
+  },
+  "images": [
+    {
+      "title": "The first and best image",
+      "url": "http://images.example.com/testimmo/ABC123456789-0.jpg"
+    },
+    {
+      "title": null,
+      "url": "http://images.example.com/testimmo/ABC123456789-1.jpg"
+    }
+  ]
+}

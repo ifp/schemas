@@ -1,2 +1,2 @@
 date: 2026-09-11
-note: First reconcile. Onboarding (#140), release 1.17.0 cut covering #138-#140, and the repo's first validator + CI (this PR). Six contract decisions surfaced and recorded in SITREP/TODO, none actioned.
+note: Second reconcile. Worked the six open questions from the first: four fixed (simplified_export enums + required, internal queue envelope, proximity WIP deleted), two closed as deliberate-by-design after investigation (virtual_tours shape, let/rent vocabulary). New finding recorded: advert-collector emits the pre-importer shape while floor_plans-schema requires post-CDN keys.
