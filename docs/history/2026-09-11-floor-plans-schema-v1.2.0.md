@@ -1,15 +1,16 @@
 ---
 title: Floor plans schema v1.2.0 — one lifecycle, three CDN generations
 tags: [schema, internal-envelope, images, cdn]
-status: in-progress
-completed:
+status: stable
+completed: 2026-09-11
+verified: ci
 commits: [7e472ed]
 pr: 143
 ---
 
 # Floor plans schema v1.2.0 — one lifecycle, three CDN generations
 
-> **Awaiting verification.** Unmerged at the time of writing.
+Verified 11 Sep 2026 (auto tier): CI `validate` green on merge commit `2a3ed5e`; a collector-shaped `{listing_position, title, original_url}` object is rejected by `floor_plans-schema_v1.1.0` and accepted by v1.2.0 — the exact behaviour the bump existed for.
 
 ## The problem, stated properly
 

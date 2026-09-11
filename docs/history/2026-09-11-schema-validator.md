@@ -1,16 +1,16 @@
 ---
 title: Schema validator and CI
 tags: [tooling, ci, validation]
-status: in-progress
-completed:
+status: stable
+completed: 2026-09-11
+verified: ci
 commits: [f76f58f]
 pr: 141
 ---
 
 # Schema validator and CI
 
-> **Awaiting verification.** Unmerged at the time of writing. `status` stays `in-progress` and
-> `completed:` stays blank until someone has confirmed the validator does what is wanted.
+Verified 11 Sep 2026 (auto tier): CI `validate` green on merge commit `3e7af4c`; `python3 bin/validate.py` on `master` reports PASSED with 9 fixture/schema pairings green across 41 live schema files, and 1 non-fatal warning.
 
 ## What shipped
 

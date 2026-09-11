@@ -1,17 +1,16 @@
 ---
 title: Partner export contract, queue envelope, and the proximity WIP
 tags: [schema, public-contract, internal-envelope, cleanup]
-status: in-progress
-completed:
+status: stable
+completed: 2026-09-11
+verified: ci
 commits: [76fe281, 984660d]
 pr: 142
 ---
 
 # Partner export contract, queue envelope, and the proximity WIP
 
-> **Awaiting verification.** Unmerged at the time of writing. `status` stays `in-progress` and
-> `completed:` stays blank until someone has confirmed these are the right calls — particularly
-> the two items deliberately left alone.
+Verified 11 Sep 2026 (auto tier): CI `validate` green on merge commit `8e2c159`; `simplified_export` now rejects `{}` (`'id' is a required property`) and accepts a novel attribute value (`bastide_provencale_neuve`), which are the two behaviours this changed.
 
 Worked through the six open questions the [first reconcile](2026-09-11-schema-validator.md) put
 in the SITREP. Four were real and are fixed. **Two were not defects at all**, and one of them

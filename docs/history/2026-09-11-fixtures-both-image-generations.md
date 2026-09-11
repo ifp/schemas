@@ -1,15 +1,16 @@
 ---
 title: The fixtures must carry both image generations, not just the new one
 tags: [fixtures, images, cdn, correction]
-status: in-progress
-completed:
+status: stable
+completed: 2026-09-11
+verified: ci
 commits: []
 pr: 145
 ---
 
 # The fixtures must carry both image generations, not just the new one
 
-> **Awaiting verification.** Unmerged at the time of writing.
+Verified 11 Sep 2026 (auto tier): CI `validate` green on merge commit `b2ae478`; `upsert_sale_advert.json` carries 5 legacy images (no `cdn`) and 5 Bunny-native (`cdn: 3`), and the downstream consumer change ([#1679](https://github.com/ifp/www.french-property.com/pull/1679)) went green on french-property.com's own CI against this fixture.
 
 This corrects [the fixture rebuild](2026-09-11-floor-plans-original-url-fix.md), which converted
 every image in every fixture to the Bunny shape on the strength of two live adverts. Two adverts

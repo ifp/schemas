@@ -1,15 +1,16 @@
 ---
 title: floor_plans v1.2.0 required a field that half of all adverts never have
 tags: [schema, images, cdn, regression]
-status: in-progress
-completed:
+status: stable
+completed: 2026-09-11
+verified: ci
 commits: [afd36a3, 57fba02]
 pr: 144
 ---
 
 # floor_plans v1.2.0 required a field that half of all adverts never have
 
-> **Awaiting verification.** Unmerged at the time of writing.
+Verified 11 Sep 2026 (auto tier): CI `validate` green on merge commit `3c0bb9c`; live private-vendor media (`cdn: 4`, no `original_url`) is rejected by v1.1.0 and accepted by v1.2.0 as fixed.
 
 `floor_plans-schema_v1.2.0` shipped in `1.19.0` requiring `original_url`. A live advert, fetched
 hours later, showed that **private-vendor media has no `original_url` at all**. Those files are
