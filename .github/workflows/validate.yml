@@ -1,0 +1,28 @@
+name: Validate schemas
+
+# '**' rather than '*': in GitHub Actions glob syntax '*' does not match branch
+# names containing a slash, so feat/... and fix/... branches would silently skip
+# CI entirely and any required check would hang forever.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Pinned: bin/validate.py uses RefResolver, which is deprecated in
+      # jsonschema 4.18+ and scheduled for removal in a future major.
+      - name: Install jsonschema
+        run: pip install 'jsonschema~=4.25'
+
+      - name: Validate schemas and fixtures
+        run: python3 bin/validate.py

@@ -29,6 +29,22 @@ There is some logic to the required fields of the property.geo.user_data, which 
 - commune_name + department_name
 - commune_name + department_code
 
+### Other published schemas:
+
+- [Simplified Export Sale Advert JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/simplified_export_sale-advert-schema_v1.0.0.json) - the schema of the property exports we send to partners. Field-by-field notes: [partner_exports.md](https://github.com/ifp/schemas/blob/master/partner_exports.md).
+- [Geo Public JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/geo-public-schema_v1.0.0.json) - referenced by `property.geo` in the public sale advert schemas; you do not need to fetch it separately to validate.
+
+### Validating your JSON:
+
+Run the repo's own validator over every schema and fixture:
+
+```
+pip install 'jsonschema~=4.25'
+python3 bin/validate.py
+```
+
+It runs in CI on every branch and pull request.
+
 ### JSON resources:
 
 - [Tutorials](https://www.google.co.uk/search?q=json%20tutorial)
@@ -38,7 +54,7 @@ There is some logic to the required fields of the property.geo.user_data, which 
 
 ## Internal Schemas:
 
-[Internal Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/internal_sale-advert-schema_changelog.md)
+[Internal Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/internal/internal_sale-advert-schema_changelog.md)
 
 - [Internal Sale Advert JSON Schema v1.1.0](https://raw.githubusercontent.com/ifp/schemas/master/json/internal/internal_sale-advert-schema_v1.1.0.json)
 - [Internal Sale Advert JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/internal/internal_sale-advert-schema_v1.0.0.json)

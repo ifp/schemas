@@ -15,10 +15,9 @@ JSON files so consumers can pull them into their test suites.
 
 ## Project status — read at session start
 
-- `SITREP.md` — situation report _(created by the first `reconcile-everything` run)_
-- `docs/TODO.md` — follow-ups _(same)_
-
-Neither exists yet. Both appear once the first reconcile runs.
+- [`SITREP.md`](SITREP.md) — where the repo is right now, open questions, next actions
+- [`docs/TODO.md`](docs/TODO.md) — forward-looking backlog, mostly contract decisions
+- [`docs/README.md`](docs/README.md) — index of the internal docs
 
 ## The release model — read this before changing anything
 
@@ -34,10 +33,10 @@ register the VCS repository and pull it transitively. So any change that consume
 requires **a new git tag** after the PR merges. Tags are bare SemVer, no `v` prefix
 (`1.16.0`, not `v1.16.0`).
 
-> **As of 2026-09-11 the latest tag is `1.16.0`, and [#138](https://github.com/ifp/schemas/pull/138)
-> and [#139](https://github.com/ifp/schemas/pull/139) are merged to `master` but untagged — so
-> neither fix has reached a single consumer.** Check `git log $(git describe --tags --abbrev=0)..master`
-> before assuming a merged change is live.
+> **Check `git log $(git describe --tags --abbrev=0)..master` before assuming a merged change is
+> live.** This has bitten already: [#138](https://github.com/ifp/schemas/pull/138) and
+> [#139](https://github.com/ifp/schemas/pull/139) sat merged and untagged, reaching no consumer,
+> until `1.17.0` was cut on 11 Sep 2026.
 
 ### Two version axes, easily confused
 
@@ -74,40 +73,25 @@ Two consequences worth holding on to:
 
 ## Validating a change
 
-There is no validator in the repo (see Follow-ups). The recipe that works, with remote `$ref`s
-resolved to the local tree:
-
-```python
-import json, os
-from jsonschema import Draft7Validator, RefResolver
-
-ROOT = "/Users/ingram/code/schemas"
-PREFIX = "https://raw.githubusercontent.com/ifp/schemas/master/"
-
-class LocalResolver(RefResolver):
-    def resolve_remote(self, uri):
-        if uri.startswith(PREFIX):
-            return json.load(open(os.path.join(ROOT, uri[len(PREFIX):])))
-        return super().resolve_remote(uri)
-
-schema = json.load(open(f"{ROOT}/json/internal/internal_sale-advert-schema_v1.1.0.json"))
-doc = json.load(open(f"{ROOT}/json/fixtures/upsert_sale_advert.json"))
-v = Draft7Validator(schema, resolver=LocalResolver(base_uri=PREFIX, referrer=schema))
-for e in v.iter_errors(doc):
-    print("/" + "/".join(str(x) for x in e.absolute_path), e.message)
+```bash
+cd /Users/ingram/code/schemas && python3 bin/validate.py
 ```
 
-**Always validate both directions**: that the fixtures still pass, *and* that the change
-actually rejects what it is meant to reject. A loosening that passes every fixture may have
-loosened nothing.
+Needs `pip install 'jsonschema~=4.25'` once. CI runs the same script on every branch
+(`.github/workflows/validate.yml`). It checks that every live schema is valid draft-07, that
+every `$ref` resolves, and that each fixture still satisfies its schema — with the
+`master`-pinned `$ref` URLs rewritten to the working tree, so you are testing your branch and
+not `master`.
 
-Fixtures to check a change against:
+Two things it deliberately only warns about: **orphaned files** (nothing live `$ref`s them, so
+they cannot break a consumer — the abandoned proximity WIP under `geo/` lives here), and
+**hollow schemas** (`type: object` with no `required` and open `additionalProperties`, which
+validate any object including `{}`).
 
-| Fixture | Validates against |
-|---|---|
-| `json/fixtures/upsert_sale_advert.json` | `json/internal/internal_sale-advert-schema_v1.1.0.json` |
-| `json/public/examples/public_sale-advert-schema_v1.1.0-example.json` | `json/public/public_sale-advert-schema_v1.1.0.json` |
-| `json/public/examples/public_sale-advert-schema_v1.0.0-example.json` | `json/public/public_sale-advert-schema_v1.0.0.json` |
+**A green run is necessary, not sufficient.** Always check the change in both directions: that
+the fixtures still pass, *and* that the change actually rejects what it is meant to reject. A
+loosening that passes every fixture may have loosened nothing. Add the new pairing to `PAIRS`
+in `bin/validate.py` if you add a fixture.
 
 `elasticsearch_single_sale_advert_result.json` and `search_engine_single_sale_advert_result.json`
 are downstream response shapes, not schema-validated — they wrap an advert in `hits.hits[]._source`
@@ -120,7 +104,8 @@ json/public/          the third-party feed contract + examples + changelog
 json/internal/        the pipeline envelope; advert-schema and metadata-schema sit here
   property/           one file per property sub-object (price, geo, images, attributes, …)
     geo/              French admin hierarchy: locality, department, region, commune, ski
-      distances_from/ airports, autoroutes, eurotunnel, TGV, train, ferry — ALL 0 BYTES
+      distances_from/ airports, autoroutes, eurotunnel, TGV, train, ferry — ALL 0 BYTES,
+                      abandoned proximity WIP; locality*-wip / -nearest files here are broken too
     enums/            types / features / tags: the enum + singular/plural EN/FR lookups
 json/fixtures/        canonical documents the consuming systems test against
 src/Fixtures/         the Composer package's only PHP — loadFixture() / loadEnum()
@@ -159,9 +144,15 @@ Not bugs to fix casually — each needs a decision, and most need a version bump
   and sets top-level `additionalProperties: false`.
 - `advert.first_visible_at` is `{"type": "array"}` with no `items`; every producer found emits
   a hardcoded `[]` and nothing populates it.
+- **`simplified_export_sale-advert-schema_v1.0.0.json` still `$ref`s the strict enum files**, so a
+  type accepted by `property.attributes` is rejected by our own partner-export schema. Third
+  occurrence of the divergence [#137](https://github.com/ifp/schemas/pull/137) opened;
+  [#139](https://github.com/ifp/schemas/pull/139) closed the second. That file also sets no
+  `required` and leaves `additionalProperties` open, so it validates `{}`.
 
 Background and the full external cross-reference: Company Memory
-`reports/schemas/atlas-cross-reference/report.md`.
+`reports/schemas/atlas-cross-reference/report.md`. Current state and next actions:
+[SITREP.md](SITREP.md).
 
 ## Stack
 
