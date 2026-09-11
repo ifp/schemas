@@ -45,11 +45,11 @@ PAIRS = [
     ("json/internal/internal_purge-advert-schema.json", "json/fixtures/purge_advert.json"),
     ("json/public/public_sale-advert-schema_v1.1.0.json", "json/public/examples/public_sale-advert-schema_v1.1.0-example.json"),
     ("json/public/public_sale-advert-schema_v1.0.0.json", "json/public/examples/public_sale-advert-schema_v1.0.0-example.json"),
+    ("json/public/simplified_export_sale-advert-schema_v1.0.0.json", "json/fixtures/simplified_export_sale_advert.json"),
 ]
 
 # Published, but not reachable from any fixture root — still strictly checked.
 EXTRA_ROOTS = [
-    "json/public/simplified_export_sale-advert-schema_v1.0.0.json",
     "json/public/geo-public-schema_v1.0.0.json",
     "json/internal/advert-schema_v1.0.0.json",
     "json/internal/metadata-schema_v1.0.0.json",

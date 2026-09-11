@@ -129,26 +129,42 @@ systems/              how each system uses the schema (loader.md, importer.md ar
 - **`property.attributes` currently accepts any string** for types/features/tags —
   [#137](https://github.com/ifp/schemas/pull/137) loosened it and the PR title says
   *temporary*. `advert.pre_attributed` `$ref`s the same file so the two cannot drift apart;
-  when the enums are restored, both tighten together.
+  when the enums are restored, both tighten together. **`simplified_export` is the third place
+  this vocabulary appears** and it deliberately does *not* share the definition — a public
+  schema should not reach into internal enum files, and doing so leaked the `_unclassified` /
+  `_unmapped` sentinels to partners. It carries its own any-string arrays, so restoring the
+  enums means updating it too.
 - **Empty placeholder files are a habit here.** `systems/checker.md`, `systems/quota.md` and
   all six `geo/distances_from/*.json` are 0 bytes. Check a file has content before citing it.
 
-## Known divergences between public and internal
+## Public and internal differ on purpose — don't "fix" these
 
-Not bugs to fix casually — each needs a decision, and most need a version bump:
+The public schema is the agency-facing contract; the internal one is our pipeline envelope.
+Where they disagree it is usually because something converts between them. Two cases look like
+bugs and are not:
 
-- `virtual_tours` is `[{title, original_url}]` in public and `string[]` in internal.
-- `property.status` says `let`/`to_let` in public and `rented`/`to_rent` in internal.
-- The importer's enqueuer emits `unexpected_fields` and `missing_fields`
-  (`importer/processor/enqueuer.rb:19-21`), but the internal schema defines `unmapped_fields`
-  and sets top-level `additionalProperties: false`.
+- **`virtual_tours` is `[{title, original_url}]` in public and `string[]` in internal.**
+  Deliberate. Floor plans and images go through Cloudinary, so internally they become objects
+  carrying `public_id`, dimensions and bytes. Virtual tours are external video links that never
+  touch our CDN, so only the URL survives. `PublicAdvertMapper::flatUrls`
+  (`advert-collector`) does the conversion and says so in its docblock. Changing either side
+  would break the importer, which sifts `virtual_tours` alongside `highlights` as a flat list.
+- **`property.status` says `let`/`to_let` in public and `rented`/`to_rent` in internal.**
+  Deliberate, and **do not loosen the public enum to accept the internal spellings.**
+  `PublicAdvertMapper::isForSale` drops rentals by testing for exactly `['let', 'to_let']`, so a
+  record arriving as `to_rent` would sail past that filter and be ingested as a sale. The
+  loader canonicalises to the internal spelling (`DefaultValueTransformer:55`).
+
+Genuinely open, and each needing a decision rather than a patch:
+
 - `advert.first_visible_at` is `{"type": "array"}` with no `items`; every producer found emits
   a hardcoded `[]` and nothing populates it.
-- **`simplified_export_sale-advert-schema_v1.0.0.json` still `$ref`s the strict enum files**, so a
-  type accepted by `property.attributes` is rejected by our own partner-export schema. Third
-  occurrence of the divergence [#137](https://github.com/ifp/schemas/pull/137) opened;
-  [#139](https://github.com/ifp/schemas/pull/139) closed the second. That file also sets no
-  `required` and leaves `additionalProperties` open, so it validates `{}`.
+- `advert-collector` describes its output as `internal_sale-advert-schema` but emits the
+  **pre-importer** shape — flat URLs for `floor_plans`, no Cloudinary fields. The internal
+  `floor_plans-schema_v1.1.0` requires all eleven keys including `public_id`, which a producer
+  cannot know before upload, while `images-schema` requires only the three pre-CDN keys. One of
+  the two is wrong; no fixture exercises either, because `floor_plans` and `virtual_tours` are
+  both `[]` in `upsert_sale_advert.json`.
 
 Background and the full external cross-reference: Company Memory
 `reports/schemas/atlas-cross-reference/report.md`. Current state and next actions:

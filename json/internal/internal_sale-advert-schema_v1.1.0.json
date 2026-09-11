@@ -144,7 +144,24 @@
     },
     "unmapped_fields": {
       "type": "object",
-      "additionalProperties": true
+      "additionalProperties": true,
+      "description": "Possibly vestigial: no producer found emits this key. The importer's enqueuer sets unexpected_fields and missing_fields instead. Kept until someone confirms nothing relies on it."
+    },
+    "unexpected_fields": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true,
+      "description": "Fields present in the agency's feed that the importer's mapping does not recognise. Set on the queue message by importer/processor/enqueuer.rb."
+    },
+    "missing_fields": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true,
+      "description": "Fields the importer's mapping expected but the agency's feed did not supply. Set on the queue message by importer/processor/enqueuer.rb."
     },
     "mapped_enums": {
       "type": [

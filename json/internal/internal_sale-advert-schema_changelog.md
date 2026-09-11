@@ -1,5 +1,19 @@
 # Internal Sale Advert Schema Changelog
 
+### Fix (2026-09-11)
+
+- **Declare `unexpected_fields` and `missing_fields`.** The importer's enqueuer sets both on
+  every outgoing queue message (`importer/processor/enqueuer.rb:19-21`), but neither was in the
+  schema, and the top level is `additionalProperties: false` — so the envelope this schema
+  describes **rejected the message the importer actually emits**. Verified against `master`
+  before the change: adding those two keys to `upsert_sale_advert.json` produced *"Additional
+  properties are not allowed"*. Both are typed `["object", "null"]` and are optional. Nothing
+  downstream reads them today (the loader never references either), so this is a documentation
+  correction to the envelope, not a behaviour change.
+- **`unmapped_fields` is marked as possibly vestigial.** No producer found emits it; it looks
+  like the name the two fields above were meant to have. Left in place — removing it needs
+  someone to confirm nothing relies on it.
+
 ### Fixes (2026-09-11)
 
 Type-correctness fixes only. No field added or removed, and every existing fixture still
