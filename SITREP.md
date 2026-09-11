@@ -1,7 +1,7 @@
 ---
 title: ifp/schemas — situation report
 updated: 2026-09-11
-reconcile: 1
+reconcile: 2
 ---
 
 # ifp/schemas — situation report
@@ -13,43 +13,48 @@ release model and the conventions that read as bugs but aren't.
 
 - **Released at `1.17.0`** (11 Sep 2026), covering [#138](https://github.com/ifp/schemas/pull/138),
   [#139](https://github.com/ifp/schemas/pull/139) and [#140](https://github.com/ifp/schemas/pull/140).
-  Before this the latest tag was `1.16.0` and two merged fixes had reached no consumer at all —
-  this repo ships by tag, not by merge.
-- **The repo can now validate itself.** `bin/validate.py` plus a GitHub Actions workflow on every
-  branch. Until now nothing checked anything, which is why a public schema stayed impossible to
-  satisfy for years and a sub-schema drifted from its parent for three months.
-- **Onboarded for Claude Code** ([#140](https://github.com/ifp/schemas/pull/140)) — `CLAUDE.md`,
-  reconcile `project.md`, permissions split.
-- **First reconcile.** `.reconcile-marker` and the `reconciled` tag start here.
+  This repo ships by tag, not by merge.
+- **The repo validates itself** — `bin/validate.py` plus CI on every branch
+  ([#141](https://github.com/ifp/schemas/pull/141)). Seven fixture/schema pairings, one warning.
+- **The partner export contract now means something.** `simplified_export` previously validated
+  `{}` and rejected our own output; both fixed.
+- **The internal envelope matches the importer's actual queue message** for the first time.
+- **The abandoned proximity WIP is deleted** — nine orphaned files, six of them empty.
 
 ## In flight
 
-- `feat/schema-validator` — the validator, its CI workflow and this reconcile. Unmerged.
+- `fix/schema-contract-cleanup` — the above, plus this reconcile. Unmerged.
+
+## Settled — do not reopen
+
+Two differences between the public and internal schemas were on this list as defects. They are
+deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
+
+- **`virtual_tours`** objects vs strings — floor plans go through Cloudinary, virtual tours are
+  external links that don't.
+- **`let`/`to_let` vs `rented`/`to_rent`** — and loosening the public enum, which was the plan,
+  would have let rentals through `PublicAdvertMapper::isForSale` and been ingested as sales.
 
 ## Known open questions — decisions needed, not tasks
 
-These are all **contract changes**. None is safe to fix as a drive-by; each needs a call on
-direction first. Detail and the external cross-reference that surfaced most of them:
-Company Memory `reports/schemas/atlas-cross-reference/report.md`.
-
 | Question | Why it isn't just a fix |
 |---|---|
-| `virtual_tours` is `[{title, original_url}]` in public and `string[]` in internal | Changing either breaks a published contract; precedent (`floor_plans`, v1.1.0) says version bump |
-| `property.status` says `let`/`to_let` in public, `rented`/`to_rent` in internal | Same vocabulary, two spellings; either reconcile them or publish the mapping |
-| `simplified_export` still `$ref`s the strict enum files | Confirmed 11 Sep: a novel type accepted by `property.attributes` is **rejected** by our own partner-export schema. Same class of bug as [#139](https://github.com/ifp/schemas/pull/139), third occurrence. Partner-facing, so fixing it is a contract decision |
-| `simplified_export` sets no `required` and leaves `additionalProperties` open | It validates any object, `{}` included. It is the partner export contract and currently guarantees nothing |
-| Importer emits `unexpected_fields` / `missing_fields`; schema defines `unmapped_fields` with `additionalProperties: false` | Either the schema or the importer is stale — needs someone who knows which came first |
-| Six 0-byte `geo/distances_from/*.json`, plus three broken orphaned WIP files | Remnants of an abandoned proximity feature. Fill or delete — see the TODO doc |
+| `advert-collector` emits the pre-importer shape but calls it `internal_sale-advert-schema`; internal `floor_plans-schema_v1.1.0` requires Cloudinary's `public_id`, which no producer can know pre-upload, while `images-schema` requires only three pre-CDN keys | One of the two is wrong and fixing either touches a live pipeline. No fixture exercises it — `floor_plans` is `[]` in the upsert fixture |
+| `advert.first_visible_at` is `{"type": "array"}` with no `items` | Every producer emits a hardcoded `[]`; nothing populates it. May be vestigial |
+| `unmapped_fields` may be vestigial | No producer emits it. Removing it needs confirmation nothing reads it |
+| `locality-data-schema` validates `{}` | Content comes from the locality service; tightening needs that service's behaviour confirmed |
+| `property.attributes` accepts any string, per [#137](https://github.com/ifp/schemas/pull/137) "temporary" | When the enums are restored, three files need updating — `attributes-schema`, and `simplified_export` which now carries its own copy |
 
 ## Next action
 
-1. Merge `feat/schema-validator`, then finalise the `reconciled` tag against the squashed trunk commit.
-2. Decide the direction on the `simplified_export` enum divergence — it is the only open question
-   where our own output can fail our own published schema today.
-3. Everything else in the table above, in whatever order suits.
+1. Merge `fix/schema-contract-cleanup`, then finalise the `reconciled` tag.
+2. Verify the two history docs currently `status: in-progress` and tell Claude to promote them.
+3. Take the `floor_plans` / `advert-collector` stage mismatch to whoever owns the collector —
+   it is the only open item that touches a live pipeline.
 
 ## Roadmap
 
 | Date | What shipped | History doc |
 |---|---|---|
+| 2026-09-11 | Partner export contract, queue envelope, proximity WIP deleted | [2026-09-11-schema-contract-cleanup.md](docs/history/2026-09-11-schema-contract-cleanup.md) |
 | 2026-09-11 | Schema validator + CI | [2026-09-11-schema-validator.md](docs/history/2026-09-11-schema-validator.md) |
