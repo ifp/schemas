@@ -1,7 +1,7 @@
 ---
 title: ifp/schemas — situation report
 updated: 2026-09-11
-reconcile: 4
+reconcile: 5
 ---
 
 # ifp/schemas — situation report
@@ -26,11 +26,12 @@ release model and the conventions that read as bugs but aren't.
 - **Released at `1.19.0`** covering [#143](https://github.com/ifp/schemas/pull/143), then fixed:
   v1.2.0's first cut required `original_url`, which private-vendor media never has.
 - **The live media shape is known at last** — two real adverts, recorded in `CLAUDE.md`.
-- **All fixtures rebuilt to the live shape.** No Cloudinary left in this repo's test data.
+- **All fixtures rebuilt to the live shapes** — five legacy images (no `cdn`, exercising the
+  Cloudinary→Bunny shim in `ifp/system`) and five Bunny-native, because production has both.
 
 ## In flight
 
-- `fix/floor-plans-original-url-not-required` — the fix above, plus this reconcile. Unmerged.
+- `fix/fixture-must-cover-both-image-generations` — plus this reconcile. Unmerged.
 
 ## Settled — do not reopen
 
@@ -46,7 +47,6 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 
 | Question | Why it isn't just a fix |
 |---|---|
-| `french-property.com`'s suite cannot run on PHP 8.5 (`spatie/ray` → `curl_close()` → 500 on every request) | Not this repo's bug, but it blocks verifying fixture changes against that suite. One predicted risk there is unverified, not cleared |
 | `ifp/system` has its own Cloudinary-shaped test data in `AdvertHelper` | Rebuilding our fixtures doesn't reach it; needs a change in that repo |
 | `advert-collector` emits floor plans as bare URL strings and needs to emit objects | v1.2.0 makes the fix possible; nothing here forces it. Belongs to whoever owns the collector |
 | `advert.first_visible_at` is `{"type": "array"}` with no `items` | Every producer emits a hardcoded `[]`; nothing populates it. May be vestigial |
@@ -57,8 +57,8 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 ## Next action
 
 1. Merge `fix/floor-plans-original-url-not-required`, finalise the `reconciled` tag, cut `1.20.0`.
-2. Decide whether the `french-property.com` PHP 8.5 / `spatie/ray` breakage is worth chasing —
-   it currently makes that whole suite unusable for verification.
+2. Merge this, cut the release, then update `RentalSearchControllerTest`'s five changed URLs in
+   `french-property.com` (verified locally with `php83`).
 3. Tell `advert-collector`'s owner that emitting floor plan objects is now possible.
 4. Verify the four history docs currently `status: in-progress`.
 
@@ -66,6 +66,7 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 
 | Date | What shipped | History doc |
 |---|---|---|
+| 2026-09-11 | Fixtures carry both image generations | [2026-09-11-fixtures-both-image-generations.md](docs/history/2026-09-11-fixtures-both-image-generations.md) |
 | 2026-09-11 | floor_plans v1.2.0 required a field half of all adverts never have | [2026-09-11-floor-plans-original-url-fix.md](docs/history/2026-09-11-floor-plans-original-url-fix.md) |
 | 2026-09-11 | Floor plans schema v1.2.0 | [2026-09-11-floor-plans-schema-v1.2.0.md](docs/history/2026-09-11-floor-plans-schema-v1.2.0.md) |
 | 2026-09-11 | Partner export contract, queue envelope, proximity WIP deleted | [2026-09-11-schema-contract-cleanup.md](docs/history/2026-09-11-schema-contract-cleanup.md) |
