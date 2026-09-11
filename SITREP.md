@@ -26,6 +26,7 @@ release model and the conventions that read as bugs but aren't.
 - **Released at `1.19.0`** covering [#143](https://github.com/ifp/schemas/pull/143), then fixed:
   v1.2.0's first cut required `original_url`, which private-vendor media never has.
 - **The live media shape is known at last** — two real adverts, recorded in `CLAUDE.md`.
+- **All fixtures rebuilt to the live shape.** No Cloudinary left in this repo's test data.
 
 ## In flight
 
@@ -45,7 +46,8 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 
 | Question | Why it isn't just a fix |
 |---|---|
-| **The fixtures describe a CDN we stopped using years ago.** `upsert_sale_advert.json` and both response fixtures carry `cloudinary_account: "test-account"` and no `cdn`/`path` | No longer blocked — the live shape is now known and recorded. But `upsert_sale_advert` is loaded by `ifp/system` and `french-property.com` tests, so those suites must be run before and after. **Biggest open item** |
+| `french-property.com`'s suite cannot run on PHP 8.5 (`spatie/ray` → `curl_close()` → 500 on every request) | Not this repo's bug, but it blocks verifying fixture changes against that suite. One predicted risk there is unverified, not cleared |
+| `ifp/system` has its own Cloudinary-shaped test data in `AdvertHelper` | Rebuilding our fixtures doesn't reach it; needs a change in that repo |
 | `advert-collector` emits floor plans as bare URL strings and needs to emit objects | v1.2.0 makes the fix possible; nothing here forces it. Belongs to whoever owns the collector |
 | `advert.first_visible_at` is `{"type": "array"}` with no `items` | Every producer emits a hardcoded `[]`; nothing populates it. May be vestigial |
 | `unmapped_fields` may be vestigial | No producer emits it. Removing it needs confirmation nothing reads it |
@@ -55,8 +57,8 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 ## Next action
 
 1. Merge `fix/floor-plans-original-url-not-required`, finalise the `reconciled` tag, cut `1.20.0`.
-2. **Rebuild the three remaining fixtures** from the now-known live shape, and run `ifp/system`'s
-   and `french-property.com`'s suites either side.
+2. Decide whether the `french-property.com` PHP 8.5 / `spatie/ray` breakage is worth chasing —
+   it currently makes that whole suite unusable for verification.
 3. Tell `advert-collector`'s owner that emitting floor plan objects is now possible.
 4. Verify the four history docs currently `status: in-progress`.
 

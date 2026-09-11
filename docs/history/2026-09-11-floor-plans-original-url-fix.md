@@ -3,7 +3,7 @@ title: floor_plans v1.2.0 required a field that half of all adverts never have
 tags: [schema, images, cdn, regression]
 status: in-progress
 completed:
-commits: [afd36a3]
+commits: [afd36a3, 57fba02]
 pr: 144
 ---
 
@@ -64,15 +64,35 @@ live records rather than invented, which the previous version's were.
 Verified it still rejects what it should: bare URL strings (`advert-collector`'s current output)
 and entries missing `listing_position`.
 
-## Follow-up this makes urgent
+## The fixture rebuild, done in the same PR
 
-**The other three fixtures are still Cloudinary-shaped**, and now there is no excuse for it —
-the real shape is known. `upsert_sale_advert.json`, `elasticsearch_single_sale_advert_result.json`
-and `search_engine_single_sale_advert_result.json` all carry `cloudinary_account: "test-account"`
-and no `cdn` or `path`.
+All three remaining fixtures are now rebuilt to the live `cdn: 3` shape. `cloudinary_account`,
+`public_id` and `version` are gone; so are `format` and `bytes`, which `images-schema` declares
+but neither live record carries.
 
-This is not a self-contained change. `upsert_sale_advert` is loaded by `ifp/system`'s tests
-(`AdvertHelper`, `AdvertCounterTrait`) and by `french-property.com`'s. Those suites need running
-before and after. The one piece of good news: `ifp/system`'s Cloudinary tests
-(`AdvertImageTest`, `AdvertTest`) build their own `cdn: 2` arrays inline rather than loading our
-fixture, so they are unaffected.
+The diff is confined to the images arrays. The first attempt round-tripped each file through
+`json.dump` and rewrote every escaped slash and `\u` escape in it — 236 changed lines of pure
+noise — so it was redone as a targeted replacement preserving each file's own style.
+
+### What the verification did and did not establish
+
+**`ifp/system` is unchanged**, which is the meaningful result — it loads `upsert_sale_advert` via
+`AdvertHelper` and `AdvertCounterTrait`:
+
+```
+before: Tests: 1424, Assertions: 3482, Errors: 43
+after:  Tests: 1424, Assertions: 3482, Errors: 43
+```
+
+The 43 errors are pre-existing and unrelated. Identical assertion counts either side is a strong
+signal — but partly because `AdvertHelper::setImageTitlesOnAdvertData` replaces the fixture's
+images wholesale with its own `$example_image`, which is **itself still Cloudinary-shaped** in
+that repo. So `ifp/system` carries a second copy of this staleness that this PR cannot reach.
+
+**`french-property.com` could not be used at all.** Its suite fails identically with the
+*original* fixture — 76 tests, 74 failures — because `spatie/ray` calls `curl_close()`, which
+PHP 8.5 deprecates, and Laravel's deprecation handling turns that into a 500 on every request.
+Environmental and unrelated to this change, but it means one predicted risk is **unverified
+rather than cleared**: `RentalSearchControllerTest:52` sets `public_id` on the fixture's first
+image to distinguish two adverts, and under a `cdn: 3` record both resolve through
+`Cdn3AdvertImage` from the same `path`. That line most likely needs to set `path` instead.

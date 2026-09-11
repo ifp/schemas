@@ -11,15 +11,20 @@ production bug if "fixed". Check there before adding anything back.
 
 ## Decisions needed
 
-- [ ] **Rebuild the three remaining fixtures.** `upsert_sale_advert.json`,
-  `elasticsearch_single_sale_advert_result.json` and `search_engine_single_sale_advert_result.json`
-  still describe images in Cloudinary terms. **No longer blocked** — the live shape is known and
-  recorded in `CLAUDE.md`, and `json/fixtures/floor_plans.json` already uses it.
+- [ ] **`french-property.com`'s test suite cannot run on PHP 8.5.** `spatie/ray` calls
+  `curl_close()`, and Laravel's deprecation handling turns that into a 500 on every request — 74
+  of 76 failures in `RentalSearchControllerTest` before any change of ours. Not this repo's bug,
+  but it blocks verifying anything against that suite.
 
-  Not self-contained: `upsert_sale_advert` is loaded by `ifp/system` (`AdvertHelper`,
-  `AdvertCounterTrait`) and `french-property.com` tests, so run both suites either side.
-  `ifp/system`'s Cloudinary tests build their own `cdn: 2` arrays inline and are unaffected.
-  **Biggest open item in this repo.**
+- [ ] **`RentalSearchControllerTest:52` (french-property.com) probably needs a one-line change.**
+  It sets `public_id` on the fixture's first image to distinguish two adverts; under the rebuilt
+  `cdn: 3` fixture both resolve through `Cdn3AdvertImage` from the same `path`. Setting `path`
+  instead is the likely fix. Unverified — see above.
+
+- [ ] **`ifp/system` has its own Cloudinary-shaped test data.**
+  `AdvertHelper::setImageTitlesOnAdvertData` builds an `$example_image` with `cloudinary_account`,
+  `public_id` and `version`, and replaces the fixture's images with it — so rebuilding our
+  fixtures does not reach it.
 
 - [ ] **`images-schema` describes `format` and `bytes`, which neither live record carries.**
   Both optional, so nothing breaks — but the schema claims fields the pipeline no longer
