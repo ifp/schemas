@@ -1,2 +1,2 @@
 date: 2026-09-11
-note: Second reconcile. Worked the six open questions from the first: four fixed (simplified_export enums + required, internal queue envelope, proximity WIP deleted), two closed as deliberate-by-design after investigation (virtual_tours shape, let/rent vocabulary). New finding recorded: advert-collector emits the pre-importer shape while floor_plans-schema requires post-CDN keys.
+note: Third reconcile. floor_plans-schema v1.2.0 + internal_sale-advert-schema v1.2.0 -- floor plans stopped requiring a CDN we dropped years ago, and now mirror images-schema. Released 1.18.0 covering #142. Biggest finding so far, not fixed: the fixtures still describe Cloudinary, so our test data has not matched production in years.

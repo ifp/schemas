@@ -39,6 +39,8 @@ PREFIX = "https://raw.githubusercontent.com/ifp/schemas/master/"
 # Fixture/example documents and the schema each one must satisfy.
 # The schemas here are also the roots for the reachability walk.
 PAIRS = [
+    ("json/internal/internal_sale-advert-schema_v1.2.0.json", "json/fixtures/upsert_sale_advert.json"),
+    ("json/internal/property/floor_plans-schema_v1.2.0.json", "json/fixtures/floor_plans.json"),
     ("json/internal/internal_sale-advert-schema_v1.1.0.json", "json/fixtures/upsert_sale_advert.json"),
     ("json/internal/internal_sale-advert-schema_v1.0.0.json", "json/fixtures/upsert_sale_advert.json"),
     ("json/internal/internal_delete-sale-advert-schema_v1.0.0.json", "json/fixtures/delete_sale_advert.json"),

@@ -1,0 +1,190 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "title": "IFP Internal JSON Advert Schema",
+  "description": "The full internal JSON schema of property adverts within the IFP systems. Currently supports sale properties only. Do not use this schema if sending us data. Instead, please use https://github.com/ifp/schemas/blob/master/json/public_advert-schema_v1.0.0.json",
+  "self": {
+    "vendor": "com.french-property.schemas.json",
+    "name": "internal_sale_property_advert",
+    "format": "jsonschema",
+    "version": "1-2-0"
+  },
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "archive",
+        "upsert"
+      ],
+      "default": "upsert"
+    },
+    "id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Pipeline timestamp: when IFP last updated this advert record. Always ISO 8601. Not to be confused with advert.updated_at, which is the feed's own value copied through verbatim and is not in a standard date format."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Pipeline timestamp: when IFP first created this advert record. Always ISO 8601. Not to be confused with advert.created_at, which comes from the feed."
+    },
+    "metadata": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/metadata-schema_v1.0.0.json"
+    },
+    "advert": {
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/advert-schema_v1.0.0.json"
+    },
+    "property": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/status-schema_v1.0.0.json"
+        },
+        "title_en": {
+          "type": "string",
+          "minLength": 3
+        },
+        "title_fr": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "description_en": {
+          "type": "string",
+          "minLength": 3
+        },
+        "description_fr": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "highlights": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/highlights-schema_v1.0.0.json"
+        },
+        "highlights_fr": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/highlights-schema_v1.0.0.json"
+        },
+        "geo": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo-schema_v1.0.0.json"
+        },
+        "price": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/price-schema_v1.0.0.json"
+        },
+        "room_counts": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/room_counts-schema_v1.0.0.json"
+        },
+        "floor_area": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/floor_area-schema_v1.0.0.json"
+        },
+        "land_area": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/land_area-schema_v1.0.0.json"
+        },
+        "energy_certificates": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/energy_certificates-schema_v1.0.0.json"
+        },
+        "attributes": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/attributes-schema_v1.0.0.json"
+        },
+        "images": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/images-schema_v1.0.0.json"
+        },
+        "failed_images": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/failed_images-schema_v1.0.0.json"
+        },
+        "invalid_images": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/invalid_images-schema_v1.0.0.json"
+        },
+        "floor_plans": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/floor_plans-schema_v1.2.0.json"
+        },
+        "virtual_tours": {
+          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/virtual_tours-schema_v1.0.0.json"
+        }
+      },
+      "required": [
+        "status",
+        "title_en",
+        "title_fr",
+        "description_en",
+        "description_fr",
+        "highlights",
+        "geo",
+        "price",
+        "room_counts",
+        "floor_area",
+        "land_area",
+        "energy_certificates",
+        "attributes",
+        "images",
+        "floor_plans",
+        "virtual_tours"
+      ],
+      "additionalProperties": false
+    },
+    "original_property": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "pre_checker_original_property": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "importer_property": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "translations": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "unmapped_fields": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Possibly vestigial: no producer found emits this key. The importer's enqueuer sets unexpected_fields and missing_fields instead. Kept until someone confirms nothing relies on it."
+    },
+    "unexpected_fields": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true,
+      "description": "Fields present in the agency's feed that the importer's mapping does not recognise. Set on the queue message by importer/processor/enqueuer.rb."
+    },
+    "missing_fields": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true,
+      "description": "Fields the importer's mapping expected but the agency's feed did not supply. Set on the queue message by importer/processor/enqueuer.rb."
+    },
+    "mapped_enums": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Collection of enum mappings applied by the importer; each entry records feed_field, feed_value, ifp_field and ifp_value. Built as an array by importer/downloader/converter.rb and may be null when no mapping ran."
+    }
+  },
+  "required": [
+    "action",
+    "id",
+    "updated_at",
+    "created_at",
+    "metadata",
+    "advert",
+    "property",
+    "original_property",
+    "translations"
+  ],
+  "additionalProperties": false
+}

@@ -1,5 +1,34 @@
 # Internal Sale Advert Schema Changelog
 
+### v1.2.0 (2026-09-11)
+
+- Change of `{property.floor_plans}` to `floor_plans-schema_v1.2.0`, which mirrors
+  `images-schema`: only the three keys knowable at collection time are required, and everything a
+  CDN adds later is optional.
+
+  **Why.** v1.1.0 required all eleven keys, including `cloudinary_account` and `public_id` — a
+  vendor we stopped using years ago, and values no producer can know before the file is uploaded.
+  Images were never like this: `images-schema` requires only `listing_position`, `title` and
+  `title_fr`, carries `cdn` and `path` for Bunny (CDN generations 3 and 4) alongside the legacy
+  Cloudinary trio (generation 2), and lets the `cdn` field say which applies. Floor plans never
+  got that treatment and stayed frozen in the Cloudinary era.
+
+  The practical effect: `advert-collector` emits floor plans as bare URL strings
+  (`PublicAdvertMapper::flatUrls`), which no version accepts — but the obvious fix, emitting
+  objects the same way it already does for images, **failed v1.1.0** on `cloudinary_account`.
+  v1.1.0 made the sensible fix impossible. Under v1.2.0 that same output validates.
+
+  `floor_plans-schema_v1.2.0` also adds `cdn`, `path`, `archived_at` and `title_fr` (all
+  optional) so floor plans and images finally describe the same lifecycle. The Cloudinary fields
+  are kept, optional, because `IFP\Basebox\AdvertImage\Cdn2AdvertImage` still reads them.
+
+- `self.version` in this file reads `1-2-0`. Every earlier versioned schema in this repo — public
+  and internal, v1.0.0 and v1.1.0 alike — says `1-0-0` regardless of its filename. That is a
+  long-standing inconsistency, not a convention; new files should not inherit it. The published
+  files are left alone.
+
+### Fix (2026-09-11)
+
 ### Fix (2026-09-11)
 
 - **Declare `unexpected_fields` and `missing_fields`.** The importer's enqueuer sets both on
