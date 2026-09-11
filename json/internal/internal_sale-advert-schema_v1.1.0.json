@@ -23,11 +23,13 @@
     },
     "updated_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Pipeline timestamp: when IFP last updated this advert record. Always ISO 8601. Not to be confused with advert.updated_at, which is the feed's own value copied through verbatim and is not in a standard date format."
     },
     "created_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Pipeline timestamp: when IFP first created this advert record. Always ISO 8601. Not to be confused with advert.created_at, which comes from the feed."
     },
     "metadata": {
       "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/metadata-schema_v1.0.0.json"
@@ -125,22 +127,35 @@
       "additionalProperties": false
     },
     "original_property": {
+      "type": "object",
       "additionalProperties": true
     },
     "pre_checker_original_property": {
+      "type": "object",
       "additionalProperties": true
     },
     "importer_property": {
+      "type": "object",
       "additionalProperties": true
     },
     "translations": {
+      "type": "object",
       "additionalProperties": true
     },
     "unmapped_fields": {
+      "type": "object",
       "additionalProperties": true
     },
     "mapped_enums": {
-      "additionalProperties": true
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Collection of enum mappings applied by the importer; each entry records feed_field, feed_value, ifp_field and ifp_value. Built as an array by importer/downloader/converter.rb and may be null when no mapping ran."
     }
   },
   "required": [
