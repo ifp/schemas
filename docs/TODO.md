@@ -11,12 +11,22 @@ production bug if "fixed". Check there before adding anything back.
 
 ## Decisions needed
 
-- [ ] **`advert-collector` and `floor_plans` disagree about lifecycle stage.** The collector
-  describes its output as `internal_sale-advert-schema` but emits the pre-importer shape (flat
-  URLs, no Cloudinary fields). Internal `floor_plans-schema_v1.1.0` requires all eleven keys
-  including `public_id`, which no producer can know before upload, while `images-schema` requires
-  only the three pre-CDN keys for the same lifecycle. One of the two is wrong. **The only open
-  item that touches a live pipeline** — take it to whoever owns the collector.
+- [ ] **Rebuild the fixtures from a live advert record.** `upsert_sale_advert.json` and both
+  response fixtures describe images in Cloudinary terms — `cloudinary_account: "test-account"`,
+  `public_id`, `version`, and no `cdn` or `path`. The live pipeline has been Bunny (`cdn` 3 and 4)
+  for years, so every test in every consuming repo that loads these fixtures is exercising a shape
+  production no longer produces. Even the new `floor_plans.json` has a `path` value inferred from
+  `BunnyCdnHelperTrait` rather than copied from a real row. **Biggest open item in this repo.**
+  Read-only, one record is enough:
+
+  ```bash
+  ssh forge@134.122.108.169 'cd /home/forge/loader.french-property.com/current && php8.3 artisan tinker'
+  ```
+
+- [ ] **`advert-collector` emits floor plans as bare URL strings** (`PublicAdvertMapper::flatUrls`)
+  where the schema wants objects. `floor_plans-schema_v1.2.0` now makes the obvious fix possible —
+  build them the way `images()` already does — but nothing in this repo forces it. Belongs to
+  whoever owns the collector.
 - [ ] **`advert.first_visible_at`** is `{"type": "array"}` with no `items`. Every producer emits a
   hardcoded `[]` and nothing populates it. Establish whether it is vestigial, then either type it
   or remove it.
