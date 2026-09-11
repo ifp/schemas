@@ -112,20 +112,31 @@ fields survive in the schemas. Both `images-schema` and `floor_plans-schema_v1.2
 require **only `listing_position` and `title`** (images also requires `title_fr`) and leave
 everything else optional.
 
-**Two shapes occur in live data, and anything you write must accept both:**
+**Three shapes occur in live data, and anything you write must accept all of them:**
 
 | Source | `cdn` | Carries |
 |---|---|---|
+| Legacy, pre-2020 migration | **absent** | `cloudinary_account`, `public_id`, `version`, `format`, `bytes`, `original_url`, `original_bytes` |
 | Feed-imported | 3 | `path`, `original_url`, `original_bytes`, `archived_at`, `width`, `height` |
 | Private vendor | 4 | `path`, `width`, `height` — **no `original_url`**, no bytes, no `archived_at` |
 
-Private-vendor files are uploaded to us directly, so there is no source URL to record. This has
-now caused the same bug twice: v1.1.0 required `cloudinary_account` (unknowable before upload),
-and v1.2.0's first cut required `original_url` (never exists for private vendors). **Do not add
-anything to a `required` list here without checking it against a live advert** —
-`https://config.french-property.com/adverts/full_json/{advert_id}` (login required); `1-IFPC47364`
-is a private vendor and `1634-BVI84819` is feed-imported. Note also that `format` and `bytes`
-appear in `images-schema` but in neither live sample.
+Two things follow, and both have already caused bugs:
+
+**The Cloudinary fields are not dead.** An image with **no `cdn` key defaults to 2**
+(`IFP\Basebox\Advert::getImageFromCdn`, `$image_data['cdn'] ?? 2`) and is rewritten on the fly
+into a Bunny path — `/cloudinary-2020-11/agency_{id}/{public_id}.{format}` — then served as
+`cdn: 3`. So `public_id` and **`format` are load-bearing** for every record predating the 2020
+migration, which is why `images-schema` still declares them.
+
+**Private-vendor files have no `original_url`**, because they are uploaded to us directly rather
+than fetched.
+
+**Do not add anything to a `required` list here, or remove a field as "unused", without checking
+it against live adverts** — `https://config.french-property.com/adverts/full_json/{advert_id}`
+(login required); `1-IFPC47364` is a private vendor and `1634-BVI84819` is feed-imported. Neither
+of those is a legacy record, and reasoning from those two alone produced three wrong conclusions
+in one afternoon: that `original_url` is always present, that the Cloudinary fields are dead, and
+that `format` is unused.
 
 **`floor_plans-schema_v1.1.0` is the exception, and it is wrong** — it requires all eleven keys
 including `cloudinary_account` and `public_id`, so it mandates a dead vendor and values no
