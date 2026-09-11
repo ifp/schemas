@@ -202,24 +202,8 @@
       "uniqueItems": true
     },
     "pre_attributed": {
-      "type": "object",
-      "properties": {
-        "types": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/types-schema-enum.json"
-        },
-        "features": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/features-schema-enum.json"
-        },
-        "tags": {
-          "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/enums/tags-schema-enum.json"
-        }
-      },
-      "required": [
-        "types",
-        "features",
-        "tags"
-      ],
-      "additionalProperties": false
+      "$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/attributes-schema_v1.0.0.json",
+      "description": "Classification applied before enrichment. Shares property.attributes' shape by reference so the two can never diverge on which values are legal."
     },
     "status": {
       "type": [
@@ -283,14 +267,15 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "description": "Created-at timestamp in the external feed. Simply copied through, it is not in a standard date format. The pipeline's own ISO 8601 timestamp is the top-level created_at."
     },
     "updated_at": {
       "type": [
         "null",
         "string"
       ],
-      "description": "Updated-at timestamp in the external feed. Simply copied through, it is not in a standard date format."
+      "description": "Updated-at timestamp in the external feed. Simply copied through, it is not in a standard date format. The pipeline's own ISO 8601 timestamp is the top-level updated_at."
     },
     "live_at": {
       "type": [
