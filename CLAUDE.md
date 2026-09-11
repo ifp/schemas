@@ -74,40 +74,25 @@ Two consequences worth holding on to:
 
 ## Validating a change
 
-There is no validator in the repo (see Follow-ups). The recipe that works, with remote `$ref`s
-resolved to the local tree:
-
-```python
-import json, os
-from jsonschema import Draft7Validator, RefResolver
-
-ROOT = "/Users/ingram/code/schemas"
-PREFIX = "https://raw.githubusercontent.com/ifp/schemas/master/"
-
-class LocalResolver(RefResolver):
-    def resolve_remote(self, uri):
-        if uri.startswith(PREFIX):
-            return json.load(open(os.path.join(ROOT, uri[len(PREFIX):])))
-        return super().resolve_remote(uri)
-
-schema = json.load(open(f"{ROOT}/json/internal/internal_sale-advert-schema_v1.1.0.json"))
-doc = json.load(open(f"{ROOT}/json/fixtures/upsert_sale_advert.json"))
-v = Draft7Validator(schema, resolver=LocalResolver(base_uri=PREFIX, referrer=schema))
-for e in v.iter_errors(doc):
-    print("/" + "/".join(str(x) for x in e.absolute_path), e.message)
+```bash
+cd /Users/ingram/code/schemas && python3 bin/validate.py
 ```
 
-**Always validate both directions**: that the fixtures still pass, *and* that the change
-actually rejects what it is meant to reject. A loosening that passes every fixture may have
-loosened nothing.
+Needs `pip install 'jsonschema~=4.25'` once. CI runs the same script on every branch
+(`.github/workflows/validate.yml`). It checks that every live schema is valid draft-07, that
+every `$ref` resolves, and that each fixture still satisfies its schema — with the
+`master`-pinned `$ref` URLs rewritten to the working tree, so you are testing your branch and
+not `master`.
 
-Fixtures to check a change against:
+Two things it deliberately only warns about: **orphaned files** (nothing live `$ref`s them, so
+they cannot break a consumer — the abandoned proximity WIP under `geo/` lives here), and
+**hollow schemas** (`type: object` with no `required` and open `additionalProperties`, which
+validate any object including `{}`).
 
-| Fixture | Validates against |
-|---|---|
-| `json/fixtures/upsert_sale_advert.json` | `json/internal/internal_sale-advert-schema_v1.1.0.json` |
-| `json/public/examples/public_sale-advert-schema_v1.1.0-example.json` | `json/public/public_sale-advert-schema_v1.1.0.json` |
-| `json/public/examples/public_sale-advert-schema_v1.0.0-example.json` | `json/public/public_sale-advert-schema_v1.0.0.json` |
+**A green run is necessary, not sufficient.** Always check the change in both directions: that
+the fixtures still pass, *and* that the change actually rejects what it is meant to reject. A
+loosening that passes every fixture may have loosened nothing. Add the new pairing to `PAIRS`
+in `bin/validate.py` if you add a fixture.
 
 `elasticsearch_single_sale_advert_result.json` and `search_engine_single_sale_advert_result.json`
 are downstream response shapes, not schema-validated — they wrap an advert in `hits.hits[]._source`

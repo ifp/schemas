@@ -29,6 +29,17 @@ There is some logic to the required fields of the property.geo.user_data, which 
 - commune_name + department_name
 - commune_name + department_code
 
+### Validating your JSON:
+
+Run the repo's own validator over every schema and fixture:
+
+```
+pip install 'jsonschema~=4.25'
+python3 bin/validate.py
+```
+
+It runs in CI on every branch and pull request.
+
 ### JSON resources:
 
 - [Tutorials](https://www.google.co.uk/search?q=json%20tutorial)
