@@ -1,0 +1,193 @@
+# CLAUDE.md — ifp/schemas
+
+Canonical JSON Schemas for IFP advert data, plus the fixtures every consuming system tests
+against. Two contracts live here:
+
+- **Public** (`json/public/`) — what a third party sends *us*. A contract with agencies and
+  syndicators; strict (`additionalProperties: false`, every key in `required` but nullable).
+- **Internal** (`json/internal/`) — the envelope that moves *between* our own services
+  (importer → checker → loader → search). Permissive where it needs to be, and carries the
+  workflow/commercial layer the public schema has no business seeing.
+
+It is also a Composer package, `ifp/schemas`, whose only PHP is
+[`src/Fixtures/Loader.php`](src/Fixtures/Loader.php) — a thin reader for the fixture and enum
+JSON files so consumers can pull them into their test suites.
+
+## Project status — read at session start
+
+- `SITREP.md` — situation report _(created by the first `reconcile-everything` run)_
+- `docs/TODO.md` — follow-ups _(same)_
+
+Neither exists yet. Both appear once the first reconcile runs.
+
+## The release model — read this before changing anything
+
+**Merging to `master` releases nothing.** Consumers pin a Composer tag:
+
+```
+"repositories": [{"type": "vcs", "url": "https://github.com/ifp/schemas"}],
+"require": {"ifp/schemas": "^1.16.0"}
+```
+
+`ifp/system` is the direct consumer; `french-property.com` and `loader.french-property.com`
+register the VCS repository and pull it transitively. So any change that consumers need
+requires **a new git tag** after the PR merges. Tags are bare SemVer, no `v` prefix
+(`1.16.0`, not `v1.16.0`).
+
+> **As of 2026-09-11 the latest tag is `1.16.0`, and [#138](https://github.com/ifp/schemas/pull/138)
+> and [#139](https://github.com/ifp/schemas/pull/139) are merged to `master` but untagged — so
+> neither fix has reached a single consumer.** Check `git log $(git describe --tags --abbrev=0)..master`
+> before assuming a merged change is live.
+
+### Two version axes, easily confused
+
+| Axis | Where | Changes when |
+|---|---|---|
+| **Package tag** | `git tag` | Any release to consumers, including a docs-only fix |
+| **Schema file version** | `_v1.1.0` in the filename, `self.version` inside the file | Only when a schema's *shape* changes; old versions stay published and readable |
+
+A package tag bump is routine. A schema file version bump is a new file plus a changelog
+entry, and the old file is never deleted — third parties are still validating against it.
+Versioning loosely follows [SchemaVer](https://github.com/ifp/iglu/wiki/SchemaVer).
+
+Fix in place instead of bumping only when the affected version was **impossible to satisfy**,
+so no valid consumer feed could have depended on the old behaviour
+([#138](https://github.com/ifp/schemas/pull/138) is the precedent, and the reasoning is in the
+changelog entry).
+
+## `$ref`s point at `master`, not at your tag
+
+Every cross-file reference is an absolute URL:
+
+```json
+{"$ref": "https://raw.githubusercontent.com/ifp/schemas/master/json/internal/property/geo-schema_v1.0.0.json"}
+```
+
+Two consequences worth holding on to:
+
+1. **A tagged release is not self-consistent.** Install `1.15.0` and its `$ref`s still resolve
+   to whatever is on `master` today. Changing a `$ref`'d sub-schema therefore affects every
+   released version at once.
+2. **Local validation needs a URL rewrite.** Point the resolver at the working tree, or you
+   validate against `master` rather than your branch — which silently hides the change you are
+   testing.
+
+## Validating a change
+
+There is no validator in the repo (see Follow-ups). The recipe that works, with remote `$ref`s
+resolved to the local tree:
+
+```python
+import json, os
+from jsonschema import Draft7Validator, RefResolver
+
+ROOT = "/Users/ingram/code/schemas"
+PREFIX = "https://raw.githubusercontent.com/ifp/schemas/master/"
+
+class LocalResolver(RefResolver):
+    def resolve_remote(self, uri):
+        if uri.startswith(PREFIX):
+            return json.load(open(os.path.join(ROOT, uri[len(PREFIX):])))
+        return super().resolve_remote(uri)
+
+schema = json.load(open(f"{ROOT}/json/internal/internal_sale-advert-schema_v1.1.0.json"))
+doc = json.load(open(f"{ROOT}/json/fixtures/upsert_sale_advert.json"))
+v = Draft7Validator(schema, resolver=LocalResolver(base_uri=PREFIX, referrer=schema))
+for e in v.iter_errors(doc):
+    print("/" + "/".join(str(x) for x in e.absolute_path), e.message)
+```
+
+**Always validate both directions**: that the fixtures still pass, *and* that the change
+actually rejects what it is meant to reject. A loosening that passes every fixture may have
+loosened nothing.
+
+Fixtures to check a change against:
+
+| Fixture | Validates against |
+|---|---|
+| `json/fixtures/upsert_sale_advert.json` | `json/internal/internal_sale-advert-schema_v1.1.0.json` |
+| `json/public/examples/public_sale-advert-schema_v1.1.0-example.json` | `json/public/public_sale-advert-schema_v1.1.0.json` |
+| `json/public/examples/public_sale-advert-schema_v1.0.0-example.json` | `json/public/public_sale-advert-schema_v1.0.0.json` |
+
+`elasticsearch_single_sale_advert_result.json` and `search_engine_single_sale_advert_result.json`
+are downstream response shapes, not schema-validated — they wrap an advert in `hits.hits[]._source`
+and `data` respectively, and they still have to be updated by hand when a field moves.
+
+## Layout
+
+```
+json/public/          the third-party feed contract + examples + changelog
+json/internal/        the pipeline envelope; advert-schema and metadata-schema sit here
+  property/           one file per property sub-object (price, geo, images, attributes, …)
+    geo/              French admin hierarchy: locality, department, region, commune, ski
+      distances_from/ airports, autoroutes, eurotunnel, TGV, train, ferry — ALL 0 BYTES
+    enums/            types / features / tags: the enum + singular/plural EN/FR lookups
+json/fixtures/        canonical documents the consuming systems test against
+src/Fixtures/         the Composer package's only PHP — loadFixture() / loadEnum()
+systems/              how each system uses the schema (loader.md, importer.md are real;
+                      checker.md and quota.md are 0 bytes)
+```
+
+## Conventions that are not obvious from the files
+
+- **The public schema requires everything but allows null.** "Required" here means *send the
+  key*, not *send a value*. A feed omitting a key fails; a feed sending `null` passes. This is
+  deliberate — it forces producers to be explicit about absent data.
+- **The internal schema pairs as-supplied with normalised values.** `user_size`/`size`,
+  `user_unit`/`unit`, `user_amount`/`amount`, `geo.user_data.*` vs `geo.locality.data.*`. The
+  `user_*` copy is the feed's own value and is loosely typed on purpose (a CSV feed sends
+  `"46.2561"` as a string); the normalised copy is strictly typed. **Don't "fix" a loose
+  `user_*` type** — the looseness is the feature.
+- **Enum files do double duty.** `enums/*-schema-enum.json` is the validating schema;
+  `enums/*-schema-lookup-{singular,plural}[-fr].json` are display-label maps consumed via
+  `Loader::loadEnum()`. Adding an enum value means touching the enum file *and* four lookups.
+- **`property.attributes` currently accepts any string** for types/features/tags —
+  [#137](https://github.com/ifp/schemas/pull/137) loosened it and the PR title says
+  *temporary*. `advert.pre_attributed` `$ref`s the same file so the two cannot drift apart;
+  when the enums are restored, both tighten together.
+- **Empty placeholder files are a habit here.** `systems/checker.md`, `systems/quota.md` and
+  all six `geo/distances_from/*.json` are 0 bytes. Check a file has content before citing it.
+
+## Known divergences between public and internal
+
+Not bugs to fix casually — each needs a decision, and most need a version bump:
+
+- `virtual_tours` is `[{title, original_url}]` in public and `string[]` in internal.
+- `property.status` says `let`/`to_let` in public and `rented`/`to_rent` in internal.
+- The importer's enqueuer emits `unexpected_fields` and `missing_fields`
+  (`importer/processor/enqueuer.rb:19-21`), but the internal schema defines `unmapped_fields`
+  and sets top-level `additionalProperties: false`.
+- `advert.first_visible_at` is `{"type": "array"}` with no `items`; every producer found emits
+  a hardcoded `[]` and nothing populates it.
+
+Background and the full external cross-reference: Company Memory
+`reports/schemas/atlas-cross-reference/report.md`.
+
+## Stack
+
+No framework, no build, no test suite, no CI. `composer.json` declares autoload only — no
+`require`, and **no `require.php` constraint**, so the IFP stack standard (Laravel 13 / PHP 8.5
+/ Node 24) does not apply here; the package is framework-agnostic and its consumers run PHP 8.3.
+Changes are JSON edits validated by hand per the recipe above.
+
+## Git
+
+Standard IFP policy — see the global `CLAUDE.md`. Trunk is `master`; never commit to it
+directly; every change goes via a branch and a PR.
+
+### Reconcile — fold into the feature PR
+
+Before a feature branch's PR is opened or merged, run `reconcile-everything` **on that branch**
+so the reconcile docs ride in the same PR as the code. If asked to merge, dance, or push
+un-reconciled feature work, stop and fold the reconcile in first. A standalone post-merge
+reconcile is only for catching up several already-merged PRs at once.
+
+### After the PR merges
+
+Cutting the release tag is a separate, easily-forgotten step:
+
+```bash
+cd /Users/ingram/code/schemas && git checkout master && git pull && git tag 1.17.0 && git push origin 1.17.0
+```
+
+Then bump the constraint in `ifp/system`'s `composer.json` if the consumer needs the change.
