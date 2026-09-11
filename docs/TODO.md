@@ -11,17 +11,19 @@ production bug if "fixed". Check there before adding anything back.
 
 ## Decisions needed
 
-- [ ] **Rebuild the fixtures from a live advert record.** `upsert_sale_advert.json` and both
-  response fixtures describe images in Cloudinary terms — `cloudinary_account: "test-account"`,
-  `public_id`, `version`, and no `cdn` or `path`. The live pipeline has been Bunny (`cdn` 3 and 4)
-  for years, so every test in every consuming repo that loads these fixtures is exercising a shape
-  production no longer produces. Even the new `floor_plans.json` has a `path` value inferred from
-  `BunnyCdnHelperTrait` rather than copied from a real row. **Biggest open item in this repo.**
-  Read-only, one record is enough:
+- [ ] **Rebuild the three remaining fixtures.** `upsert_sale_advert.json`,
+  `elasticsearch_single_sale_advert_result.json` and `search_engine_single_sale_advert_result.json`
+  still describe images in Cloudinary terms. **No longer blocked** — the live shape is known and
+  recorded in `CLAUDE.md`, and `json/fixtures/floor_plans.json` already uses it.
 
-  ```bash
-  ssh forge@134.122.108.169 'cd /home/forge/loader.french-property.com/current && php8.3 artisan tinker'
-  ```
+  Not self-contained: `upsert_sale_advert` is loaded by `ifp/system` (`AdvertHelper`,
+  `AdvertCounterTrait`) and `french-property.com` tests, so run both suites either side.
+  `ifp/system`'s Cloudinary tests build their own `cdn: 2` arrays inline and are unaffected.
+  **Biggest open item in this repo.**
+
+- [ ] **`images-schema` describes `format` and `bytes`, which neither live record carries.**
+  Both optional, so nothing breaks — but the schema claims fields the pipeline no longer
+  populates. Confirm, then remove or document.
 
 - [ ] **`advert-collector` emits floor plans as bare URL strings** (`PublicAdvertMapper::flatUrls`)
   where the schema wants objects. `floor_plans-schema_v1.2.0` now makes the obvious fix possible —

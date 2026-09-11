@@ -1,2 +1,2 @@
 date: 2026-09-11
-note: Third reconcile. floor_plans-schema v1.2.0 + internal_sale-advert-schema v1.2.0 -- floor plans stopped requiring a CDN we dropped years ago, and now mirror images-schema. Released 1.18.0 covering #142. Biggest finding so far, not fixed: the fixtures still describe Cloudinary, so our test data has not matched production in years.
+note: Fourth reconcile. floor_plans v1.2.0, shipped in 1.19.0 that morning, required original_url -- which private-vendor media never has. Fixed in place. Same fault as the v1.1.0 cloudinary_account requirement it was written to correct, and the same cause both times: a required list derived from a document instead of from production data. Live media shape now recorded in CLAUDE.md.
