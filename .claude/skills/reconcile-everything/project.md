@@ -37,7 +37,8 @@ This repo ships by **tag**, not by merge, so a reconcile must check for merged-b
 work:
 
 ```bash
-git describe --tags --abbrev=0 && git log --oneline $(git describe --tags --abbrev=0)..master
+T=$(git tag --sort=-v:refname | grep -E '^[0-9]' | head -1); echo "$T"; git log --oneline "$T"..master
+# not `git describe --tags`: it returns the `reconciled` marker tag, which sits on master
 ```
 
 Any commits listed are merged but not released to consumers. Surface them and the tag that

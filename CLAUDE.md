@@ -33,8 +33,9 @@ register the VCS repository and pull it transitively. So any change that consume
 requires **a new git tag** after the PR merges. Tags are bare SemVer, no `v` prefix
 (`1.16.0`, not `v1.16.0`).
 
-> **Check `git log $(git describe --tags --abbrev=0)..master` before assuming a merged change is
-> live.** This has bitten already: [#138](https://github.com/ifp/schemas/pull/138) and
+> **Check `git log $(git tag --sort=-v:refname | grep -E '^[0-9]' | head -1)..master` before assuming a
+> merged change is live.** (Not `git describe --tags`: that returns the `reconciled` marker tag.)
+> This has bitten already: [#138](https://github.com/ifp/schemas/pull/138) and
 > [#139](https://github.com/ifp/schemas/pull/139) sat merged and untagged, reaching no consumer,
 > until `1.17.0` was cut on 11 Sep 2026.
 
@@ -206,8 +207,8 @@ Genuinely open, and each needing a decision rather than a patch:
 - `advert.first_visible_at` is `{"type": "array"}` with no `items`; every producer found emits
   a hardcoded `[]` and nothing populates it.
 - `self.version` says `1-0-0` in every published schema regardless of its filename — public and
-  internal, v1.0.0 and v1.1.0 alike. `internal_sale-advert-schema_v1.2.0.json` is the first to
-  carry its real version. The older files are left alone; don't copy their value into new ones.
+  internal, v1.0.0 and v1.1.0 alike. `internal_sale-advert-schema_v1.2.0.json` and
+  `public_sale-advert-schema_v1.2.0.json` carry their real versions. The older files are left alone; don't copy their value into new ones.
 
 Background and the full external cross-reference: Company Memory
 `reports/schemas/atlas-cross-reference/report.md`. Current state and next actions:
@@ -215,7 +216,7 @@ Background and the full external cross-reference: Company Memory
 
 ## Stack
 
-No framework, no build, no test suite, no CI. `composer.json` declares autoload only — no
+No framework, no build, no test suite. CI runs `bin/validate.py` on every branch (`.github/workflows/validate.yml`). `composer.json` declares autoload only — no
 `require`, and **no `require.php` constraint**, so the IFP stack standard (Laravel 13 / PHP 8.5
 / Node 24) does not apply here; the package is framework-agnostic and its consumers run PHP 8.3.
 Changes are JSON edits validated by hand per the recipe above.

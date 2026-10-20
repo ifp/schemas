@@ -1,2 +1,2 @@
-date: 2026-09-11
-note: Sixth reconcile. Applies the new two-tier verification rule from reconcile-everything (cf2d94f). Nothing in this repo is user-visible, so human_verify_paths is empty and all five 2026-09-11 history docs are auto tier: promoted to stable with verified: ci, each carrying a named check -- CI green on its merge commit plus a spot-check of the behaviour it changed, not inference from the merge. Nothing left awaiting human eyes.
+date: 2026-10-20
+note: Seventh reconcile, folded into #147 (public sale-advert schema v1.2.0 with geo.user_data.lat/lon; geo-public v1.1.0). Its history doc is auto tier and waits on the merge, CI on the merge commit, raw master URLs and the 1.22.0 tag. Also fixed: the release check read the `reconciled` tag, and CLAUDE.md claimed no CI. SITREP's stale next actions refreshed.
