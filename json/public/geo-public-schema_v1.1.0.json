@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "user_data": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "commune_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "post_code": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "department_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "department_code": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "country": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "lat": {
+          "description": "Latitude of the property in decimal degrees (WGS84), north positive. Send with lon, or null for both.",
+          "type": [
+            "null",
+            "number"
+          ],
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lon": {
+          "description": "Longitude of the property in decimal degrees (WGS84), east positive (negative west of Greenwich). Send with lat, or null for both.",
+          "type": [
+            "null",
+            "number"
+          ],
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "required": [
+        "location",
+        "commune_name",
+        "post_code",
+        "department_name",
+        "department_code",
+        "country",
+        "lat",
+        "lon"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "user_data"
+  ],
+  "additionalProperties": false
+}

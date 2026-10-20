@@ -1,0 +1,11 @@
+{
+  "property": {
+    "geo": {
+      "user_data": {
+        "lat": "Latitude of the property in decimal degrees (WGS84), e.g. 46.2561. North is positive. Send it with lon, or null for both if you do not have them.",
+        "lon": "Longitude of the property in decimal degrees (WGS84), e.g. 0.8047. East is positive; west of Greenwich is negative. Send it with lat, or null for both.",
+        "_how_we_use_them": "When present, the coordinates decide the commune the advert is placed in (the nearest commune within 25 km), ahead of commune_name. They are the way to place a property in a hamlet or lieu-dit that is not itself a commune. Keep sending commune_name and department_name as well."
+      }
+    }
+  }
+}

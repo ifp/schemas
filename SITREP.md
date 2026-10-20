@@ -1,7 +1,7 @@
 ---
 title: ifp/schemas — situation report
-updated: 2026-09-11
-reconcile: 6
+updated: 2026-10-20
+reconcile: 7
 ---
 
 # ifp/schemas — situation report
@@ -15,7 +15,7 @@ release model and the conventions that read as bugs but aren't.
   [#139](https://github.com/ifp/schemas/pull/139) and [#140](https://github.com/ifp/schemas/pull/140).
   This repo ships by tag, not by merge.
 - **The repo validates itself** — `bin/validate.py` plus CI on every branch
-  ([#141](https://github.com/ifp/schemas/pull/141)). Seven fixture/schema pairings, one warning.
+  ([#141](https://github.com/ifp/schemas/pull/141)). Ten fixture/schema pairings as of 20 Oct, one warning.
 - **The partner export contract now means something.** `simplified_export` previously validated
   `{}` and rejected our own output; both fixed.
 - **The internal envelope matches the importer's actual queue message** for the first time.
@@ -23,6 +23,7 @@ release model and the conventions that read as bugs but aren't.
 - **Released at `1.18.0`** covering [#142](https://github.com/ifp/schemas/pull/142).
 - **`floor_plans-schema_v1.2.0`** (and `internal_sale-advert-schema_v1.2.0`) — floor plans now
   describe the same lifecycle as images instead of requiring a CDN we dropped years ago.
+- **Released at `1.21.0`** (11 Sep 2026), the latest: `1.19.0` [#143](https://github.com/ifp/schemas/pull/143), `1.20.0` [#144](https://github.com/ifp/schemas/pull/144), `1.21.0` [#145](https://github.com/ifp/schemas/pull/145). [#146](https://github.com/ifp/schemas/pull/146) (history docs only) is merged, untagged, and needs no release.
 - **Released at `1.19.0`** covering [#143](https://github.com/ifp/schemas/pull/143), then fixed:
   v1.2.0's first cut required `original_url`, which private-vendor media never has.
 - **The live media shape is known at last** — two real adverts, recorded in `CLAUDE.md`.
@@ -31,8 +32,10 @@ release model and the conventions that read as bugs but aren't.
 
 ## In flight
 
-- `chore/verify-history-docs` — closes out the five history docs under the new two-tier rule.
-  Unmerged.
+- `feat/public-schema-lat-lon` ([#147](https://github.com/ifp/schemas/pull/147)) — **public sale-advert
+  schema v1.2.0**: `property.geo.user_data.lat` / `lon` (geo-public v1.1.0), so advertisers can send
+  coordinates on-contract. JB French Houses (119) already sends them via advert-collector. Release as
+  `1.22.0` after merge.
 
 ## Settled — do not reopen
 
@@ -57,17 +60,18 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 
 ## Next action
 
-1. Merge `fix/floor-plans-original-url-not-required`, finalise the `reconciled` tag, cut `1.20.0`.
-2. Merge this, cut the release, then update `RentalSearchControllerTest`'s five changed URLs in
-   `french-property.com` (verified locally with `php83`).
-3. Tell `advert-collector`'s owner that emitting floor plan objects is now possible.
-4. Nothing awaiting human verification — every history doc here is auto tier and now carries
-   `verified: ci` with the check that promoted it.
+1. Merge [#147](https://github.com/ifp/schemas/pull/147), cut `1.22.0`, finalise the `reconciled` tag, then
+   flip `2026-10-20-public-schema-lat-lon.md` (its callout names the check).
+2. `RentalSearchControllerTest` in `french-property.com` still needs its five URLs updated once a
+   release past `1.21.0` reaches it (`docs/TODO.md`). `ifp/system` was still locked at `1.16.0` locally
+   on 20 Oct.
+3. Nothing awaiting human verification. Every history doc here is auto tier.
 
 ## Roadmap
 
 | Date | What shipped | History doc |
 |---|---|---|
+| 2026-10-20 | Public schema v1.2.0: property coordinates (`geo.user_data.lat` / `lon`) | [2026-10-20-public-schema-lat-lon.md](docs/history/2026-10-20-public-schema-lat-lon.md) |
 | 2026-09-11 | Fixtures carry both image generations | [2026-09-11-fixtures-both-image-generations.md](docs/history/2026-09-11-fixtures-both-image-generations.md) |
 | 2026-09-11 | floor_plans v1.2.0 required a field half of all adverts never have | [2026-09-11-floor-plans-original-url-fix.md](docs/history/2026-09-11-floor-plans-original-url-fix.md) |
 | 2026-09-11 | Floor plans schema v1.2.0 | [2026-09-11-floor-plans-schema-v1.2.0.md](docs/history/2026-09-11-floor-plans-schema-v1.2.0.md) |
