@@ -8,15 +8,18 @@ Please use the latest version of these schemas when sending us sale adverts:
 
 [Public Sale Advert JSON Schema Changelog](https://github.com/ifp/schemas/blob/master/json/public/public_sale-advert-schema_changelog.md)
 
+- [Public Sale Advert JSON Schema v1.2.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/public_sale-advert-schema_v1.2.0.json) - adds the property's coordinates, `geo.user_data.lat` / `lon`
 - [Public Sale Advert JSON Schema v1.1.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/public_sale-advert-schema_v1.1.0.json)
 - [Public Sale Advert JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/public_sale-advert-schema_v1.0.0.json)
 
 ### Public Document Examples:
 
+- [Public Sale Advert JSON v1.2.0 example](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.2.0-example.json)
 - [Public Sale Advert JSON v1.1.0 example](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.1.0-example.json)
 - [Public Sale Advert JSON v1.0.0 example](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.0.0-example.json)
 - [Public Sale Advert JSON v1.* list of enums available](https://raw.githubusercontent.com/ifp/schemas/master/json/public/examples/public_sale-advert-schema_v1.x-enum-values.json) - see this for the full list of the enums in the schema that can be used for the lookup values in their respective keys.
 
+- [Public Sale Advert JSON v1.2.0 notes](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.2.0-notes.json) (only notes the additions to v1.1.0)
 - [Public Sale Advert JSON v1.1.0 notes](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.1.0-notes.json) (only notes the changes/additions to v1.0.0)
 - [Public Sale Advert JSON v1.0.0 notes](https://github.com/ifp/schemas/blob/master/json/public/examples/public_sale-advert-schema_v1.0.0-notes.json)
 
@@ -32,7 +35,7 @@ There is some logic to the required fields of the property.geo.user_data, which 
 ### Other published schemas:
 
 - [Simplified Export Sale Advert JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/simplified_export_sale-advert-schema_v1.0.0.json) - the schema of the property exports we send to partners. Field-by-field notes: [partner_exports.md](https://github.com/ifp/schemas/blob/master/partner_exports.md).
-- [Geo Public JSON Schema v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/geo-public-schema_v1.0.0.json) - referenced by `property.geo` in the public sale advert schemas; you do not need to fetch it separately to validate.
+- [Geo Public JSON Schema v1.1.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/geo-public-schema_v1.1.0.json) / [v1.0.0](https://raw.githubusercontent.com/ifp/schemas/master/json/public/geo-public-schema_v1.0.0.json) - referenced by `property.geo` in the public sale advert schemas (v1.2.0 uses v1.1.0, which adds `lat` / `lon`); you do not need to fetch it separately to validate.
 
 ### Validating your JSON:
 

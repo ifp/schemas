@@ -45,6 +45,7 @@ PAIRS = [
     ("json/internal/internal_sale-advert-schema_v1.0.0.json", "json/fixtures/upsert_sale_advert.json"),
     ("json/internal/internal_delete-sale-advert-schema_v1.0.0.json", "json/fixtures/delete_sale_advert.json"),
     ("json/internal/internal_purge-advert-schema.json", "json/fixtures/purge_advert.json"),
+    ("json/public/public_sale-advert-schema_v1.2.0.json", "json/public/examples/public_sale-advert-schema_v1.2.0-example.json"),
     ("json/public/public_sale-advert-schema_v1.1.0.json", "json/public/examples/public_sale-advert-schema_v1.1.0-example.json"),
     ("json/public/public_sale-advert-schema_v1.0.0.json", "json/public/examples/public_sale-advert-schema_v1.0.0-example.json"),
     ("json/public/simplified_export_sale-advert-schema_v1.0.0.json", "json/fixtures/simplified_export_sale_advert.json"),

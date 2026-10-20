@@ -1,5 +1,20 @@
 # Public Sale Advert Schema Changelog
 
+### v1.2.0 (2026-10-20)
+
+- Add `property.geo.user_data.lat` and `property.geo.user_data.lon`: the property's coordinates in
+  decimal degrees (WGS84), `null` or a number, latitude −90…90 and longitude −180…180. Defined in the
+  new `geo-public-schema_v1.1.0.json`, which v1.2.0 references; `geo-public-schema_v1.0.0.json` and
+  v1.1.0 are unchanged and still published.
+- Both keys are **required but nullable**, like every other public field: a v1.2.0 feed sends them,
+  as `null` when it has no coordinates. A v1.1.0 feed is unaffected, and still may not send them
+  (its geo block is `additionalProperties: false`).
+- Why: some advertisers name a hamlet or lieu-dit that is not a commune, which leaves the advert
+  placed by department only. When coordinates are present, IFP places the advert in the nearest
+  commune (within 25 km) ahead of the name. First sender: JB French Houses (agency 119), via
+  advert-collector, which reads them from either version.
+- `self.version` is `1-2-0`, the file's real version (earlier public files all say `1-0-0`).
+
 ### Simplified export fixes (2026-09-11)
 
 Both applied in place to `simplified_export_sale-advert-schema_v1.0.0.json` rather than bumped.
