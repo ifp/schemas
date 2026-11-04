@@ -1,5 +1,17 @@
 # Internal Sale Advert Schema Changelog
 
+### `advert.archived_at` added to `advert-schema_v1.0.0`, in place (2026-11-04)
+
+- **New optional `advert.archived_at`**: `null` or an ISO 8601 date-time, when the advert was last
+  archived. ifp/system's `Advert` model sets it on the save that archives an advert, keeps it while the
+  advert stays archived, and removes it when the advert leaves archived. Long-archived adverts show only
+  their main photo, measured from this date (CM TASK-1402, plan
+  `reports/french-property/archived-advert-galleries/plan.md`).
+
+  Added in place, as `advert.external_reference` was ([#125](https://github.com/ifp/schemas/pull/125)):
+  the key is optional and `advert` keeps `additionalProperties: true`, so every advert valid before is
+  valid after. For the record: nothing failed validation without it.
+
 ### Fix to v1.2.0, in place (2026-09-11)
 
 - **`floor_plans-schema_v1.2.0` no longer requires `original_url`.** Required is now
