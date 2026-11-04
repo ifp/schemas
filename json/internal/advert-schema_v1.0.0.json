@@ -233,6 +233,14 @@
         "string"
       ]
     },
+    "archived_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time",
+      "description": "When the advert was last archived, as an ISO 8601 UTC date-time. Set by ifp/system's Advert model on the save that archives it, kept while it stays archived, and removed when it leaves archived (a relist restarts the clock). Absent on adverts that are not archived."
+    },
     "approval": {
       "type": [
         "string"

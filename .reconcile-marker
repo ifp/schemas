@@ -1,2 +1,2 @@
-date: 2026-10-20
-note: Seventh reconcile, folded into #147 (public sale-advert schema v1.2.0 with geo.user_data.lat/lon; geo-public v1.1.0). Its history doc is auto tier and waits on the merge, CI on the merge commit, raw master URLs and the 1.22.0 tag. Also fixed: the release check read the `reconciled` tag, and CLAUDE.md claimed no CI. SITREP's stale next actions refreshed.
+date: 2026-11-04
+note: Eighth reconcile, folded into #148 (internal advert schema gains optional advert.archived_at, CM TASK-1402). Its history doc is auto tier and waits on the merge, CI on the merge commit and the 1.23.0 tag. #147's doc verified and flipped to stable.

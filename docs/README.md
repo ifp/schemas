@@ -22,7 +22,8 @@ Elsewhere in the repo, and easy to miss:
 
 | Date | Doc | Status |
 |---|---|---|
-| 2026-10-20 | [Public sale-advert schema v1.2.0 adds the property's coordinates](history/2026-10-20-public-schema-lat-lon.md) | in-progress |
+| 2026-11-04 | [Internal advert schema records when an advert was archived](history/2026-11-04-advert-archived-at.md) | in-progress |
+| 2026-10-20 | [Public sale-advert schema v1.2.0 adds the property's coordinates](history/2026-10-20-public-schema-lat-lon.md) | stable |
 | 2026-09-11 | [The fixtures must carry both image generations, not just the new one](history/2026-09-11-fixtures-both-image-generations.md) | stable |
 | 2026-09-11 | [floor_plans v1.2.0 required a field half of all adverts never have](history/2026-09-11-floor-plans-original-url-fix.md) | stable |
 | 2026-09-11 | [Floor plans schema v1.2.0 — one lifecycle, three CDN generations](history/2026-09-11-floor-plans-schema-v1.2.0.md) | stable |

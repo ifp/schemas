@@ -1,22 +1,18 @@
 ---
 title: Public sale-advert schema v1.2.0 adds the property's coordinates
 tags: [public-schema, geo, lat-lon, v1.2.0, advert-collector, 119]
-status: in-progress
-completed:
+status: stable
+completed: 2026-11-04
+verified: ci
 commits: [f2e7f22]
 pr: 147
 ---
 
 # Public sale-advert schema v1.2.0 adds the property's coordinates
 
-> **Waiting on its check (auto tier).** It cannot pass before the merge, because v1.2.0's `$ref` resolves
-> `geo-public-schema_v1.1.0.json` from `master`. Check, after the merge:
-> 1. CI (`validate`) is green on the merge commit.
-> 2. `https://raw.githubusercontent.com/ifp/schemas/master/json/public/public_sale-advert-schema_v1.2.0.json`
->    and `…/geo-public-schema_v1.1.0.json` both return 200.
-> 3. Tag `1.22.0` is cut and pushed.
->
-> Then flip this doc to `stable` / `verified: ci`.
+Merged 20 Oct 2026 ([#147](https://github.com/ifp/schemas/pull/147)) and released as `1.22.0`. Verified 4 Nov 2026
+(folded reconcile of #148): CI `Validate schemas` green on the merge commit `afece3c`; the raw `master` URLs of
+`public_sale-advert-schema_v1.2.0.json` and `geo-public-schema_v1.1.0.json` both return 200; tag `1.22.0` points at `afece3c`.
 
 ## Why
 
