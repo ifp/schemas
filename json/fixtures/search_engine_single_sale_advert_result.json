@@ -235,9 +235,6 @@
           "width": 225,
           "height": 300,
           "title_fr": null,
-          "archived_at": null,
-          "original_url": null,
-          "original_bytes": null,
           "listing_position": 5
         },
         {
@@ -247,9 +244,6 @@
           "width": 400,
           "height": 300,
           "title_fr": null,
-          "archived_at": null,
-          "original_url": null,
-          "original_bytes": null,
           "listing_position": 6
         },
         {
@@ -259,9 +253,6 @@
           "width": 225,
           "height": 300,
           "title_fr": null,
-          "archived_at": null,
-          "original_url": null,
-          "original_bytes": null,
           "listing_position": 7
         },
         {
@@ -271,9 +262,6 @@
           "width": 400,
           "height": 300,
           "title_fr": null,
-          "archived_at": null,
-          "original_url": null,
-          "original_bytes": null,
           "listing_position": 8
         },
         {
@@ -283,9 +271,6 @@
           "width": 225,
           "height": 300,
           "title_fr": null,
-          "archived_at": null,
-          "original_url": null,
-          "original_bytes": null,
           "listing_position": 9
         }
       ],

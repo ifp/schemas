@@ -1,21 +1,18 @@
 ---
 title: Internal advert schema records when an advert was archived
 tags: [internal-schema, advert, archived-at, task-1402, archived-advert-galleries]
-status: in-progress
-completed:
-commits: []
+status: stable
+completed: 2026-11-09
+verified: ci
+commits: [0c22061]
 pr: 148
 ---
 
 # Internal advert schema records when an advert was archived
 
-> **Waiting on its check (auto tier).** After the merge:
-> 1. CI (`Validate schemas`) is green on the merge commit.
-> 2. Tag `1.23.0` is cut on it and pushed.
-> 3. `https://raw.githubusercontent.com/ifp/schemas/master/json/internal/advert-schema_v1.0.0.json` carries
->    `archived_at` (`curl -s … | jq '.properties.archived_at.format'` prints `"date-time"`).
->
-> Then flip this doc to `stable` / `verified: ci`.
+Merged 4 Nov 2026 ([#148](https://github.com/ifp/schemas/pull/148)) and released as `1.23.0`. Verified 9 Nov 2026
+(folded reconcile of #149): CI `Validate schemas` green on the merge commit `0c22061`; tag `1.23.0` points at it; the raw
+`master` `advert-schema_v1.0.0.json` gives `.properties.archived_at.format` = `"date-time"`.
 
 ## What changed
 
