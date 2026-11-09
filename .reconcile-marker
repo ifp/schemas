@@ -1,2 +1,2 @@
-date: 2026-11-04
-note: Eighth reconcile, folded into #148 (internal advert schema gains optional advert.archived_at, CM TASK-1402). Its history doc is auto tier and waits on the merge, CI on the merge commit and the 1.23.0 tag. #147's doc verified and flipped to stable.
+date: 2026-11-09
+note: Ninth reconcile, folded into #149 (Search-output fixture: Bunny images lose archived_at / original_url / original_bytes, which Search never returns; wrong since 1.21.0). Its doc waits on the merge, 1.23.1 and Search's CI. #148's doc verified (CI on 0c22061, tag 1.23.0, raw URL) and flipped to stable.

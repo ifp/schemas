@@ -1,6 +1,6 @@
 ---
 title: ifp/schemas — situation report
-updated: 2026-11-04
+updated: 2026-11-09
 reconcile: 7
 ---
 
@@ -23,7 +23,8 @@ release model and the conventions that read as bugs but aren't.
 - **Released at `1.18.0`** covering [#142](https://github.com/ifp/schemas/pull/142).
 - **`floor_plans-schema_v1.2.0`** (and `internal_sale-advert-schema_v1.2.0`) — floor plans now
   describe the same lifecycle as images instead of requiring a CDN we dropped years ago.
-- **Released at `1.22.0`** (20 Oct 2026), the latest: public sale-advert schema v1.2.0 ([#147](https://github.com/ifp/schemas/pull/147)). Before it, `1.21.0` (11 Sep 2026): `1.19.0` [#143](https://github.com/ifp/schemas/pull/143), `1.20.0` [#144](https://github.com/ifp/schemas/pull/144), `1.21.0` [#145](https://github.com/ifp/schemas/pull/145). [#146](https://github.com/ifp/schemas/pull/146) (history docs only) is merged, untagged, and needs no release.
+- **Released at `1.23.0`** (4 Nov 2026), the latest: optional `advert.archived_at` on the internal advert schema
+  ([#148](https://github.com/ifp/schemas/pull/148), TASK-1402). Before it, `1.22.0` (20 Oct): public sale-advert schema v1.2.0 ([#147](https://github.com/ifp/schemas/pull/147)). Before it, `1.21.0` (11 Sep 2026): `1.19.0` [#143](https://github.com/ifp/schemas/pull/143), `1.20.0` [#144](https://github.com/ifp/schemas/pull/144), `1.21.0` [#145](https://github.com/ifp/schemas/pull/145). [#146](https://github.com/ifp/schemas/pull/146) (history docs only) is merged, untagged, and needs no release.
 - **Released at `1.19.0`** covering [#143](https://github.com/ifp/schemas/pull/143), then fixed:
   v1.2.0's first cut required `original_url`, which private-vendor media never has.
 - **The live media shape is known at last** — two real adverts, recorded in `CLAUDE.md`.
@@ -32,9 +33,9 @@ release model and the conventions that read as bugs but aren't.
 
 ## In flight
 
-- `feat/archived-at-task-1402` ([#148](https://github.com/ifp/schemas/pull/148)): optional
-  `advert.archived_at` on the internal advert schema, in place (CM TASK-1402). ifp/system sets the date;
-  this records it. Release as `1.23.0` after merge.
+- `fix/search-engine-fixture-image-keys` ([#149](https://github.com/ifp/schemas/pull/149)): the Search-output fixture's
+  Bunny images lose `archived_at` / `original_url` / `original_bytes`, which Search never returns (wrong since `1.21.0`,
+  [#145](https://github.com/ifp/schemas/pull/145); found bumping Search for TASK-1402). Release as `1.23.1` after merge.
 
 ## Settled — do not reopen
 
@@ -59,8 +60,8 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 
 ## Next action
 
-1. Merge [#148](https://github.com/ifp/schemas/pull/148), cut `1.23.0`, finalise the `reconciled` tag, then
-   flip `2026-11-04-advert-archived-at.md` (its callout names the check).
+1. [#149](https://github.com/ifp/schemas/pull/149) auto-merges; cut `1.23.1`, finalise the `reconciled` tag. Its doc flips once
+   Search's TASK-1402 PR is green on `1.23.1`.
 2. `RentalSearchControllerTest` in `french-property.com` still needs its five URLs updated once a
    release past `1.21.0` reaches it (`docs/TODO.md`). `ifp/system` was still locked at `1.16.0` locally
    on 20 Oct.
@@ -70,6 +71,7 @@ deliberate, and the write-ups are in [CLAUDE.md](CLAUDE.md):
 
 | Date | What shipped | History doc |
 |---|---|---|
+| 2026-11-09 | Search-output fixture: Bunny images lose keys Search never returns | [2026-11-09-search-engine-fixture-image-keys.md](docs/history/2026-11-09-search-engine-fixture-image-keys.md) |
 | 2026-11-04 | Internal advert schema: optional `advert.archived_at` | [2026-11-04-advert-archived-at.md](docs/history/2026-11-04-advert-archived-at.md) |
 | 2026-10-20 | Public schema v1.2.0: property coordinates (`geo.user_data.lat` / `lon`) | [2026-10-20-public-schema-lat-lon.md](docs/history/2026-10-20-public-schema-lat-lon.md) |
 | 2026-09-11 | Fixtures carry both image generations | [2026-09-11-fixtures-both-image-generations.md](docs/history/2026-09-11-fixtures-both-image-generations.md) |
